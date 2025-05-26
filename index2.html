@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-A">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights into Network Technologies & Concepts: A Deep Research Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!--
+        Source Material Integration Plan & Visualization Choices:
+
+        Overall Narrative Plan:
+        Title: Navigating the Network Maze: Key Concepts & Technology Insights (Based on Deep Research Report - Networking Exam Solutions)
+        This infographic translates key findings from our comprehensive research on networking principles into a visual format,
+        highlighting trends, comparisons, and core mechanisms crucial for understanding today's network landscape.
+
+        Color Palette Selection: "Energetic & Playful"
+        - Primary Text: #073B4C (Dark Blue)
+        - Accent 1 (Charts, Highlights): #FF6B6B (Vibrant Red)
+        - Accent 2 (Charts, Highlights): #FFD166 (Bright Yellow)
+        - Accent 3 (Charts, Highlights): #06D6A0 (Greenish Cyan)
+        - Accent 4 (Charts, Highlights): #118AB2 (Strong Blue)
+        - Backgrounds: Page: #EFF6FF (Very Light Blue), Cards: #FFFFFF
+
+        Sections & Visualizations:
+
+        1.  Header & Introduction:
+            -   Goal: Inform, Set Context
+            -   Content: Title, brief intro about the "deep research report" (networking solutions).
+
+        2.  Section: Core Communication Principles
+            -   Intro Paragraph: Discussing the fundamental ways data flows and the essential components.
+            -   Data Point: Data Flow Dynamics (Simplex, Half-Duplex, Full-Duplex)
+                -   Goal: Compare, Organize
+                -   Chosen Visualization: HTML/CSS diagram using Tailwind for layout, borders, and text.
+                -   Justification: Clear visual separation and description of each flow type.
+                -   Library/Method: HTML, Tailwind CSS. NO SVG, NO MERMAID.
+            -   Data Point: Core Data Communication Components
+                -   Goal: Inform, Organize
+                -   Chosen Visualization: HTML/CSS list with Unicode icons.
+                -   Justification: Simple, clear presentation of components.
+                -   Library/Method: HTML, Tailwind CSS, Unicode characters. NO SVG, NO MERMAID.
+
+        3.  Section: Channel Access & Efficiency
+            -   Intro Paragraph: Analyzing how shared communication channels are utilized.
+            -   Data Point: Aloha vs. Slotted Aloha Throughput
+                -   Goal: Compare
+                -   Chosen Visualization: Bar Chart (Chart.js)
+                -   Justification: Effectively compares quantitative throughput values.
+                -   Library/Method: Chart.js (Canvas). Responsive, maintainAspectRatio:false, label wrapping, tooltip config. NO SVG.
+            -   Data Point: Time Division Multiplexing (TDM) Overview
+                -   Goal: Organize, Inform
+                -   Chosen Visualization: HTML/CSS conceptual diagram of STDM vs ATDM time slots.
+                -   Justification: Visualizes the allocation of time slots.
+                -   Library/Method: HTML, Tailwind CSS. NO SVG, NO MERMAID.
+
+        4.  Section: Ensuring Data Reliability
+            -   Intro Paragraph: The importance of detecting and handling errors in data transmission.
+            -   Data Point: Error Detection vs. Correction
+                -   Goal: Compare
+                -   Chosen Visualization: Comparative text in styled cards.
+                -   Justification: Clear textual distinction of concepts.
+                -   Library/Method: HTML, Tailwind CSS.
+            -   Data Point: Parity Check Example (for data word 1010011)
+                -   Goal: Inform (Illustrate a process)
+                -   Chosen Visualization: HTML/CSS display showing data word and resulting codewords for even/odd parity.
+                -   Justification: Simple demonstration of parity calculation.
+                -   Library/Method: HTML, Tailwind CSS. NO SVG.
+
+        5.  Section: Network Addressing & Structure
+            -   Intro Paragraph: How devices are identified and networks are structured.
+            -   Data Point: IPv4 Class A, B, C Network/Host Proportions
+                -   Goal: Compare (Composition)
+                -   Chosen Visualization: Donut Charts (Chart.js) - 1 for each class.
+                -   Justification: Visually shows the proportion of bits dedicated to network vs. host IDs.
+                -   Library/Method: Chart.js (Canvas). Responsive, maintainAspectRatio:false, label wrapping, tooltip config. NO SVG.
+            -   Data Point: Network Topologies (Ring vs. Mesh)
+                -   Goal: Compare, Organize
+                -   Chosen Visualization: HTML/CSS diagrams using styled divs and borders.
+                -   Justification: Visual representation of connectivity.
+                -   Library/Method: HTML, Tailwind CSS. NO SVG, NO MERMAID.
+
+        6.  Section: Data Encoding & Transmission Insights
+            -   Intro Paragraph: Exploring how binary data is prepared for physical transmission.
+            -   Data Point: Line Coding Schemes (NRZ-L vs. Manchester for '1001')
+                -   Goal: Compare
+                -   Chosen Visualization: HTML/CSS based signal diagrams.
+                -   Justification: Illustrates signal level changes for different schemes.
+                -   Library/Method: HTML, Tailwind CSS. NO SVG.
+            -   Data Point: Fiber Optic Cable Core Structure
+                -   Goal: Inform
+                -   Chosen Visualization: HTML/CSS cross-section diagram.
+                -   Justification: Simple visual of cable layers.
+                -   Library/Method: HTML, Tailwind CSS. NO SVG.
+
+        7.  Conclusion:
+            -   Goal: Summarize
+            -   Content: Key takeaways on the importance of understanding these networking concepts.
+
+        Confirmations (to be removed from final output, here for process documentation):
+        -   Mermaid JS was NOT used.
+        -   SVG graphics were NOT used. All visuals are Chart.js (Canvas) or HTML/CSS/Unicode.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #EFF6FF; /* Very Light Blue */
+            color: #073B4C; /* Dark Blue */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Default max-width */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Default height */
+            max-height: 350px; /* Default max-height */
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            .chart-container {
+                height: 350px;
+                max-height: 400px;
+            }
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #118AB2; /* Strong Blue */
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #FFD166; /* Bright Yellow */
+        }
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem; /* 24px */
+            margin-bottom: 1.5rem; /* 24px */
+        }
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #FF6B6B; /* Vibrant Red */
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .html-diagram-node {
+            background-color: #118AB2; /* Strong Blue */
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            min-width: 80px;
+        }
+        .html-diagram-line {
+            background-color: #073B4C; /* Dark Blue */
+            height: 2px;
+            margin: 0.5rem 0;
+        }
+        .signal-diagram {
+            border: 1px solid #073B4C;
+            height: 80px;
+            position: relative;
+            background-image: 
+                linear-gradient(to right, #e0e0e0 1px, transparent 1px),
+                linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
+            background-size: 20px 20px; /* Grid lines */
+        }
+        .signal-level {
+            position: absolute;
+            background-color: #FF6B6B; /* Vibrant Red */
+            height: 2px;
+        }
+        .signal-transition {
+            position: absolute;
+            background-color: #FF6B6B; /* Vibrant Red */
+            width: 2px;
+        }
+        .unicode-icon {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+            color: #06D6A0; /* Greenish Cyan */
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <header class="bg-073B4C text-white py-8 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-2">Navigating the Network Maze</h1>
+            <p class="text-xl text-gray-300">Key Concepts & Technology Insights from Our Deep Research Report</p>
+        </div>
+    </header>
+        <a href="index.html" 
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md 
+                  transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 
+                  focus:ring-blue-500 focus:ring-opacity-75">
+            Home
+        </a>
+        <a href="dcn.html" 
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md 
+                  transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 
+                  focus:ring-blue-500 focus:ring-opacity-75">
+            DCN
+        </a>
+    <main class="container mx-auto px-4 py-8">
+        <section id="intro" class="mb-12">
+            <div class="card">
+                <h2 class="text-2xl font-semibold mb-3" style="color: #118AB2;">Unveiling Network Complexities</h2>
+                <p class="text-lg leading-relaxed">
+                    This infographic presents key findings derived from our extensive "Deep Research Report on Networking Principles and Practices" (based on comprehensive exam solutions). It aims to distill complex networking concepts into digestible visual insights, highlighting prevalent mechanisms, comparative analyses, and foundational knowledge critical in today's interconnected world. We explore how data flows, how channels are managed, the intricacies of ensuring data reliability, and the structures that underpin modern network communications.
+                </p>
+            </div>
+        </section>
+
+        <section id="core-principles" class="mb-12">
+            <h2 class="section-title">Core Communication Principles</h2>
+            <p class="text-lg mb-6">Understanding the fundamental modes of data flow and the essential components that enable communication is paramount. Our research indicates distinct operational characteristics and a common set of building blocks vital for any data exchange.</p>
+            
+            <div class="card">
+                <h3 class="text-xl font-semibold mb-4">Data Flow Dynamics: A Comparative Overview</h3>
+                <div class="comparison-grid">
+                    <div class="p-4 border border-gray-200 rounded-lg">
+                        <h4 class="font-bold text-lg mb-2" style="color: #FF6B6B;">Simplex</h4>
+                        <p class="mb-2">Data flows in <strong class="font-semibold">one direction only</strong>.</p>
+                        <div class="flex items-center justify-center space-x-2">
+                            <div class="html-diagram-node">Sender</div>
+                            <div class="text-2xl font-bold" style="color: #073B4C;">&rarr;</div>
+                            <div class="html-diagram-node">Receiver</div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">Example: Traditional Radio Broadcast</p>
+                    </div>
+                    <div class="p-4 border border-gray-200 rounded-lg">
+                        <h4 class="font-bold text-lg mb-2" style="color: #FFD166;">Half-Duplex</h4>
+                        <p class="mb-2">Data flows in <strong class="font-semibold">both directions, but not simultaneously</strong>.</p>
+                         <div class="flex items-center justify-center space-x-2">
+                            <div class="html-diagram-node">Device A</div>
+                            <div class="text-2xl font-bold" style="color: #073B4C;">&lrarr;</div>
+                            <div class="html-diagram-node">Device B</div>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-600">Example: Walkie-Talkies</p>
+                    </div>
+                    <div class="p-4 border border-gray-200 rounded-lg">
+                        <h4 class="font-bold text-lg mb-2" style="color: #06D6A0;">Full-Duplex</h4>
+                        <p class="mb-2">Data flows in <strong class="font-semibold">both directions simultaneously</strong>.</p>
+                        <div class="flex items-center justify-center space-x-2">
+                            <div class="html-diagram-node">Device A</div>
+                            <div class="text-2xl font-bold" style="color: #073B4C;">&rlarr;</div>
+                            <div class="html-diagram-node">Device B</div>
+                        </div>
+                         <p class="mt-2 text-sm text-gray-600">Example: Telephone Conversation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="text-xl font-semibold mb-4">Essential Components of Data Communication</h3>
+                <ul class="list-none space-y-3">
+                    <li class="flex items-center"><span class="unicode-icon">&#128187;</span><div><strong class="font-semibold">Message:</strong> The core information or data being conveyed.</div></li>
+                    <li class="flex items-center"><span class="unicode-icon">&#128225;</span><div><strong class="font-semibold">Sender:</strong> The entity initiating the data transmission.</div></li>
+                    <li class="flex items-center"><span class="unicode-icon">&#128226;</span><div><strong class="font-semibold">Receiver:</strong> The entity designated to accept the message.</div></li>
+                    <li class="flex items-center"><span class="unicode-icon">&#128279;</span><div><strong class="font-semibold">Transmission Medium:</strong> The physical pathway for data travel (e.g., cable, air).</div></li>
+                    <li class="flex items-center"><span class="unicode-icon">&#128220;</span><div><strong class="font-semibold">Protocol:</strong> The set of rules governing the data exchange process.</div></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="channel-efficiency" class="mb-12">
+            <h2 class="section-title">Channel Access & Efficiency</h2>
+            <p class="text-lg mb-6">Efficiently managing access to shared communication channels is a key trend in network performance. Our research highlights significant differences in throughput based on the access protocol employed.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Aloha Protocols: Throughput Comparison</h3>
+                    <p class="mb-4">Analysis of Aloha and Slotted Aloha reveals distinct maximum theoretical throughputs, a critical factor in network design.</p>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="alohaThroughputChart"></canvas>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-700">Slotted Aloha's synchronized transmission slots significantly reduce collision probability, effectively doubling the maximum throughput compared to its predecessor.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4">Time Division Multiplexing (TDM) Approaches</h3>
+                    <p class="mb-4">TDM methodologies show varying efficiency based on dynamic slot allocation:</p>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold" style="color: #118AB2;">Synchronous TDM (STDM)</h4>
+                            <p class="text-sm">Fixed time slots are pre-assigned. If a device has no data, its slot is unused, potentially leading to bandwidth wastage.</p>
+                            <div class="flex mt-2 space-x-1 h-8 items-end">
+                                <div class="bg-blue-300 flex-1 h-full rounded-sm flex items-center justify-center text-xs text-blue-800">A1</div>
+                                <div class="bg-gray-300 flex-1 h-full rounded-sm flex items-center justify-center text-xs text-gray-600">Empty</div>
+                                <div class="bg-blue-300 flex-1 h-full rounded-sm flex items-center justify-center text-xs text-blue-800">C1</div>
+                                <div class="bg-blue-300 flex-1 h-full rounded-sm flex items-center justify-center text-xs text-blue-800">D1</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold" style="color: #06D6A0;">Asynchronous/Statistical TDM (ATDM)</h4>
+                            <p class="text-sm">Time slots allocated dynamically based on demand. More efficient for bursty traffic as empty slots are minimized.</p>
+                            <div class="flex mt-2 space-x-1 h-8 items-end">
+                                <div class="bg-green-300 flex-1 h-full rounded-sm flex items-center justify-center text-xs text-green-800">A1</div>
+                                <div class="bg-green-300 flex-1 h-full rounded-sm flex items-center justify-center text-xs text-green-800">C1</div>
+                                <div class="bg-green-300 flex-1 h-full rounded-sm flex items-center justify-center text-xs text-green-800">A2</div>
+                                </div>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-sm text-gray-700">ATDM's dynamic nature offers superior bandwidth utilization when data sources are not continuously active.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="data-reliability" class="mb-12">
+            <h2 class="section-title">Ensuring Data Reliability</h2>
+            <p class="text-lg mb-6">The integrity of transmitted data is fundamental. Our research underscores the distinct roles and capabilities of error detection and correction mechanisms, with parity checks being a foundational technique.</p>
+            <div class="comparison-grid">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4" style="color: #FF6B6B;">Error Detection</h3>
+                    <p>Identifies the presence of errors in transmitted data. The receiver knows data is corrupted but cannot fix it. Examples include Parity Check, Checksum, CRC. Focus is on flagging issues for potential retransmission requests.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-4" style="color: #06D6A0;">Error Correction</h3>
+                    <p>Not only detects errors but also has the capability to locate and correct certain errors without retransmission. More complex, often involving redundant data. Example: Hamming Code. Aims to maintain data flow despite minor corruptions.</p>
+                </div>
+            </div>
+             <div class="card mt-6">
+                <h3 class="text-xl font-semibold mb-4">Parity Check Example: Data Word 1010011</h3>
+                <p class="mb-2">Original Data Word (7 bits): <code class="bg-gray-200 px-2 py-1 rounded text-lg font-mono">1010011</code> (Number of 1s = 4)</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold">a) Even Parity:</h4>
+                        <p>Total 1s (data + parity) must be even. Since data has 4 (even) 1s, parity bit is <strong class="text-xl" style="color: #118AB2;">0</strong>.</p>
+                        <p>Codeword: <code class="bg-blue-100 px-2 py-1 rounded text-lg font-mono">1010011<strong style="color: #118AB2;">0</strong></code></p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold">b) Odd Parity:</h4>
+                        <p>Total 1s (data + parity) must be odd. Since data has 4 (even) 1s, parity bit is <strong class="text-xl" style="color: #FF6B6B;">1</strong>.</p>
+                        <p>Codeword: <code class="bg-red-100 px-2 py-1 rounded text-lg font-mono">1010011<strong style="color: #FF6B6B;">1</strong></code></p>
+                    </div>
+                </div>
+                <p class="mt-3 text-sm text-gray-700">Simple parity checks are a basic but important concept in error detection, forming the basis for more advanced techniques.</p>
+            </div>
+        </section>
+
+        <section id="addressing-structure" class="mb-12">
+            <h2 class="section-title">Network Addressing & Structure</h2>
+            <p class="text-lg mb-6">Effective device identification and network organization are crucial. IPv4 classes, despite historical context, illustrate fundamental address allocation strategies, while topologies define physical or logical layouts.</p>
+            <div class="card">
+                <h3 class="text-xl font-semibold mb-4">IPv4 Class Network/Host Bit Allocation</h3>
+                <p class="mb-4">The distribution of bits between Network ID and Host ID varies significantly across traditional IPv4 classes, impacting the number of networks and hosts supported.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <h4 class="font-semibold mb-2">Class A (8 Network / 24 Host bits)</h4>
+                        <div class="chart-container h-48 md:h-56 !max-w-[250px]">
+                            <canvas id="ipv4ClassAChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="font-semibold mb-2">Class B (16 Network / 16 Host bits)</h4>
+                        <div class="chart-container h-48 md:h-56 !max-w-[250px]">
+                            <canvas id="ipv4ClassBChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="font-semibold mb-2">Class C (24 Network / 8 Host bits)</h4>
+                        <div class="chart-container h-48 md:h-56 !max-w-[250px]">
+                            <canvas id="ipv4ClassCChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-4 text-sm text-gray-700">This classful system highlights the trade-offs in address space design, paving the way for more flexible CIDR approaches.</p>
+            </div>
+            <div class="card mt-6">
+                <h3 class="text-xl font-semibold mb-4">Network Topology Comparison: Ring vs. Mesh</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-center" style="color: #FF6B6B;">Ring Topology</h4>
+                        <div class="flex flex-col items-center space-y-2 p-4 border border-gray-200 rounded-lg h-48 justify-center">
+                            <div class="html-diagram-node">A</div>
+                            <div class="flex justify-between w-32">
+                                <div class="html-diagram-node transform -rotate-45 translate-x-2 translate-y-1">D</div>
+                                <div class="html-diagram-node transform rotate-45 -translate-x-2 translate-y-1">B</div>
+                            </div>
+                            <div class="html-diagram-node">C</div>
+                            </div>
+                        <p class="mt-2 text-sm">Devices connect in a circle. Failure of one node can disrupt the ring. Offers orderly access.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-3 text-center" style="color: #118AB2;">Mesh Topology (Conceptual Full)</h4>
+                        <div class="relative p-4 border border-gray-200 rounded-lg h-48 flex items-center justify-center">
+                            <div class="grid grid-cols-2 gap-10">
+                                <div class="html-diagram-node">A</div>
+                                <div class="html-diagram-node">B</div>
+                                <div class="html-diagram-node">C</div>
+                                <div class="html-diagram-node">D</div>
+                            </div>
+                            <p class="absolute bottom-1 left-1 right-1 text-center text-xs text-gray-500">All nodes interconnected (conceptual).</p>
+                        </div>
+                        <p class="mt-2 text-sm">High reliability due to redundant paths. Complex and expensive to implement fully.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="encoding-transmission" class="mb-12">
+            <h2 class="section-title">Data Encoding & Transmission Insights</h2>
+            <p class="text-lg mb-6">Converting binary data into transmittable signals and the medium of transmission are core to physical layer operations. Our research highlights key line coding schemes and fiber optic cable design.</p>
+            <div class="card">
+                <h3 class="text-xl font-semibold mb-4">Line Coding Scheme Comparison (Data: 1001)</h3>
+                <p class="mb-4">Different line coding schemes represent binary data with varying signal patterns, impacting synchronization and DC component.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-1">Polar NRZ-L (Non-Return to Zero - Level)</h4>
+                        <p class="text-xs mb-2">'1' = +V, '0' = -V (example convention)</p>
+                        <div class="signal-diagram" id="nrzl-signal">
+                            <div class="signal-level" style="left: 0%; width: 25%; bottom: 75%;"></div>
+                            <div class="signal-level" style="left: 25%; width: 25%; bottom: 25%;"></div>
+                            <div class="signal-level" style="left: 50%; width: 25%; bottom: 25%;"></div>
+                            <div class="signal-level" style="left: 75%; width: 25%; bottom: 75%;"></div>
+                            <div class="signal-transition" style="left: 25%; bottom: 25%; height: 50%;"></div>
+                            <div class="signal-transition" style="left: 75%; bottom: 25%; height: 50%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-1">Manchester (L->H for 1, H->L for 0)</h4>
+                        <p class="text-xs mb-2">Transition in middle of each bit</p>
+                        <div class="signal-diagram" id="manchester-signal">
+                            <div class="signal-level" style="left: 0%; width: 12.5%; bottom: 25%;"></div>
+                            <div class="signal-transition" style="left: 12.5%; bottom: 25%; height: 50%;"></div>
+                            <div class="signal-level" style="left: 12.5%; width: 12.5%; bottom: 75%;"></div>
+                            <div class="signal-level" style="left: 25%; width: 12.5%; bottom: 75%;"></div>
+                            <div class="signal-transition" style="left: 37.5%; bottom: 25%; height: 50%;"></div>
+                            <div class="signal-level" style="left: 37.5%; width: 12.5%; bottom: 25%;"></div>
+                            <div class="signal-level" style="left: 50%; width: 12.5%; bottom: 75%;"></div>
+                            <div class="signal-transition" style="left: 62.5%; bottom: 25%; height: 50%;"></div>
+                            <div class="signal-level" style="left: 62.5%; width: 12.5%; bottom: 25%;"></div>
+                            <div class="signal-level" style="left: 75%; width: 12.5%; bottom: 25%;"></div>
+                            <div class="signal-transition" style="left: 87.5%; bottom: 25%; height: 50%;"></div>
+                            <div class="signal-level" style="left: 87.5%; width: 12.5%; bottom: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-4 text-sm text-gray-700">Manchester coding ensures a mid-bit transition for synchronization but requires more bandwidth than NRZ schemes.</p>
+            </div>
+
+            <div class="card mt-6">
+                <h3 class="text-xl font-semibold mb-4">Fiber Optic Cable Core Structure</h3>
+                <div class="flex flex-col items-center p-4 border border-gray-200 rounded-lg">
+                    <div class="text-center space-y-1 w-full max-w-xs">
+                        <div class="bg-gray-700 text-white p-2 rounded-t-md text-sm">Outer Jacket</div>
+                        <div class="bg-yellow-400 text-gray-800 p-1 text-xs">Strength Members (e.g., Aramid)</div>
+                        <div class="bg-blue-300 text-blue-800 p-2 text-sm">Buffer Coating</div>
+                        <div class="bg-green-300 text-green-800 p-3 text-base font-medium">Cladding (Lower Refractive Index)</div>
+                        <div class="bg-red-400 text-white p-4 rounded-b-md text-lg font-semibold">Core (Higher Refractive Index - Light Path)</div>
+                    </div>
+                </div>
+                <p class="mt-3 text-sm text-gray-700">The layered design of fiber optic cables, particularly the core-cladding refractive index difference, is essential for data transmission via Total Internal Reflection.</p>
+            </div>
+        </section>
+
+        <section id="conclusion" class="mb-12">
+             <div class="card bg-073B4C text-white">
+                <h2 class="text-2xl font-semibold mb-3" style="color: #FFD166;">Key Takeaways & Future Outlook</h2>
+                <p class="text-lg leading-relaxed text-gray-300">
+                    Our deep research into networking fundamentals reveals a landscape built on precise principles and evolving technologies. From basic data flow and error control to complex addressing and medium access strategies, a solid understanding of these core concepts is indispensable for network professionals. As networks continue to grow in complexity and demand, mastery of these foundational elements—as highlighted in our report—will remain critical for innovation and robust infrastructure development. The ongoing trends point towards more efficient, reliable, and intelligent networking solutions.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-6 bg-gray-800 text-gray-400 text-sm">
+        <p>&copy; <span id="currentYear"></span> Deep Research Insights. All rights reserved.</p>
+        <p>Infographic based on internal "Networking Exam Solutions" report.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Chart.js Label Wrapping Function
+        function wrapText(text, maxWidth) {
+            if (typeof text !== 'string' || text.length <= maxWidth) {
+                return text;
+            }
+            const words = text.split(' ');
+            let currentLine = '';
+            const lines = [];
+            for (const word of words) {
+                if ((currentLine + word).length <= maxWidth || currentLine === '') {
+                    currentLine += (currentLine === '' ? '' : ' ') + word;
+                } else {
+                    lines.push(currentLine);
+                    currentLine = word;
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+        
+        // Tooltip Configuration
+        const tooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        // Aloha Throughput Chart
+        const alohaCtx = document.getElementById('alohaThroughputChart').getContext('2d');
+        new Chart(alohaCtx, {
+            type: 'bar',
+            data: {
+                labels: [wrapText('Pure Aloha Protocol', 16), wrapText('Slotted Aloha Protocol', 16)],
+                datasets: [{
+                    label: 'Max Theoretical Throughput (%)',
+                    data: [18.4, 36.8],
+                    backgroundColor: ['#FF6B6B', '#06D6A0'],
+                    borderColor: ['#CC5555', '#05A080'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 40,
+                        title: { display: true, text: 'Throughput (%)' }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Aloha vs. Slotted Aloha Throughput' },
+                    tooltip: { callbacks: { title: tooltipTitleCallback } }
+                }
+            }
+        });
+
+        // IPv4 Class Charts
+        const ipv4ChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom', labels: { boxWidth: 12 } },
+                tooltip: { callbacks: { title: tooltipTitleCallback } }
+            }
+        };
+
+        new Chart(document.getElementById('ipv4ClassAChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: [wrapText('Network Bits (8)',16), wrapText('Host Bits (24)',16)],
+                datasets: [{ data: [8, 24], backgroundColor: ['#118AB2', '#FFD166'] }]
+            },
+            options: {...ipv4ChartOptions, plugins: {...ipv4ChartOptions.plugins, title: {display: true, text:'Class A Bits'} } }
+        });
+        new Chart(document.getElementById('ipv4ClassBChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: [wrapText('Network Bits (16)',16), wrapText('Host Bits (16)',16)],
+                datasets: [{ data: [16, 16], backgroundColor: ['#118AB2', '#FFD166'] }]
+            },
+            options: {...ipv4ChartOptions, plugins: {...ipv4ChartOptions.plugins, title: {display: true, text:'Class B Bits'} } }
+        });
+        new Chart(document.getElementById('ipv4ClassCChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: [wrapText('Network Bits (24)',16), wrapText('Host Bits (8)',16)],
+                datasets: [{ data: [24, 8], backgroundColor: ['#118AB2', '#FFD166'] }]
+            },
+            options: {...ipv4ChartOptions, plugins: {...ipv4ChartOptions.plugins, title: {display: true, text:'Class C Bits'} } }
+        });
+
+    </script>
+</body>
+</html>

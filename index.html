@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Exam Infographics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for animations if needed, otherwise Tailwind is sufficient */
+        @keyframes pulse-light {
+            0%, 100% { opacity: 0.5; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+        .animate-pulse-light {
+            animation: pulse-light 1.5s infinite ease-in-out;
+        }
+        @keyframes fill-bucket {
+            0% { height: 0%; }
+            100% { height: 100%; }
+        }
+        .animate-fill-bucket {
+            animation: fill-bucket 4s ease-out forwards;
+        }
+        /* Inter font from Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        <header class="bg-gradient-to-r from-blue-600 to-purple-700 text-white p-6 rounded-xl shadow-lg mb-8 text-center">
+            <h1 class="text-4xl font-extrabold mb-2 tracking-tight">Networking Exam Infographics</h1>
+            <p class="text-lg opacity-90">Visual Explanations for Key Concepts</p>
+        </header>
+        <a href="index2.html" 
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md 
+                  transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 
+                  focus:ring-blue-500 focus:ring-opacity-75">
+            Infographics
+        </a>
+        <a href="dcn.html" 
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md 
+                  transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 
+                  focus:ring-blue-500 focus:ring-opacity-75">
+            DCN
+        </a>
+        <main>
+            <section class="mb-12 bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-500 pb-2">
+                    Section A
+                </h2>
+                <div class="space-y-10">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">1. Differentiate between simplex and duplex data flow.</h3>
+                        <div class="flex flex-col md:flex-row justify-around items-center gap-4 p-4 bg-blue-50 rounded-lg">
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mb-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">Simplex</h4>
+                                <p class="text-sm text-center text-gray-600">Data flows in <strong>one direction only</strong>.</p>
+                                <p class="text-xs text-gray-500 mt-1">e.g., TV broadcast</p>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/3">
+                                <div class="flex items-center mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </div>
+                                <h4 class="font-semibold text-lg text-gray-800">Half-Duplex</h4>
+                                <p class="text-sm text-center text-gray-600">Both directions, <strong>not simultaneously</strong>.</p>
+                                <p class="text-xs text-gray-500 mt-1">e.g., Walkie-talkie</p>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/3">
+                                <div class="flex items-center mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600 absolute" style="transform: rotateY(180deg) translateX(10px);"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </div>
+                                <h4 class="font-semibold text-lg text-gray-800">Full-Duplex</h4>
+                                <p class="text-sm text-center text-gray-600">Both directions, <strong>simultaneously</strong>.</p>
+                                <p class="text-xs text-gray-500 mt-1">e.g., Telephone call</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">2. List the components of Data Communication.</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-green-50 rounded-lg">
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mb-2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">1. Message</h4>
+                                <p class="text-sm text-center text-gray-600">The information to be communicated.</p>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mb-2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">2. Sender</h4>
+                                <p class="text-sm text-center text-gray-600">Device that sends the data.</p>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mb-2"><line x1="2" y1="22" x2="13" y2="11"></line><polygon points="2 22 9 2 13 11 22 15 2 22"></polygon></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">3. Receiver</h4>
+                                <p class="text-sm text-center text-gray-600">Device that receives the data.</p>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm col-span-1 md:col-span-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mb-2"><path d="M12 12c-2.4 0-4-2-4-4s1.6-4 4-4 4 2 4 4-1.6 4-4 4z"></path><path d="M12 12v6c0 2.4-2 4-4 4s-4-1.6-4-4V8"></path><path d="M12 12v6c0 2.4 2 4 4 4s4-1.6 4-4V8"></path></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">4. Transmission Medium</h4>
+                                <p class="text-sm text-center text-gray-600">Physical path for message travel.</p>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mb-2"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.05" y1="12" x2="23" y2="12"></line></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">5. Protocol</h4>
+                                <p class="text-sm text-center text-gray-600">Rules governing data communication.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">3. What are guard bands in FDM?</h3>
+                        <div class="flex flex-col items-center p-4 bg-yellow-50 rounded-lg">
+                            <h4 class="font-semibold text-lg text-gray-800 mb-2">Guard Bands in FDM</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-600 mb-3"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
+                            <div class="relative w-full max-w-md h-24 bg-gray-200 rounded-lg overflow-hidden">
+                                <div class="absolute top-1/2 left-0 w-full h-1/2 -translate-y-1/2 flex justify-between items-center px-2">
+                                    <div class="bg-blue-400 h-full w-1/4 rounded-md flex items-center justify-center text-xs font-bold text-white">Ch 1</div>
+                                    <div class="bg-gray-400 h-1/4 w-1/12 rounded-sm flex items-center justify-center text-xs text-white">GB</div>
+                                    <div class="bg-red-400 h-full w-1/4 rounded-md flex items-center justify-center text-xs font-bold text-white">Ch 2</div>
+                                    <div class="bg-gray-400 h-1/4 w-1/12 rounded-sm flex items-center justify-center text-xs text-white">GB</div>
+                                    <div class="bg-green-400 h-full w-1/4 rounded-md flex items-center justify-center text-xs font-bold text-white">Ch 3</div>
+                                </div>
+                                <p class="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-gray-600">Narrow, unused frequency strips</p>
+                            </div>
+                            <p class="text-sm text-center text-gray-600 mt-3">Prevent interference/crosstalk between adjacent channels.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">4. Differentiate between analog and digital signals.</h3>
+                        <div class="flex flex-col md:flex-row justify-around items-center gap-4 p-4 bg-purple-50 rounded-lg">
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600 mb-2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">Analog Signals</h4>
+                                <p class="text-sm text-center text-gray-600">Continuous waveforms, infinite values.</p>
+                                <div class="w-full h-12 mt-2 border-b border-gray-300 relative">
+                                    <div class="absolute w-full h-full bg-gradient-to-r from-purple-300 to-purple-500 opacity-75 rounded-full" style="clip-path: polygon(0% 50%, 10% 30%, 20% 70%, 30% 40%, 40% 60%, 50% 30%, 60% 70%, 70% 40%, 80% 60%, 90% 30%, 100% 50%);"></div>
+                                </div>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600 mb-2"><path d="M12 11V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4"></path><path d="M20 11V7a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-4"></path></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">Digital Signals</h4>
+                                <p class="text-sm text-center text-gray-600">Discrete waveforms, finite values (0s & 1s).</p>
+                                <div class="w-full h-12 mt-2 border-b border-gray-300 relative">
+                                    <div class="absolute w-full h-full flex">
+                                        <div class="w-1/8 h-full bg-purple-500"></div>
+                                        <div class="w-1/8 h-1/2 bg-purple-500 mt-auto"></div>
+                                        <div class="w-1/8 h-full bg-purple-500"></div>
+                                        <div class="w-1/8 h-1/2 bg-purple-500 mt-auto"></div>
+                                        <div class="w-1/8 h-full bg-purple-500"></div>
+                                        <div class="w-1/8 h-1/2 bg-purple-500 mt-auto"></div>
+                                        <div class="w-1/8 h-full bg-purple-500"></div>
+                                        <div class="w-1/8 h-1/2 bg-purple-500 mt-auto"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">5. Define an error. List the error detection techniques?</h3>
+                        <div class="flex flex-col items-center p-4 bg-red-50 rounded-lg">
+                            <h4 class="font-semibold text-lg text-gray-800 mb-2">What is an Error?</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600 mb-3"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            <p class="text-sm text-center text-gray-600 mb-4">A bit is altered during transmission (0 to 1, or 1 to 0).</p>
+                            <h4 class="font-semibold text-lg text-gray-800 mb-2">Error Detection Techniques:</h4>
+                            <ul class="list-none p-0 m-0 text-gray-700 text-sm">
+                                <li class="flex items-center mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500 mr-2"><polyline points="20 6 9 17 4 12"></polyline></svg>Simple Parity Check</li>
+                                <li class="flex items-center mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500 mr-2"><polyline points="20 6 9 17 4 12"></polyline></svg>Checksum</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500 mr-2"><polyline points="20 6 9 17 4 12"></polyline></svg>Cyclic Redundancy Check (CRC)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">6. List the difference between circuit switching and packet switching.</h3>
+                        <div class="flex flex-col md:flex-row justify-around items-center gap-4 p-4 bg-teal-50 rounded-lg">
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-teal-600 mb-2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07L9.4 6.6A5 5 0 0 0 7 13z"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71A5 5 0 0 0 17 11z"></path></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">Circuit Switching</h4>
+                                <p class="text-sm text-center text-gray-600">Dedicated path established <strong>before</strong> data transfer.</p>
+                                <p class="text-xs text-gray-500 mt-1">e.g., Traditional phone call</p>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-teal-600 mb-2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">Packet Switching</h4>
+                                <p class="text-sm text-center text-gray-600">Data broken into packets, sent independently.</p>
+                                <p class="text-xs text-gray-500 mt-1">e.g., Internet data</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">7. Compare error detection and correction.</h3>
+                        <div class="flex flex-col md:flex-row justify-around items-center gap-4 p-4 bg-orange-50 rounded-lg">
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-600 mb-2"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">Error Detection</h4>
+                                <p class="text-sm text-center text-gray-600">Determines if an error occurred.</p>
+                                <p class="text-xs text-gray-500 mt-1">Doesn't fix corrupted bits.</p>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-600 mb-2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v2a2 2 0 0 0-2 2H4a2 2 0 0 0-2 2v.44a2 2 0 0 0 2 2h2a2 2 0 0 0 2 2v2a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-2a2 2 0 0 0 2-2h2a2 2 0 0 0 2-2v-.44a2 2 0 0 0-2-2h-2a2 2 0 0 0-2-2V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">Error Correction</h4>
+                                <p class="text-sm text-center text-gray-600">Detects error, identifies, and reconstructs data.</p>
+                                <p class="text-xs text-gray-500 mt-1">Fixes corrupted bits.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">8. What is Byte stuffing?</h3>
+                        <div class="flex flex-col items-center p-4 bg-blue-50 rounded-lg">
+                            <h4 class="font-semibold text-lg text-gray-800 mb-2">Byte Stuffing</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mb-3"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            <p class="text-sm text-center text-gray-600 mb-2">Inserts a special escape character into data to prevent misinterpretation of flag bytes.</p>
+                            <div class="bg-white p-3 rounded-lg shadow-sm text-sm font-mono">
+                                <p class="text-gray-700">Original: <span class="font-bold">01111110</span> (Flag) <span class="font-bold">DATA<span class="text-red-500">01111110</span>DATA</span> <span class="font-bold">01111110</span> (Flag)</p>
+                                <p class="text-gray-700 mt-2">Stuffed: <span class="font-bold">01111110</span> <span class="font-bold">DATA<span class="text-green-500">01111110</span><span class="text-blue-500">ESC</span><span class="text-green-500">01111110</span>DATA</span> <span class="font-bold">01111110</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">9. Given a data word 1010011. What code word will be transmitted if a) even parity is used and b) odd parity is used.</h3>
+                        <div class="flex flex-col items-center p-4 bg-green-50 rounded-lg">
+                            <h4 class="font-semibold text-lg text-gray-800 mb-2">Parity Check Example</h4>
+                            <p class="text-sm text-gray-600 mb-3">Data Word: <span class="font-mono font-bold text-lg">1010011</span> (4 ones)</p>
+                            <div class="flex flex-col md:flex-row justify-around items-center gap-4 w-full">
+                                <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                    <h5 class="font-semibold text-md text-gray-700">a) Even Parity</h5>
+                                    <p class="text-sm text-center text-gray-600">Total '1's must be even.</p>
+                                    <p class="text-xl font-bold text-green-700 mt-2">1010011<span class="text-red-500">0</span></p>
+                                </div>
+                                <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                    <h5 class="font-semibold text-md text-gray-700">b) Odd Parity</h5>
+                                    <p class="text-sm text-center text-gray-600">Total '1's must be odd.</p>
+                                    <p class="text-xl font-bold text-green-700 mt-2">1010011<span class="text-red-500">1</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">10. Differentiate between PAP and CHAP used in Point to Point protocol.</h3>
+                        <div class="flex flex-col md:flex-row justify-around items-center gap-4 p-4 bg-yellow-50 rounded-lg">
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-600 mb-2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 9.9-1"></path></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">PAP (Password Authentication Protocol)</h4>
+                                <p class="text-sm text-center text-gray-600">Sends username/password in <strong>plain text</strong>.</p>
+                                <p class="text-xs text-red-500 mt-1">Less secure.</p>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-600 mb-2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">CHAP (Challenge-Handshake Authentication Protocol)</h4>
+                                <p class="text-sm text-center text-gray-600">Uses 3-way handshake & shared secret (no plain text).</p>
+                                <p class="text-xs text-green-500 mt-1">More secure (hashing).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">11. What is the throughput of Aloha and Slotted Aloha protocol?</h3>
+                        <div class="flex flex-col items-center p-4 bg-purple-50 rounded-lg">
+                            <h4 class="font-semibold text-lg text-gray-800 mb-2">Aloha Protocol Throughput</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600 mb-3"><line x1="12" y1="20" x2="12" y2="10"></line><line x1="18" y1="20" x2="18" y2="4"></line><line x1="6" y1="20" x2="6" y2="16"></line></svg>
+                            <div class="flex flex-col md:flex-row justify-around items-center gap-4 w-full">
+                                <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                    <h5 class="font-semibold text-md text-gray-700">Pure Aloha</h5>
+                                    <p class="text-sm text-center text-gray-600">Max theoretical throughput:</p>
+                                    <p class="text-xl font-bold text-purple-700 mt-2">~18.4%</p>
+                                </div>
+                                <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                    <h5 class="font-semibold text-md text-gray-700">Slotted Aloha</h5>
+                                    <p class="text-sm text-center text-gray-600">Max theoretical throughput:</p>
+                                    <p class="text-xl font-bold text-purple-700 mt-2">~36.8%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">12. What is CDMA? Where is it used?</h3>
+                        <div class="flex flex-col items-center p-4 bg-teal-50 rounded-lg">
+                            <h4 class="font-semibold text-lg text-gray-800 mb-2">CDMA (Code Division Multiple Access)</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-teal-600 mb-3"><path d="M4.9 19.4a2 2 0 0 0 1.45.6h11.3a2 2 0 0 0 1.45-.6l3.3-3.9A2 2 0 0 0 22 14V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v8a2 2 0 0 0 .9 1.6z"></path><path d="M7.5 14.5 9 13l4 4 2-2 3.5 3.5"></path></svg>
+                            <p class="text-sm text-center text-gray-600 mb-2">Multiple users share the same frequency band simultaneously using unique spreading codes.</p>
+                            <h5 class="font-semibold text-md text-gray-700 mt-2">Usage:</h5>
+                            <ul class="list-none p-0 m-0 text-gray-700 text-sm">
+                                <li class="flex items-center mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500 mr-2"><polyline points="20 6 9 17 4 12"></polyline></svg>3G Mobile Communication (CDMA2000, WCDMA)</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500 mr-2"><polyline points="20 6 9 17 4 12"></polyline></svg>Satellite Communication</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">13. What is Explicit Feedback?</h3>
+                        <div class="flex flex-col items-center p-4 bg-orange-50 rounded-lg">
+                            <h4 class="font-semibold text-lg text-gray-800 mb-2">Explicit Feedback (Congestion Control)</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-600 mb-3"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                            <p class="text-sm text-center text-gray-600 mb-2">Routers/network devices directly inform senders about network congestion status.</p>
+                            <h5 class="font-semibold text-md text-gray-700 mt-2">Examples:</h5>
+                            <ul class="list-none p-0 m-0 text-gray-700 text-sm">
+                                <li class="flex items-center mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500 mr-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>ICMP Source Quench</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500 mr-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>ECN (Explicit Congestion Notification) bits</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">14. Compare Static routing table and dynamic routing table.</h3>
+                        <div class="flex flex-col md:flex-row justify-around items-center gap-4 p-4 bg-blue-50 rounded-lg">
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mb-2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21 3 6"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">Static Routing Table</h4>
+                                <p class="text-sm text-center text-gray-600">Manually configured, fixed routes.</p>
+                                <p class="text-xs text-gray-500 mt-1">Simple for small, stable networks.</p>
+                            </div>
+                            <div class="flex flex-col items-center p-3 bg-white rounded-lg shadow-sm w-full md:w-1/2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mb-2"><circle cx="12" cy="4.5" r="2.5"></circle><path d="m10.2 6.3-3.9 3.9c-.8.8-.8 2.1 0 2.9l5.9 5.9c.8.8 2.1.8 2.9 0l3.9-3.9c.8-.8.8-2.1 0-2.9L13.8 6.3c-.8-.8-2.1-.8-2.9 0Z"></path><path d="M7 17c-1.1 0-2-.9-2-2s.9-2 2-2"></path><path d="M17 17c1.1 0 2-.9 2-2s-.9-2-2-2"></path></svg>
+                                <h4 class="font-semibold text-lg text-gray-800">Dynamic Routing Table</h4>
+                                <p class="text-sm text-center text-gray-600">Automatically updated by routing protocols.</p>
+                                <p class="text-xs text-gray-500 mt-1">Adapts to network changes, scalable.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">15. Define congestion. List the types of congestion control.</h3>
+                        <div class="flex flex-col items-center p-4 bg-red-50 rounded-lg">
+                            <h4 class="font-semibold text-lg text-gray-800 mb-2">What is Congestion?</h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600 mb-3"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"></path></svg>
+                            <p class="text-sm text-center text-gray-600 mb-4">Demand for network resources exceeds capacity, leading to degraded performance (delay, loss).</p>
+                            <h4 class="font-semibold text-lg text-gray-800 mb-2">Types of Congestion Control:</h4>
+                            <ul class="list-none p-0 m-0 text-gray-700 text-sm">
+                                <li class="flex items-center mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-500 mr-2"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 6c0 1.8.7 3.3 1.5 4.5C8.3 11.3 8.8 12 9 14"></path><path d="M10 20h4"></path><path d="M10 20c0 1-.5 2-2 2H8c-1.5 0-2-1-2-2"></path><path d="M14 20c0 1 .5 2 2 2h0c1.5 0 2-1 2-2"></path></svg>Open-loop (Prevention)</li>
+                                <li class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500 mr-2"><path d="M2.5 2v6h6"></path><path d="M2.5 2c-2.2 4.6-1.3 10.2 3.3 14.8 4.6 4.6 10.2 5.5 14.8 3.3l-1.4-1.4"></path><path d="M21.5 22v-6h-6"></path><path d="M21.5 22c2.2-4.6 1.3-10.2-3.3-14.8-4.6-4.6-10.2-5.5-14.8-3.3l1.4 1.4"></path></svg>Closed-loop (Alleviation)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-12 bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-500 pb-2">
+                    Section B
+                </h2>
+                <div class="space-y-10">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">1. Explain Ring and Mesh topologies with its advantages and drawbacks.</h3>
+                        <div class="flex flex-col md:flex-row justify-around items-start gap-6 p-6 bg-indigo-50 rounded-lg">
+                            <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg w-full md:w-1/2">
+                                <h3 class="font-bold text-xl text-indigo-700 mb-3">Ring Topology</h3>
+                                <div class="relative w-32 h-32 mb-4">
+                                    <div class="absolute inset-0 rounded-full border-2 border-indigo-400 flex items-center justify-center">
+                                        <div class="w-4 h-4 bg-indigo-600 rounded-full absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                                        <div class="w-4 h-4 bg-indigo-600 rounded-full absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"></div>
+                                        <div class="w-4 h-4 bg-indigo-600 rounded-full absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                                        <div class="w-4 h-4 bg-indigo-600 rounded-full absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2"></div>
+                                    </div>
+                                    <div class="absolute inset-0 flex items-center justify-center text-indigo-500 font-bold text-sm">
+                                        <span class="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">A</span>
+                                        <span class="absolute top-1/4 right-1/4 transform translate-x-1/2 -translate-y-1/2">B</span>
+                                        <span class="absolute bottom-1/4 right-1/4 transform translate-x-1/2 translate-y-1/2">C</span>
+                                        <span class="absolute bottom-1/4 left-1/4 transform -translate-x-1/2 translate-y-1/2">D</span>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-1/2 left-0 transform -translate-y-1/2 translate-x-full text-indigo-500"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute top-0 left-1/2 transform translate-y-full translate-x-1/2 rotate-90 text-indigo-500"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute bottom-1/2 right-0 transform translate-y-1/2 -translate-x-full rotate-180 text-indigo-500"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute bottom-0 left-1/2 transform -translate-y-full -translate-x-1/2 -rotate-90 text-indigo-500"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </div>
+                                <p class="text-sm text-center text-gray-600 mb-3">Each device connected to two others, forming a ring.</p>
+                                <div class="grid grid-cols-2 gap-2 text-sm w-full">
+                                    <div class="bg-green-100 p-2 rounded-md">
+                                        <h5 class="font-semibold text-green-700">Pros:</h5>
+                                        <ul class="list-disc list-inside text-xs">
+                                            <li>Simple cabling</li>
+                                            <li>No central hub</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-red-100 p-2 rounded-md">
+                                        <h5 class="font-semibold text-red-700">Cons:</h5>
+                                        <ul class="list-disc list-inside text-xs">
+                                            <li>Single point failure</li>
+                                            <li>Hard to troubleshoot</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg w-full md:w-1/2">
+                                <h3 class="font-bold text-xl text-indigo-700 mb-3">Mesh Topology</h3>
+                                <div class="relative w-32 h-32 mb-4">
+                                    <div class="absolute w-4 h-4 bg-indigo-600 rounded-full top-0 left-0"></div>
+                                    <div class="absolute w-4 h-4 bg-indigo-600 rounded-full top-0 right-0"></div>
+                                    <div class="absolute w-4 h-4 bg-indigo-600 rounded-full bottom-0 left-0"></div>
+                                    <div class="absolute w-4 h-4 bg-indigo-600 rounded-full bottom-0 right-0"></div>
+                                    <svg class="absolute inset-0" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                        <line x1="0" y1="0" x2="100" y2="0" stroke="#6366F1" stroke-width="2" />
+                                        <line x1="0" y1="0" x2="0" y2="100" stroke="#6366F1" stroke-width="2" />
+                                        <line x1="100" y1="0" x2="100" y2="100" stroke="#6366F1" stroke-width="2" />
+                                        <line x1="0" y1="100" x2="100" y2="100" stroke="#6366F1" stroke-width="2" />
+                                        <line x1="0" y1="0" x2="100" y2="100" stroke="#6366F1" stroke-width="2" />
+                                        <line x1="0" y1="100" x2="100" y2="0" stroke="#6366F1" stroke-width="2" />
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center text-indigo-500 font-bold text-sm">
+                                        <span class="absolute top-0 left-0 transform -translate-x-1/2 -translate-y-1/2">A</span>
+                                        <span class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">B</span>
+                                        <span class="absolute bottom-0 right-0 transform translate-x-1/2 translate-y-1/2">C</span>
+                                        <span class="absolute bottom-0 left-0 transform -translate-x-1/2 translate-y-1/2">D</span>
+                                    </div>
+                                </div>
+                                <p class="text-sm text-center text-gray-600 mb-3">Every device connected directly to every other device.</p>
+                                <div class="grid grid-cols-2 gap-2 text-sm w-full">
+                                    <div class="bg-green-100 p-2 rounded-md">
+                                        <h5 class="font-semibold text-green-700">Pros:</h5>
+                                        <ul class="list-disc list-inside text-xs">
+                                            <li>High redundancy</li>
+                                            <li>Robustness</li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-red-100 p-2 rounded-md">
+                                        <h5 class="font-semibold text-red-700">Cons:</h5>
+                                        <ul class="list-disc list-inside text-xs">
+                                            <li>Expensive cabling</li>
+                                            <li>Complex setup</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">2. Explain the network layer protocols of TCP/IP model.</h3>
+                        <div class="flex flex-col items-center p-6 bg-gray-100 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-gray-800 mb-4">TCP/IP Network Layer Protocols</h3>
+                            <p class="text-md text-gray-600 mb-6 text-center">Responsible for logical addressing, routing, and fragmentation.</p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mb-3"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-1">IP (Internet Protocol)</h4>
+                                    <p class="text-sm text-center text-gray-600">Connectionless, unreliable datagram protocol. Handles logical addressing (IPv4/IPv6), routing, fragmentation.</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mb-3"><rect x="5" y="5" width="14" height="14" rx="2"></rect><path d="M12 19V5"></path><path d="M5 12h14"></path></svg>
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-1">ARP (Address Resolution Protocol)</h4>
+                                    <p class="text-sm text-center text-gray-600">Maps IP addresses to physical MAC addresses on a local network.</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600 mb-3"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"></path></svg>
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-1">RARP (Reverse ARP)</h4>
+                                    <p class="text-sm text-center text-gray-600">Discovers own IP address from MAC address (largely replaced by DHCP).</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600 mb-3"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-1">ICMP (Internet Control Message Protocol)</h4>
+                                    <p class="text-sm text-center text-gray-600">Sends error messages and operational info (e.g., Destination Unreachable, Time Exceeded).</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-600 mb-3"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-1">IGMP (Internet Group Management Protocol)</h4>
+                                    <p class="text-sm text-center text-gray-600">Manages multicast group memberships (e.g., streaming video).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">3. What is time division multiplexing? Explain its types with a neat diagram.</h3>
+                        <div class="flex flex-col items-center p-6 bg-blue-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-blue-800 mb-4">Time Division Multiplexing (TDM)</h3>
+                            <p class="text-md text-gray-700 mb-6 text-center">Allows multiple digital signals to share a single channel by dividing time into slots.</p>
+
+                            <div class="flex flex-col md:flex-row justify-around items-start gap-6 w-full">
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md w-full md:w-1/2">
+                                    <h4 class="font-semibold text-xl text-blue-700 mb-3">Synchronous TDM (STDM)</h4>
+                                    <p class="text-sm text-center text-gray-600 mb-4">Fixed, pre-assigned time slots for each device, even if no data.</p>
+                                    <div class="w-full bg-gray-200 p-2 rounded-md font-mono text-xs text-center mb-3">
+                                        <p>Input: A, B, C, D</p>
+                                        <p class="mt-1">Output Frame: | A | B | C | D | A | B | C | D |</p>
+                                    </div>
+                                    <div class="flex items-center justify-center w-full">
+                                        <div class="flex flex-col items-center mr-2">
+                                            <div class="w-4 h-4 bg-blue-400 rounded-full"></div>
+                                            <div class="text-xs">A</div>
+                                        </div>
+                                        <div class="flex flex-col items-center mr-2">
+                                            <div class="w-4 h-4 bg-blue-400 rounded-full"></div>
+                                            <div class="text-xs">B</div>
+                                        </div>
+                                        <div class="flex flex-col items-center mr-2">
+                                            <div class="w-4 h-4 bg-blue-400 rounded-full"></div>
+                                            <div class="text-xs">C</div>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <div class="w-4 h-4 bg-blue-400 rounded-full"></div>
+                                            <div class="text-xs">D</div>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mx-4"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                        <div class="flex border border-blue-400 rounded-md overflow-hidden">
+                                            <div class="w-8 h-8 bg-blue-200 flex items-center justify-center text-xs">A</div>
+                                            <div class="w-8 h-8 bg-blue-300 flex items-center justify-center text-xs">B</div>
+                                            <div class="w-8 h-8 bg-blue-200 flex items-center justify-center text-xs">C</div>
+                                            <div class="w-8 h-8 bg-blue-300 flex items-center justify-center text-xs">D</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md w-full md:w-1/2">
+                                    <h4 class="font-semibold text-xl text-blue-700 mb-3">Asynchronous TDM (ATDM/Statistical TDM)</h4>
+                                    <p class="text-sm text-center text-gray-600 mb-4">Dynamic allocation of slots only to devices with data. More efficient.</p>
+                                    <div class="w-full bg-gray-200 p-2 rounded-md font-mono text-xs text-center mb-3">
+                                        <p>Input: A, B, C, D (C, D sometimes idle)</p>
+                                        <p class="mt-1">Output Frame: | A | B | A | B | C | A | ...</p>
+                                    </div>
+                                    <div class="flex items-center justify-center w-full">
+                                        <div class="flex flex-col items-center mr-2">
+                                            <div class="w-4 h-4 bg-green-400 rounded-full"></div>
+                                            <div class="text-xs">A</div>
+                                        </div>
+                                        <div class="flex flex-col items-center mr-2">
+                                            <div class="w-4 h-4 bg-green-400 rounded-full"></div>
+                                            <div class="text-xs">B</div>
+                                        </div>
+                                        <div class="flex flex-col items-center mr-2">
+                                            <div class="w-4 h-4 bg-green-400 rounded-full"></div>
+                                            <div class="text-xs">C</div>
+                                        </div>
+                                        <div class="flex flex-col items-center">
+                                            <div class="w-4 h-4 bg-green-400 rounded-full"></div>
+                                            <div class="text-xs">D</div>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mx-4"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                        <div class="flex border border-green-400 rounded-md overflow-hidden">
+                                            <div class="w-8 h-8 bg-green-200 flex items-center justify-center text-xs">A</div>
+                                            <div class="w-8 h-8 bg-green-300 flex items-center justify-center text-xs">B</div>
+                                            <div class="w-8 h-8 bg-green-200 flex items-center justify-center text-xs">A</div>
+                                            <div class="w-8 h-8 bg-green-300 flex items-center justify-center text-xs">C</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">4. Data word to be transmitted by the sender is 1001101. Assuming the even parity, find out the code word that will be sent to the receiver using Hamming code.</h3>
+                        <div class="flex flex-col items-center p-6 bg-purple-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-purple-800 mb-4">Hamming Code (Even Parity)</h3>
+                            <p class="text-md text-gray-700 mb-6">Data Word: <span class="font-mono font-bold text-xl text-purple-600">1001101</span> (7 bits)</p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">1. Determine Parity Bits (r)</h4>
+                                    <p class="text-sm text-center text-gray-600">Formula: $2^r \ge m + r + 1$</p>
+                                    <p class="text-sm text-center text-gray-600">For m=7, r=4 (since $2^4 = 16 \ge 7+4+1=12$)</p>
+                                    <p class="text-xl font-bold text-purple-700 mt-2">Need 4 Parity Bits</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">2. Bit Positions (Total 11 bits)</h4>
+                                    <p class="text-sm text-center text-gray-600">Parity at $2^n$ positions: 1, 2, 4, 8</p>
+                                    <p class="text-sm text-center text-gray-600">Data ($D_1$ to $D_7$) fill others.</p>
+                                    <p class="font-mono text-center text-purple-700 mt-2">C11 C10 C9 <span class="text-red-500">C8</span> C7 C6 C5 <span class="text-red-500">C4</span> C3 <span class="text-red-500">C2</span> <span class="text-red-500">C1</span></p>
+                                    <p class="font-mono text-center text-purple-700">D7 D6 D5 <span class="text-red-500">P8</span> D4 D3 D2 <span class="text-red-500">P4</span> D1 <span class="text-red-500">P2</span> <span class="text-red-500">P1</span></p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md col-span-full">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">3. Calculate Parity Bits (Even Parity)</h4>
+                                    <p class="text-sm text-gray-600">Data Word: 1001101</p>
+                                    <p class="text-sm text-gray-600">P1 (1,3,5,7,9,11): 1,0,1,1,1 (4 ones) $\implies P_1=0$</p>
+                                    <p class="text-sm text-gray-600">P2 (2,3,6,7,10,11): 1,0,1,0,1 (3 ones) $\implies P_2=1$</p>
+                                    <p class="text-sm text-gray-600">P4 (4,5,6,7): 0,0,1 (1 one) $\implies P_4=1$</p>
+                                    <p class="text-sm text-gray-600">P8 (8,9,10,11): 1,0,1 (2 ones) $\implies P_8=0$</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md col-span-full">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">4. Final Codeword</h4>
+                                    <p class="text-xl font-bold text-green-700 mt-2">10101001110</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">5. Explain the different types of frames exchanged during data transmission in HDLC protocol.</h3>
+                        <div class="flex flex-col items-center p-6 bg-green-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-green-800 mb-4">HDLC Frame Types</h3>
+                            <p class="text-md text-gray-700 mb-6 text-center">Bit-oriented protocol using specific frames for data and control.</p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 mb-3"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-1">Information Frames (I-frames)</h4>
+                                    <p class="text-sm text-center text-gray-600">Transport user data; carry flow/error control (piggybacking).</p>
+                                    <p class="text-xs text-gray-500 mt-2">Includes $N_S$ (sent) and $N_R$ (received) sequence numbers.</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600 mb-3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-1">Supervisory Frames (S-frames)</h4>
+                                    <p class="text-sm text-center text-gray-600">Flow and error control (ACKs, NAKs) when no user data.</p>
+                                    <p class="text-xs text-gray-500 mt-2">Types: RR, RNR, REJ, SREJ.</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-600 mb-3"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-1">Unnumbered Frames (U-frames)</h4>
+                                    <p class="text-sm text-center text-gray-600">Link management (setup/teardown, error reporting not data related).</p>
+                                    <p class="text-xs text-gray-500 mt-2">No sequence numbers. e.g., SABM, DISC, UA.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">6. Explain Stop and wait ARQ protocol with an example.</h3>
+                        <div class="flex flex-col items-center p-6 bg-yellow-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-yellow-800 mb-4">Stop-and-Wait ARQ</h3>
+                            <p class="text-md text-gray-700 mb-6 text-center">Simple flow/error control: send one frame, wait for ACK, then next.</p>
+
+                            <div class="flex flex-col items-center w-full max-w-lg bg-white p-4 rounded-lg shadow-md">
+                                <div class="flex justify-between w-full mb-4 font-semibold text-lg">
+                                    <span>Sender</span>
+                                    <span>Receiver</span>
+                                </div>
+                                <div class="flex items-center w-full mb-2">
+                                    <div class="w-1/2 text-center">Send Frame 0</div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-600 mx-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    <div class="w-1/2 text-center">Receive Frame 0</div>
+                                </div>
+                                <div class="flex items-center w-full mb-2">
+                                    <div class="w-1/2 text-center">Start Timer</div>
+                                    <div class="w-1/2 text-center">Send ACK 1</div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-600 mx-2 rotate-180"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                </div>
+                                <div class="flex items-center w-full mb-2">
+                                    <div class="w-1/2 text-center">Receive ACK 1</div>
+                                    <div class="w-1/2 text-center"></div>
+                                </div>
+                                <div class="flex items-center w-full mb-2">
+                                    <div class="w-1/2 text-center">Stop Timer</div>
+                                    <div class="w-1/2 text-center"></div>
+                                </div>
+                                <div class="flex items-center w-full mb-2">
+                                    <div class="w-1/2 text-center">Send Frame 1</div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-600 mx-2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                    <div class="w-1/2 text-center">Receive Frame 1</div>
+                                </div>
+                                <p class="text-sm text-gray-600 mt-4 text-center">If ACK lost or timeout: Retransmit same frame.</p>
+                                <p class="text-sm text-gray-600 text-center">Receiver discards duplicate frames.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">7. Explain Leaky Bucket algorithm with a neat diagram.</h3>
+                        <div class="flex flex-col items-center p-6 bg-red-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-red-800 mb-4">Leaky Bucket Algorithm</h3>
+                            <p class="text-md text-gray-700 mb-6 text-center">Traffic shaping: smooths bursty traffic to a constant output rate.</p>
+
+                            <div class="flex flex-col items-center w-full max-w-sm bg-white p-4 rounded-lg shadow-md">
+                                <p class="text-sm text-gray-600 mb-2">Bursty Input Traffic</p>
+                                <div class="w-full h-8 bg-gray-200 rounded-md flex items-center justify-center text-xs font-mono mb-4">
+                                    P1 P2 P3 P4 P5 ...
+                                </div>
+
+                                <div class="relative w-32 h-32 border-4 border-blue-400 rounded-b-lg flex flex-col justify-end items-center overflow-hidden mb-4">
+                                    <div class="w-full h-full bg-blue-200 opacity-75 animate-fill-bucket"></div>
+                                    <div class="absolute bottom-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-xs">Leak</div>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-2">Fixed Rate Output Traffic</p>
+                                <div class="w-full h-8 bg-gray-200 rounded-md flex items-center justify-center text-xs font-mono">
+                                    P1 P2 P3 P4 P5 ... (constant rate)
+                                </div>
+                                <p class="text-xs text-red-500 mt-2">If bucket overflows, packets are discarded.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">8. Compare and contrast how Congestion control is achieved in Leaky Bucket and Token Bucket algorithm.</h3>
+                        <div class="flex flex-col items-center p-6 bg-teal-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-teal-800 mb-4">Leaky Bucket vs. Token Bucket</h3>
+                            <p class="text-md text-gray-700 mb-6 text-center">Both for traffic shaping, but differ in burst handling.</p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-xl text-teal-700 mb-3">Leaky Bucket</h4>
+                                    <p class="text-sm text-center text-gray-600 mb-4"><strong>Strictly fixed output rate.</strong> Excess packets dropped if buffer full.</p>
+                                    <div class="relative w-24 h-24 border-4 border-blue-400 rounded-b-lg flex flex-col justify-end items-center overflow-hidden mb-2">
+                                        <div class="w-full h-full bg-blue-200 opacity-75"></div>
+                                        <div class="absolute bottom-0 w-6 h-6 bg-blue-600 rounded-full"></div>
+                                    </div>
+                                    <p class="text-xs text-red-500">No burst tolerance.</p>
+                                </div>
+
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-xl text-teal-700 mb-3">Token Bucket</h4>
+                                    <p class="text-sm text-center text-gray-600 mb-4"><strong>Allows bursts</strong> (up to accumulated tokens). Then enforces rate.</p>
+                                    <div class="relative w-24 h-24 border-4 border-green-400 rounded-lg flex flex-col justify-end items-center overflow-hidden mb-2">
+                                        <div class="w-full h-full bg-green-200 opacity-75"></div>
+                                        <div class="absolute bottom-0 w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-xs">T</div>
+                                        <div class="absolute top-0 w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center text-xs">T</div>
+                                    </div>
+                                    <p class="text-xs text-green-500">Burst tolerance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-12 bg-white p-6 rounded-xl shadow-lg">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-4 border-blue-500 pb-2">
+                    Section C
+                </h2>
+                <div class="space-y-10">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">1. Explain distance vector routing algorithm with an example.</h3>
+                        <div class="flex flex-col items-center p-6 bg-orange-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-orange-800 mb-4">Distance Vector Routing Algorithm</h3>
+                            <p class="text-md text-gray-700 mb-6 text-center">Routers exchange "distance vectors" to find shortest paths (Bellman-Ford).</p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Core Principles</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-600">
+                                        <li>Knows only neighbors.</li>
+                                        <li>Exchanges full DV with neighbors.</li>
+                                        <li>Updates via <code>Cost(Dest) = min[Cost(Neighbor) + Cost(N to Dest)]</code>.</li>
+                                        <li>"Routing by Rumor."</li>
+                                    </ul>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Example (Simplified)</h4>
+                                    <div class="text-xs font-mono text-gray-700">
+                                        <p>Router A DV (Initial): {B:1, D:5}</p>
+                                        <p>Router B DV (Initial): {A:1, C:1}</p>
+                                        <p class="mt-2 font-bold">A learns C via B:</p>
+                                        <p>A to C = A-B (1) + B-C (1) = 2</p>
+                                        <p class="font-bold mt-2">A's Updated DV: {B:1, C:2, D:5}</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md col-span-full">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Problems</h4>
+                                    <ul class="list-disc list-inside text-sm text-red-600">
+                                        <li>Count-to-Infinity (routing loops).</li>
+                                        <li>Slow Convergence.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">2. What is line coding? Explain the different schemes of line coding for the data stream 10011101.</h3>
+                        <div class="flex flex-col items-center p-6 bg-purple-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-purple-800 mb-4">Line Coding Schemes</h3>
+                            <p class="text-md text-gray-700 mb-6 text-center">Converts digital data (bits) to digital signals (waveforms) for transmission.</p>
+                            <p class="text-lg font-bold text-purple-600 mb-4">Data Stream: <span class="font-mono">10011101</span></p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Unipolar NRZ</h4>
+                                    <p class="text-sm text-gray-600">1=+V, 0=0V. No return to zero.</p>
+                                    <pre class="text-xs font-mono bg-gray-100 p-2 rounded mt-2">
+              +V  _   _       _ _ _   _
+              0V | |_|_|     |_|_|_| | |
+                 |___________|_______|_|
+                 1 0 0 1 1 1 0 1
+                                    </pre>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Polar NRZ-L</h4>
+                                    <p class="text-sm text-gray-600">1=-V, 0=+V. No return to zero.</p>
+                                    <pre class="text-xs font-mono bg-gray-100 p-2 rounded mt-2">
+              +V |   _ _       _ _ _   _
+              0V |  / \ /     / \ / \ / \
+              -V |_|   |_ _ _|       |_|
+                 1 0 0 1 1 1 0 1
+                                    </pre>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Polar RZ</h4>
+                                    <p class="text-sm text-gray-600">1=+V then 0, 0=-V then 0.</p>
+                                    <pre class="text-xs font-mono bg-gray-100 p-2 rounded mt-2">
+              +V | _       _ _ _
+              0V |  |_ _ _|_|_|_|_ _ _
+              -V |_|       |   |   |
+                 1 0 0 1 1 1 0 1
+                                    </pre>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Bipolar AMI</h4>
+                                    <p class="text-sm text-gray-600">0=0V, 1=alternating +V/-V.</p>
+                                    <pre class="text-xs font-mono bg-gray-100 p-2 rounded mt-2">
+              +V | _       _     _
+              0V |  |_ _ _|_|_ _|_|_ _
+              -V |       |_|   |_|
+                 1 0 0 1 1 1 0 1
+                                    </pre>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Manchester</h4>
+                                    <p class="text-sm text-gray-600">Transition in middle: 0=High-Low, 1=Low-High.</p>
+                                    <pre class="text-xs font-mono bg-gray-100 p-2 rounded mt-2">
+              +V | _   _ _   _   _ _   _
+              0V |  |_|   |_|_|_|   |_|
+              -V |_|               |_|
+                 1 0 0 1 1 1 0 1
+                                    </pre>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Differential Manchester</h4>
+                                    <p class="text-sm text-gray-600">Transition at start: 0=Invert, 1=No Invert. Middle always transition.</p>
+                                    <pre class="text-xs font-mono bg-gray-100 p-2 rounded mt-2">
+              +V | _   _ _   _ _ _   _
+              0V |  |_|   |_|   |_|_|
+              -V |_|           |_|
+                 1 0 0 1 1 1 0 1
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">3. Discuss in detail the design of Fiber Optic cables and how it transmits data? Explain its types.</h3>
+                        <div class="flex flex-col items-center p-6 bg-blue-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-blue-800 mb-4">Fiber Optic Cables</h3>
+                            <p class="text-md text-gray-700 mb-6 text-center">Transmits data as light pulses over glass/plastic fibers.</p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Cable Design</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-600">
+                                        <li><strong>Core:</strong> Pure glass/plastic, high refractive index (light travels).</li>
+                                        <li><strong>Cladding:</strong> Lower refractive index (reflects light back via TIR).</li>
+                                        <li><strong>Buffer Coating:</strong> Plastic protection.</li>
+                                        <li>Strength Members (Kevlar), Outer Jacket.</li>
+                                    </ul>
+                                    <div class="w-full h-24 bg-gray-200 rounded-md mt-4 relative flex items-center justify-center">
+                                        <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white text-xs font-bold">Core</div>
+                                        <div class="w-20 h-20 rounded-full bg-blue-400 absolute flex items-center justify-center text-white text-xs font-bold">Cladding</div>
+                                        <div class="w-24 h-24 rounded-full bg-blue-200 absolute flex items-center justify-center text-white text-xs font-bold">Buffer</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">How Data Transmits (TIR)</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-600">
+                                        <li>Electrical to Optical (LED/Laser).</li>
+                                        <li>Light injected into core.</li>
+                                        <li><strong>Total Internal Reflection (TIR):</strong> Light bounces off core-cladding boundary.</li>
+                                        <li>Light propagates with minimal loss.</li>
+                                        <li>Optical to Electrical (Photodiode).</li>
+                                    </ul>
+                                    <div class="w-full h-24 bg-gray-100 rounded-md mt-4 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-500 mr-2"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 6c0 1.8.7 3.3 1.5 4.5C8.3 11.3 8.8 12 9 14"></path><path d="M10 20h4"></path><path d="M10 20c0 1-.5 2-2 2H8c-1.5 0-2-1-2-2"></path><path d="M14 20c0 1 .5 2 2 2h0c1.5 0 2-1 2-2"></path></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                        <div class="w-20 h-4 bg-blue-300 rounded-full mx-2 relative">
+                                            <div class="absolute inset-0 border-t-2 border-b-2 border-blue-600"></div>
+                                            <div class="absolute w-full h-full flex items-center justify-center">
+                                                <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse-light" style="animation-delay: 0s;"></div>
+                                                <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse-light" style="animation-delay: 0.5s;"></div>
+                                                <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse-light" style="animation-delay: 1s;"></div>
+                                            </div>
+                                        </div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-600 ml-2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><path d="M9 9h6v6H9z"></path><path d="M9 1v3"></path><path d="M15 1v3"></path><path d="M9 20v3"></path><path d="M15 20v3"></path><path d="M20 9h3"></path><path d="M20 15h3"></path><path d="M1 9h3"></path><path d="M1 15h3"></path></svg>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md col-span-full">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Types of Fiber</h4>
+                                    <div class="flex flex-col md:flex-row justify-around w-full gap-4">
+                                        <div class="flex flex-col items-center w-full md:w-1/2 p-2 bg-gray-50 rounded-md">
+                                            <h5 class="font-semibold text-md text-gray-700">Single-Mode Fiber (SMF)</h5>
+                                            <p class="text-sm text-center text-gray-600">Very small core, single light path. High bandwidth, long distance (lasers).</p>
+                                        </div>
+                                        <div class="flex flex-col items-center w-full md:w-1/2 p-2 bg-gray-50 rounded-md">
+                                            <h5 class="font-semibold text-md text-gray-700">Multi-Mode Fiber (MMF)</h5>
+                                            <p class="text-sm text-center text-gray-600">Larger core, multiple light paths. Lower bandwidth, shorter distance (LEDs).</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">4. a) Explain internet checksum method with an example. b) Explain simple parity check method with an example.</h3>
+                        <div class="flex flex-col items-center p-6 bg-green-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-green-800 mb-4">Error Detection Methods</h3>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">a) Internet Checksum</h4>
+                                    <p class="text-sm text-gray-600 mb-3">Used in IP, UDP, TCP. Sums 16-bit segments using one's complement, then one's complements the sum.</p>
+                                    <div class="text-xs font-mono bg-gray-100 p-2 rounded-md w-full">
+                                        <p>Seg 1: 0101010101010101</p>
+                                        <p>Seg 2: 0011001100110011</p>
+                                        <p class="border-t border-gray-300 mt-1 pt-1">Sum:   1000011001001000</p>
+                                        <p>Checksum (1's comp): <span class="text-blue-600">0111100110110111</span></p>
+                                        <p class="mt-2">Receiver: Sum all including checksum. Result should be all 1s (0 after 1's comp).</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">b) Simple Parity Check</h4>
+                                    <p class="text-sm text-gray-600 mb-3">Adds a single bit to make total '1's either even or odd.</p>
+                                    <div class="text-xs font-mono bg-gray-100 p-2 rounded-md w-full">
+                                        <p>Data: 1010011 (4 ones)</p>
+                                        <p>Even Parity: <span class="text-blue-600">10100110</span> (4 ones)</p>
+                                        <p>Odd Parity:  <span class="text-blue-600">10100111</span> (5 ones)</p>
+                                        <p class="mt-2">Receiver: Counts '1's. Detects odd number of errors only.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">5. Analyse the types of CSMA protocol used in medium access control.</h3>
+                        <div class="flex flex-col items-center p-6 bg-yellow-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-yellow-800 mb-4">CSMA Protocol Types</h3>
+                            <p class="text-md text-gray-700 mb-6 text-center">Carrier Sense Multiple Access: Listen before transmit to reduce collisions.</p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">1-Persistent CSMA</h4>
+                                    <p class="text-sm text-center text-gray-600">If idle, transmit immediately. If busy, continuously listen, then transmit immediately.</p>
+                                    <p class="text-xs text-red-500 mt-2">High collision probability under heavy load.</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Non-Persistent CSMA</h4>
+                                    <p class="text-sm text-center text-gray-600">If idle, transmit immediately. If busy, wait random time, then re-sense.</p>
+                                    <p class="text-xs text-green-500 mt-2">Reduces collisions, but lower utilization.</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">p-Persistent CSMA</h4>
+                                    <p class="text-sm text-center text-gray-600">For slotted channels. Transmit with probability 'p' if idle, defer with '1-p'.</p>
+                                    <p class="text-xs text-blue-500 mt-2">Balance utilization and collision.</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">CSMA/CD (Collision Detection)</h4>
+                                    <p class="text-sm text-center text-gray-600">Sense before transmit, <em>and</em> detect collisions during transmit. (Wired Ethernet)</p>
+                                    <p class="text-xs text-purple-500 mt-2">Aborts colliding transmissions early.</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">CSMA/CA (Collision Avoidance)</h4>
+                                    <p class="text-sm text-center text-gray-600">Sense before transmit, <em>avoid</em> collisions (e.g., random back-off, ACKs, RTS/CTS). (Wireless Wi-Fi)</p>
+                                    <p class="text-xs text-orange-500 mt-2">Essential for wireless where CD is hard.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">6. Explain in detail the different classes of IPv4 addressing.</h3>
+                        <div class="flex flex-col items-center p-6 bg-red-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-red-800 mb-4">IPv4 Addressing Classes</h3>
+                            <p class="text-md text-gray-700 mb-6 text-center">32-bit addresses divided into Network ID and Host ID (Classful Addressing).</p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Class A</h4>
+                                    <p class="text-sm text-gray-600">Format: <span class="font-mono font-bold text-red-600">0</span>xxxxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx</p>
+                                    <p class="text-sm text-gray-600">Networks: 128 ($2^7$)</p>
+                                    <p class="text-sm text-gray-600">Hosts/Net: ~16.7M ($2^{24}-2$)</p>
+                                    <p class="text-xs text-gray-500 mt-2">For very large networks. Default Mask: 255.0.0.0</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Class B</h4>
+                                    <p class="text-sm text-gray-600">Format: <span class="font-mono font-bold text-red-600">10</span>xxxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx</p>
+                                    <p class="text-sm text-gray-600">Networks: 16,384 ($2^{14}$)</p>
+                                    <p class="text-sm text-gray-600">Hosts/Net: 65,534 ($2^{16}-2$)</p>
+                                    <p class="text-xs text-gray-500 mt-2">For medium to large networks. Default Mask: 255.255.0.0</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Class C</h4>
+                                    <p class="text-sm text-gray-600">Format: <span class="font-mono font-bold text-red-600">110</span>xxxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx</p>
+                                    <p class="text-sm text-gray-600">Networks: ~2M ($2^{21}$)</p>
+                                    <p class="text-sm text-gray-600">Hosts/Net: 254 ($2^8-2$)</p>
+                                    <p class="text-xs text-gray-500 mt-2">For small networks. Default Mask: 255.255.255.0</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Class D (Multicast)</h4>
+                                    <p class="text-sm text-gray-600">Format: <span class="font-mono font-bold text-red-600">1110</span>xxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx</p>
+                                    <p class="text-sm text-gray-600">Range: 224.0.0.0 to 239.255.255.255</p>
+                                    <p class="text-xs text-gray-500 mt-2">For group communication.</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Class E (Experimental)</h4>
+                                    <p class="text-sm text-gray-600">Format: <span class="font-mono font-bold text-red-600">1111</span>xxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx</p>
+                                    <p class="text-sm text-gray-600">Range: 240.0.0.0 to 255.255.255.255</p>
+                                    <p class="text-xs text-gray-500 mt-2">Reserved for future/experimental use.</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md col-span-full">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Limitations:</h4>
+                                    <ul class="list-disc list-inside text-sm text-red-600">
+                                        <li>Address Depletion (inefficient use).</li>
+                                        <li>Lack of Flexibility (rigid boundaries).</li>
+                                        <li>Routing Table Bloat.</li>
+                                    </ul>
+                                    <p class="text-xs text-gray-500 mt-2">Led to CIDR (Classless Inter-Domain Routing).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
+                        <h3 class="text-xl font-semibold text-blue-700 mb-4">7. Explain bit-oriented framing and the need for bit stuffing with an example.</h3>
+                        <div class="flex flex-col items-center p-6 bg-teal-50 rounded-lg shadow-inner">
+                            <h3 class="font-bold text-2xl text-teal-800 mb-4">Bit-Oriented Framing & Bit Stuffing</h3>
+                            <p class="text-md text-gray-700 mb-6 text-center">Delimits frames using bit patterns; stuffing prevents flag misinterpretation.</p>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Bit-Oriented Framing</h4>
+                                    <p class="text-sm text-gray-600">Uses specific bit patterns (e.g., <span class="font-mono font-bold">01111110</span>) as frame flags.</p>
+                                    <p class="text-xs text-gray-500 mt-2">Allows any bit pattern in data field.</p>
+                                    <div class="text-xs font-mono bg-gray-100 p-2 rounded-md mt-2">
+                                        <p>Flag | Data | FCS | Flag</p>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Need for Bit Stuffing</h4>
+                                    <p class="text-sm text-gray-600">Prevents data from being mistaken for a flag.</p>
+                                    <p class="text-xs text-gray-500 mt-2">If <span class="font-mono font-bold">01111110</span> appears in data, it breaks framing.</p>
+                                </div>
+                                <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md col-span-full">
+                                    <h4 class="font-semibold text-lg text-gray-800 mb-2">Bit Stuffing Example</h4>
+                                    <p class="text-sm text-gray-600">Rule: After 5 consecutive '1's, insert a '0'.</p>
+                                    <div class="text-xs font-mono bg-gray-100 p-2 rounded-md w-full">
+                                        <p>Original Data: <span class="font-bold">0110111111011111100</span></p>
+                                        <p class="mt-2">Sender Stuffing:</p>
+                                        <p><span class="font-bold">0110</span><span class="font-bold text-blue-600">11111</span><span class="font-bold text-red-600">0</span><span class="font-bold">10</span><span class="font-bold text-blue-600">11111</span><span class="font-bold text-red-600">0</span><span class="font-bold">100</span></p>
+                                        <p class="mt-2">Stuffed Payload: <span class="font-bold">011011111010111110100</span></p>
+                                        <p class="mt-2">Receiver Destuffing: Removes '0' after 5 '1's.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

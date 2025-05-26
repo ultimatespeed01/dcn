@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Networking Concepts Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- 
+        Application Structure Plan:
+        The SPA is structured thematically to provide a logical flow for exploring networking concepts from the Source Report.
+        Sections include:
+        1.  Hero/Introduction: Sets the context of the application.
+        2.  Fundamentals of Data Communication: Covers basic data flow, components, and signal types.
+        3.  Data Integrity & Error Management: Focuses on error detection, correction, and related mechanisms like parity and checksums.
+        4.  Channel Utilization & Access: Explores multiplexing (FDM, TDM), Aloha protocols, and CDMA.
+        5.  Network Protocols & Switching: Details circuit vs. packet switching, HDLC frames, and PPP authentication.
+        6.  Routing Principles & Congestion: Discusses routing table types, distance vector algorithms, and congestion control (Leaky/Token Bucket).
+        7.  Addressing & Network Structures: Covers IPv4 classes and network topologies.
+        8.  Data Encoding & Physical Transmission: Explains line coding, bit stuffing, and fiber optics.
+        9.  Advanced Access Control & Layered Protocols: Details CSMA mechanisms and key TCP/IP network layer protocols.
+        10. Conclusion: Summarizes the importance of the explored concepts.
+        Navigation is via scrolling. Interactive elements include Chart.js charts and HTML/CSS diagrams.
+        This structure was chosen to group related concepts from the Q&A format of the report into a more narrative and educational flow, enhancing usability and understanding for users wanting to learn about these networking topics.
+    -->
+
+    <!-- 
+        Visualization & Content Choices:
+        (Selected Examples)
+        - Report Info: Simplex/Duplex Data Flow -> Goal: Compare, Organize -> Viz/Method: HTML/CSS diagram (Tailwind for layout, styled divs for nodes/arrows) -> Interaction: Static visual -> Justification: Clear visual differentiation of flow types. NO SVG/Mermaid.
+        - Report Info: Components of Data Communication -> Goal: Inform -> Viz/Method: HTML list with Unicode icons -> Interaction: Static list -> Justification: Simple, clear presentation. NO SVG/Mermaid.
+        - Report Info: Aloha vs. Slotted Aloha Throughput -> Goal: Compare (Quantitative) -> Viz/Method: Chart.js Bar Chart (Canvas) -> Interaction: Tooltips on hover -> Justification: Effective for comparing numerical values. Chart.js for Canvas rendering, responsiveness, label wrapping, tooltip config. NO SVG.
+        - Report Info: TDM Types (Synchronous vs. Asynchronous) -> Goal: Compare, Organize -> Viz/Method: HTML/CSS conceptual diagram (side-by-side styled divs representing time slots) -> Interaction: Static visual -> Justification: Illustrates time slot allocation differences. NO SVG/Mermaid.
+        - Report Info: IPv4 Class Network/Host Bit Allocation -> Goal: Compare (Composition) -> Viz/Method: Chart.js Donut Chart (Canvas) for each class -> Interaction: Tooltips on hover -> Justification: Visualizes bit proportions effectively. Chart.js for Canvas rendering, responsiveness, label wrapping, tooltip config. NO SVG.
+        - Report Info: Network Topologies (Ring vs. Mesh) -> Goal: Compare, Organize -> Viz/Method: HTML/CSS diagrams (styled divs for nodes, borders/positioning for connections) -> Interaction: Static visual -> Justification: Visual representation of connectivity. NO SVG/Mermaid.
+        - Report Info: Line Coding Schemes (e.g., NRZ-L, Manchester) -> Goal: Compare -> Viz/Method: HTML/CSS simplified signal waveforms (divs with varying heights/positions) -> Interaction: Static visual -> Justification: Illustrates signal level changes. NO SVG/Mermaid.
+        - Report Info: CSMA Types -> Goal: Compare, Organize -> Viz/Method: Tabbed interface (HTML/CSS/JS for tabs) or distinct cards -> Interaction: Click to switch tabs/view details -> Justification: Allows focused comparison of multiple related types. JS for tab functionality. NO SVG/Mermaid.
+        - Report Info: Leaky Bucket vs. Token Bucket -> Goal: Compare -> Viz/Method: HTML/CSS side-by-side comparison cards with key characteristics listed. -> Interaction: Static visual comparison. -> Justification: Clear textual differentiation of algorithms. NO SVG/Mermaid.
+        All choices prioritize clarity, adherence to NO SVG/Mermaid, and use of specified libraries. Contextual text is provided for each section and visualization.
+    -->
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5F5; /* Warm Gray */
+            color: #333333; /* Dark Gray */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px; /* Adjusted for potentially smaller cards */
+            margin-left: auto;
+            margin-right: auto;
+            height: 280px; 
+            max-height: 320px;
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            .chart-container {
+                height: 300px;
+                max-height: 350px;
+            }
+        }
+        .section-title {
+            font-size: 1.75rem; /* 28px */
+            font-weight: 700;
+            color: #4A90E2; /* Calm Blue */
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #50E3C2; /* Tealish Green */
+        }
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 0.5rem; /* 8px */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05), 0 4px 8px rgba(0,0,0,0.05);
+            padding: 1.5rem; /* 24px */
+            margin-bottom: 1.5rem; /* 24px */
+        }
+        .card-title {
+            font-size: 1.25rem; /* 20px */
+            font-weight: 600;
+            color: #4A90E2; /* Calm Blue */
+            margin-bottom: 0.75rem; /* 12px */
+        }
+        .nav-item {
+            padding: 0.5rem 1rem;
+            color: #F5F5F5;
+            font-weight: 500;
+            border-radius: 0.375rem;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .nav-item:hover {
+            background-color: #3B7BC0; /* Slightly darker blue for hover */
+        }
+        .nav-item.active {
+            background-color: #50E3C2; /* Tealish Green for active */
+            color: #333333;
+        }
+        .tab-button {
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+            border-radius: 0.375rem 0.375rem 0 0;
+            background-color: #D8D8D8; /* Light Gray */
+            color: #333333;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .tab-button.active {
+            background-color: #FFFFFF;
+            border-bottom: 2px solid #4A90E2; /* Calm Blue */
+            color: #4A90E2;
+        }
+        .tab-content {
+            display: none;
+            padding: 1rem;
+            border: 1px solid #D8D8D8;
+            border-top: none;
+            border-radius: 0 0 0.375rem 0.375rem;
+            background-color: #FFFFFF;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .html-diagram-box {
+            border: 1px solid #D8D8D8;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            background-color: #F9F9F9;
+            text-align: center;
+        }
+        .html-diagram-arrow {
+            font-size: 1.5rem;
+            color: #4A90E2;
+            margin: 0 0.5rem;
+        }
+        .code-block {
+            background-color: #2d2d2d; /* Darker gray for code */
+            color: #f0f0f0; /* Light text for code */
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem; /* 14px */
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body class="antialiased">
+        <a href="index.html" 
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md 
+                  transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 
+                  focus:ring-blue-500 focus:ring-opacity-75">
+            Home
+        </a>
+        <a href="index2.html" 
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md 
+                  transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 
+                  focus:ring-blue-500 focus:ring-opacity-75">
+            Infographics
+        </a>
+    <nav id="navbar" class="bg-4A90E2 sticky top-0 z-50 shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <span class="text-xl font-bold text-white">Networking Explorer</span>
+                <div class="space-x-1 hidden md:flex" id="nav-links">
+                    </div>
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-4A90E2 pb-2">
+            </div>
+    </nav>
+
+    <header class="bg-gray-100 py-10 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-2 text-4A90E2">Interactive Networking Concepts Explorer</h1>
+            <p class="text-lg text-gray-700">An interactive exploration of key concepts from the Deep Research Report on Networking.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        
+        <section id="fundamentals" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Fundamentals of Data Communication</h2>
+            <p class="mb-6 text-gray-700">This section delves into the foundational aspects of how data is exchanged, including the basic modes of flow, essential components involved, and the nature of signals used in communication.</p>
+            
+            <div class="card">
+                <h3 class="card-title">Data Flow Modes</h3>
+                <p class="mb-4">Understanding how data travels between devices is crucial. Our report highlights three primary modes:</p>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="html-diagram-box">
+                        <h4 class="font-semibold text-lg mb-2">Simplex</h4>
+                        <p class="text-sm mb-2">Sender <span class="html-diagram-arrow">&rarr;</span> Receiver</p>
+                        <p class="text-xs text-gray-600">One-way traffic (e.g., TV broadcast).</p>
+                    </div>
+                    <div class="html-diagram-box">
+                        <h4 class="font-semibold text-lg mb-2">Half-Duplex</h4>
+                        <p class="text-sm mb-2">Device A <span class="html-diagram-arrow">&lrarr;</span> Device B</p>
+                        <p class="text-xs text-gray-600">Two-way, but not simultaneous (e.g., walkie-talkies).</p>
+                    </div>
+                    <div class="html-diagram-box">
+                        <h4 class="font-semibold text-lg mb-2">Full-Duplex</h4>
+                        <p class="text-sm mb-2">Device A <span class="html-diagram-arrow">&rlarr;</span> Device B</p>
+                        <p class="text-xs text-gray-600">Two-way, simultaneous (e.g., phone call).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Core Components of Data Communication</h3>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li><strong>Message:</strong> The information (data) to be communicated.</li>
+                    <li><strong>Sender:</strong> The device that sends the data message.</li>
+                    <li><strong>Receiver:</strong> The device that receives the data message.</li>
+                    <li><strong>Transmission Medium:</strong> The physical path for message travel.</li>
+                    <li><strong>Protocol:</strong> A set of rules governing data communication.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Analog vs. Digital Signals</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold mb-1">Analog Signals</h4>
+                        <p class="text-sm text-gray-700">Continuous waveforms with infinite values over a range. Represent info by varying amplitude/frequency (e.g., human voice).</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-1">Digital Signals</h4>
+                        <p class="text-sm text-gray-700">Discrete-time signals with finite values (0s and 1s). Example: data in computers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="data-integrity" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Data Integrity & Error Management</h2>
+            <p class="mb-6 text-gray-700">Ensuring that data arrives at its destination without corruption is a critical aspect of networking. This involves techniques for both detecting and, in some cases, correcting errors that occur during transmission.</p>
+            
+            <div class="card">
+                <h3 class="card-title">Error Detection vs. Correction</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold mb-1 text-F5A623">Error Detection</h4>
+                        <p class="text-sm text-gray-700">Identifies if errors occurred. Receiver knows data is corrupt but can't fix it. Examples: Parity Check, CRC.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-1 text-50E3C2">Error Correction</h4>
+                        <p class="text-sm text-gray-700">Detects, locates, and corrects errors. More complex. Example: Hamming code.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Parity Check Example (Data: 1010011)</h3>
+                <p class="mb-2 text-gray-700">Data word <code class="code-block inline-block !p-1">1010011</code> has 4 ones (even).</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-700">
+                    <li><strong>Even Parity:</strong> Parity bit is 0. Codeword: <code class="code-block inline-block !p-1">10100110</code></li>
+                    <li><strong>Odd Parity:</strong> Parity bit is 1. Codeword: <code class="code-block inline-block !p-1">10100111</code></li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3 class="card-title">Internet Checksum Method</h3>
+                <p class="text-sm text-gray-700 mb-2">A common error detection method for protocol headers (e.g., IP, TCP). It involves summing 16-bit words of the header (with end-around carry for overflows) and then taking the one's complement of the final sum. The receiver performs the same sum including the received checksum; if the result is all 1s (0xFFFF), no error is detected.</p>
+                <p class="text-xs text-gray-600">While simple and fast, it's not foolproof and can miss certain error patterns.</p>
+            </div>
+        </section>
+
+        <section id="channel-utilization" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Channel Utilization & Access</h2>
+            <p class="mb-6 text-gray-700">Efficiently sharing communication channels among multiple users is key. This section explores multiplexing techniques and random access protocols like Aloha.</p>
+
+            <div class="card">
+                <h3 class="card-title">Aloha Protocol Throughput</h3>
+                <p class="text-sm text-gray-700 mb-4">The Aloha protocols are foundational random access methods. Their theoretical maximum throughputs highlight the impact of collision management strategies.</p>
+                <div class="chart-container">
+                    <canvas id="alohaThroughputChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Time Division Multiplexing (TDM)</h3>
+                <p class="text-sm text-gray-700 mb-4">TDM divides channel time into slots for different users. Key types include:</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="html-diagram-box">
+                        <h4 class="font-semibold mb-1">Synchronous TDM (STDM)</h4>
+                        <p class="text-xs text-gray-600">Fixed slots per user, regardless of data. Can be inefficient if users are idle.</p>
+                        <div class="mt-2 p-2 border border-dashed border-gray-400 rounded">Frame: [A1 | <span class="text-gray-400">B_empty</span> | C1]</div>
+                    </div>
+                    <div class="html-diagram-box">
+                        <h4 class="font-semibold mb-1">Asynchronous TDM (ATDM)</h4>
+                        <p class="text-xs text-gray-600">Dynamic slots, only for active users. More efficient for bursty traffic.</p>
+                        <div class="mt-2 p-2 border border-dashed border-gray-400 rounded">Frame: [A1 | C1 | A2]</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Frequency Division Multiplexing (FDM) & Guard Bands</h3>
+                <p class="text-sm text-gray-700">FDM assigns different frequency bands to users. Guard bands are unused frequency strips between channels to prevent interference or crosstalk, ensuring signal clarity.</p>
+            </div>
+        </section>
+        
+        <section id="network-protocols-switching" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Network Protocols & Switching</h2>
+            <p class="mb-6 text-gray-700">This section explores fundamental switching techniques that form the backbone of network communication, alongside key data link layer protocols like HDLC and authentication methods in PPP.</p>
+
+            <div class="card">
+                <h3 class="card-title">Circuit Switching vs. Packet Switching</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold mb-1 text-F5A623">Circuit Switching</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-700">
+                            <li>Dedicated physical path established.</li>
+                            <li>Resources reserved for the duration.</li>
+                            <li>Example: Traditional telephone network.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-1 text-50E3C2">Packet Switching</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-700">
+                            <li>Data broken into packets.</li>
+                            <li>Packets routed independently.</li>
+                            <li>Resources shared dynamically.</li>
+                            <li>Example: Internet.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">HDLC Frame Types</h3>
+                <p class="text-sm text-gray-700 mb-2">High-level Data Link Control (HDLC) uses distinct frame types for different communication purposes:</p>
+                <ul class="list-disc list-inside space-y-1 text-gray-700 text-sm">
+                    <li><strong>I-Frames (Information):</strong> Carry user data and control info (sequence numbers, ACKs).</li>
+                    <li><strong>S-Frames (Supervisory):</strong> For flow and error control (e.g., ACK, NAK, ready/not ready). Do not carry user data.</li>
+                    <li><strong>U-Frames (Unnumbered):</strong> For link management (setup, disconnect, error reporting).</li>
+                </ul>
+                 <p class="text-xs text-gray-600 mt-2">The Control field within the HDLC frame header distinguishes these types.</p>
+            </div>
+            
+            <div class="card">
+                <h3 class="card-title">PPP Authentication: PAP vs. CHAP</h3>
+                 <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold mb-1">PAP (Password Authentication Protocol)</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-700">
+                            <li>Sends username/password in clear text.</li>
+                            <li>Vulnerable to eavesdropping.</li>
+                            <li>Two-way handshake.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-1">CHAP (Challenge-Handshake Auth. Protocol)</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-700">
+                            <li>More secure; password not sent directly.</li>
+                            <li>Uses a three-way challenge-response.</li>
+                            <li>Periodically re-challenges.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="routing-congestion" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Routing Principles & Congestion Control</h2>
+            <p class="mb-6 text-gray-700">Efficiently directing data packets through a network and managing traffic to prevent overloads are crucial for network performance. This section covers routing table strategies and congestion control mechanisms.</p>
+
+            <div class="card">
+                <h3 class="card-title">Static vs. Dynamic Routing Tables</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="font-semibold mb-1">Static Routing</h4>
+                        <p class="text-sm text-gray-700">Routes manually configured. Simple, secure, less overhead. Not adaptive to network changes.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-1">Dynamic Routing</h4>
+                        <p class="text-sm text-gray-700">Routes learned automatically via protocols (RIP, OSPF). Adapts to changes. More complex and overhead.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="card-title">Distance Vector Routing Algorithm</h3>
+                <p class="text-sm text-gray-700 mb-2">An iterative algorithm where routers share their distance vectors (cost to destinations) with neighbors. Each router updates its table based on neighbors' information to find the shortest path. Prone to slow convergence (count-to-infinity problem).</p>
+                <p class="text-xs text-gray-600">Key principle: Bellman-Ford algorithm. Solutions like split horizon mitigate issues.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Congestion Control: Leaky Bucket vs. Token Bucket</h3>
+                <p class="text-sm text-gray-700 mb-4">These algorithms shape traffic to prevent network congestion.</p>
+                <div id="congestionTabs" class="mb-4">
+                    <button class="tab-button active" onclick="openCongestionTab(event, 'LeakyBucket')">Leaky Bucket</button>
+                    <button class="tab-button" onclick="openCongestionTab(event, 'TokenBucket')">Token Bucket</button>
+                </div>
+
+                <div id="LeakyBucket" class="tab-content active">
+                    <h4 class="font-semibold text-md mb-2">Leaky Bucket Algorithm</h4>
+                    <ul class="list-disc list-inside text-sm space-y-1">
+                        <li>Output: Smooth, constant rate.</li>
+                        <li>Mechanism: Data queues and "leaks" out.</li>
+                        <li>Bursts: Absorbs small bursts; large bursts cause packet loss if buffer overflows.</li>
+                        <li>Idle Periods: No credit saved.</li>
+                        <li>Congestion Aspect: Prevents by smoothing traffic to a strict rate.</li>
+                    </ul>
+                </div>
+                <div id="TokenBucket" class="tab-content">
+                    <h4 class="font-semibold text-md mb-2">Token Bucket Algorithm</h4>
+                    <ul class="list-disc list-inside text-sm space-y-1">
+                        <li>Output: Can be bursty (up to token capacity), then average rate.</li>
+                        <li>Mechanism: Packets need tokens (generated at a constant rate) to transmit.</li>
+                        <li>Bursts: Allows by consuming accumulated tokens.</li>
+                        <li>Idle Periods: Tokens accumulate, allowing larger bursts later.</li>
+                        <li>Congestion Aspect: Prevents by policing/shaping average rate and burst size. More flexible.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="addressing-structures" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Addressing & Network Structures</h2>
+            <p class="mb-6 text-gray-700">This section explores how devices are uniquely identified using IPv4 addressing schemes and how networks are physically or logically arranged through various topologies.</p>
+
+            <div class="card">
+                <h3 class="card-title">IPv4 Classful Addressing Overview</h3>
+                <p class="text-sm text-gray-700 mb-4">Traditional IPv4 addressing divided the space into classes, each with a different allocation for network and host IDs. While largely superseded by CIDR, understanding classes provides historical context.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="text-center p-3 border rounded">
+                        <h4 class="font-semibold">Class A</h4>
+                        <p class="text-xs">(1-126.x.x.x)</p>
+                        <div class="chart-container !h-40 !max-w-[200px] mx-auto">
+                            <canvas id="ipv4ClassAChart"></canvas>
+                        </div>
+                        <p class="text-xs mt-1">Few Networks, Many Hosts</p>
+                    </div>
+                    <div class="text-center p-3 border rounded">
+                        <h4 class="font-semibold">Class B</h4>
+                        <p class="text-xs">(128-191.x.x.x)</p>
+                        <div class="chart-container !h-40 !max-w-[200px] mx-auto">
+                            <canvas id="ipv4ClassBChart"></canvas>
+                        </div>
+                        <p class="text-xs mt-1">Moderate Networks & Hosts</p>
+                    </div>
+                    <div class="text-center p-3 border rounded">
+                        <h4 class="font-semibold">Class C</h4>
+                        <p class="text-xs">(192-223.x.x.x)</p>
+                        <div class="chart-container !h-40 !max-w-[200px] mx-auto">
+                            <canvas id="ipv4ClassCChart"></canvas>
+                        </div>
+                        <p class="text-xs mt-1">Many Networks, Few Hosts</p>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-600 mt-3">Class D is for Multicast, Class E is Experimental.</p>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Network Topologies: Ring vs. Mesh</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="html-diagram-box">
+                        <h4 class="font-semibold mb-2">Ring Topology</h4>
+                        <div class="flex justify-center items-center space-x-2 my-2">
+                            <span class="p-2 bg-blue-100 border border-blue-300 rounded-full text-sm">A</span>
+                            <span class="text-blue-500">&harr;</span>
+                            <span class="p-2 bg-blue-100 border border-blue-300 rounded-full text-sm">B</span>
+                            <span class="text-blue-500">&harr;</span>
+                            <span class="p-2 bg-blue-100 border border-blue-300 rounded-full text-sm">C</span>
+                            <span class="text-blue-500">&harr;</span>
+                            <span class="p-2 bg-blue-100 border border-blue-300 rounded-full text-sm">D</span>
+                             <span class="text-blue-500">&harr; (A)</span>
+                        </div>
+                        <p class="text-xs text-gray-600">Devices in a circle. Orderly access. Single point of failure can disrupt.</p>
+                    </div>
+                    <div class="html-diagram-box">
+                        <h4 class="font-semibold mb-2">Mesh Topology (Conceptual)</h4>
+                        <div class="grid grid-cols-2 gap-2 my-2 text-center">
+                            <span class="p-2 bg-green-100 border border-green-300 rounded text-sm">A</span>
+                            <span class="p-2 bg-green-100 border border-green-300 rounded text-sm">B</span>
+                            <span class="p-2 bg-green-100 border border-green-300 rounded text-sm">C</span>
+                            <span class="p-2 bg-green-100 border border-green-300 rounded text-sm">D</span>
+                        </div>
+                        <p class="text-xs text-gray-600">High reliability (many interconnections). Full mesh is expensive.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="encoding-transmission-media" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Data Encoding & Physical Transmission</h2>
+            <p class="mb-6 text-gray-700">This section covers how binary data is converted into signals for transmission and the characteristics of transmission media like fiber optics, including mechanisms like bit stuffing for data transparency.</p>
+
+            <div class="card">
+                <h3 class="card-title">Line Coding Schemes (Conceptual for data 1001)</h3>
+                <p class="text-sm text-gray-700 mb-4">Line coding converts binary data to digital signals. Different schemes offer trade-offs in synchronization, DC component, and bandwidth.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-sm mb-1">Polar NRZ-L (1: +V, 0: -V)</h4>
+                        <div class="h-16 border border-gray-300 bg-gray-50 relative">
+                            <div class="absolute bg-red-500 h-0.5" style="top: 25%; left:0%; width:25%;"></div> <div class="absolute bg-red-500 h-0.5" style="top: 75%; left:25%; width:25%;"></div><div class="absolute bg-red-500 h-0.5" style="top: 75%; left:50%; width:25%;"></div><div class="absolute bg-red-500 h-0.5" style="top: 25%; left:75%; width:25%;"></div></div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sm mb-1">Manchester (1: L->H, 0: H->L mid-bit)</h4>
+                        <div class="h-16 border border-gray-300 bg-gray-50 relative">
+                            <div class="absolute bg-blue-500 h-0.5" style="top: 75%; left:0%; width:12.5%;"></div>
+                            <div class="absolute bg-blue-500 w-0.5" style="top: 25%; left:12.5%; height:50%;"></div>
+                            <div class="absolute bg-blue-500 h-0.5" style="top: 25%; left:12.5%; width:12.5%;"></div>
+                            <div class="absolute bg-blue-500 h-0.5" style="top: 25%; left:25%; width:12.5%;"></div>
+                            <div class="absolute bg-blue-500 w-0.5" style="top: 25%; left:37.5%; height:50%;"></div>
+                            <div class="absolute bg-blue-500 h-0.5" style="top: 75%; left:37.5%; width:12.5%;"></div>
+                             <div class="absolute bg-blue-500 h-0.5" style="top: 25%; left:50%; width:12.5%;"></div>
+                            <div class="absolute bg-blue-500 w-0.5" style="top: 25%; left:62.5%; height:50%;"></div>
+                            <div class="absolute bg-blue-500 h-0.5" style="top: 75%; left:62.5%; width:12.5%;"></div>
+                            <div class="absolute bg-blue-500 h-0.5" style="top: 75%; left:75%; width:12.5%;"></div>
+                            <div class="absolute bg-blue-500 w-0.5" style="top: 25%; left:87.5%; height:50%;"></div>
+                            <div class="absolute bg-blue-500 h-0.5" style="top: 25%; left:87.5%; width:12.5%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Bit-Oriented Framing & Bit Stuffing</h3>
+                <p class="text-sm text-gray-700 mb-2">Bit-oriented protocols use flags (e.g., <code class="code-block inline-block !p-1">01111110</code>) to mark frame boundaries. Bit stuffing is needed for data transparency: if the flag pattern appears in data, the sender inserts an extra '0' after five consecutive '1's. The receiver removes this stuffed '0'.</p>
+                <p class="text-xs text-gray-600">Example: Data <code class="code-block inline-block !p-1">...0111111...</code> becomes <code class="code-block inline-block !p-1">...01111101...</code> after stuffing.</p>
+            </div>
+            
+            <div class="card">
+                <h3 class="card-title">Fiber Optic Cable Design</h3>
+                <p class="text-sm text-gray-700 mb-2">Fiber optic cables transmit data as light pulses using Total Internal Reflection (TIR). Key components include:</p>
+                <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
+                    <li><strong>Core:</strong> Inner light-carrying part (high refractive index).</li>
+                    <li><strong>Cladding:</strong> Surrounds core (lower refractive index, enables TIR).</li>
+                    <li><strong>Buffer Coating:</strong> Protective plastic layer.</li>
+                    <li><strong>Strength Members:</strong> Provide tensile strength (e.g., Aramid yarn).</li>
+                    <li><strong>Outer Jacket:</strong> External protection.</li>
+                </ul>
+                <p class="text-xs text-gray-600 mt-2">Types include Single-Mode (SMF) for long-haul, high bandwidth, and Multi-Mode (MMF) for shorter distances.</p>
+            </div>
+        </section>
+
+        <section id="advanced-access-layered" class="mb-12 scroll-mt-20">
+            <h2 class="section-title">Advanced Access Control & Layered Protocols</h2>
+            <p class="mb-6 text-gray-700">This section explores more sophisticated medium access control mechanisms like CSMA and its variants, and key protocols within the TCP/IP network layer that manage addressing and routing.</p>
+
+            <div class="card">
+                <h3 class="card-title">CSMA (Carrier Sense Multiple Access) Protocols</h3>
+                <p class="text-sm text-gray-700 mb-4">CSMA protocols involve stations listening to the channel before transmitting to reduce collisions.</p>
+                <div id="csmaTabs" class="mb-4">
+                    <button class="tab-button active" onclick="openCsmaTab(event, 'CSMA_1P')">1-Persistent</button>
+                    <button class="tab-button" onclick="openCsmaTab(event, 'CSMA_NP')">Non-Persistent</button>
+                    <button class="tab-button" onclick="openCsmaTab(event, 'CSMA_PP')">p-Persistent</button>
+                    <button class="tab-button" onclick="openCsmaTab(event, 'CSMA_CD')">CSMA/CD</button>
+                    <button class="tab-button" onclick="openCsmaTab(event, 'CSMA_CA')">CSMA/CA</button>
+                </div>
+
+                <div id="CSMA_1P" class="tab-content active">
+                    <h4 class="font-semibold text-md mb-2">1-Persistent CSMA</h4>
+                    <p class="text-sm">If channel idle, transmit. If busy, sense continuously and transmit immediately when idle. Can be greedy, high collision risk if multiple stations wait.</p>
+                </div>
+                <div id="CSMA_NP" class="tab-content">
+                    <h4 class="font-semibold text-md mb-2">Non-Persistent CSMA</h4>
+                    <p class="text-sm">If channel idle, transmit. If busy, wait random time then sense again (doesn't sense continuously). Reduces collisions but can increase delay.</p>
+                </div>
+                <div id="CSMA_PP" class="tab-content">
+                    <h4 class="font-semibold text-md mb-2">p-Persistent CSMA</h4>
+                    <p class="text-sm">If channel idle, transmit with probability 'p', or defer with (1-p) to next slot. Balances collision reduction and idle time. Used in slotted channels.</p>
+                </div>
+                <div id="CSMA_CD" class="tab-content">
+                    <h4 class="font-semibold text-md mb-2">CSMA/Collision Detection (CD)</h4>
+                    <p class="text-sm">"Listen while talk." If collision detected during transmission, abort, send jam signal, backoff randomly. Used in wired Ethernet.</p>
+                </div>
+                <div id="CSMA_CA" class="tab-content">
+                    <h4 class="font-semibold text-md mb-2">CSMA/Collision Avoidance (CA)</h4>
+                    <p class="text-sm">Tries to *avoid* collisions. Uses IFS, random backoff, ACKs. Optional RTS/CTS. Used in wireless (Wi-Fi).</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="card-title">TCP/IP Network Layer Protocols</h3>
+                <p class="text-sm text-gray-700 mb-2">The Network (Internet) Layer handles logical addressing and routing.</p>
+                <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
+                    <li><strong>IP (Internet Protocol):</strong> Primary protocol. Connectionless, unreliable datagram delivery. Handles addressing (IPv4/IPv6) and routing.</li>
+                    <li><strong>ICMP (Internet Control Message Protocol):</strong> Works with IP for error reporting and diagnostics (e.g., ping, destination unreachable).</li>
+                    <li><strong>Routing Protocols (e.g., RIP, OSPF, BGP):</strong> Enable routers to build and maintain routing tables for IP to use.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="conclusion" class="scroll-mt-20">
+            <div class="card bg-4A90E2 text-white">
+                <h2 class="text-2xl font-semibold mb-3 text-gray-100">Conclusion: Mastering Network Foundations</h2>
+                <p class="text-lg leading-relaxed text-gray-200">
+                    The concepts explored, derived from our comprehensive "Networking Exam Solutions" report, form the bedrock of modern data communication. From the fundamental flow of data and error management to sophisticated routing algorithms and access control mechanisms, a deep understanding of these principles is essential for anyone involved in designing, implementing, or managing networks. This interactive explorer aims to provide a clear and accessible overview, reinforcing the importance of these foundational elements in an ever-evolving technological landscape.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 bg-gray-800 text-gray-400 text-sm">
+        <p>&copy; <span id="currentYear"></span> Networking Concepts Explorer. All rights reserved.</p>
+        <p>Based on the "Networking Exam Solutions" Deep Research Report.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Navigation data
+        const navSections = [
+            { id: 'fundamentals', name: 'Fundamentals' },
+            { id: 'data-integrity', name: 'Integrity' },
+            { id: 'channel-utilization', name: 'Channel Use' },
+            { id: 'network-protocols-switching', name: 'Protocols' },
+            { id: 'routing-congestion', name: 'Routing' },
+            { id: 'addressing-structures', name: 'Addressing' },
+            { id: 'encoding-transmission-media', name: 'Encoding' },
+            { id: 'advanced-access-layered', name: 'Advanced' },
+            { id: 'conclusion', name: 'Conclusion' }
+        ];
+
+        const navLinksContainer = document.getElementById('nav-links');
+        const mobileMenuContainer = document.getElementById('mobile-menu');
+
+        navSections.forEach(section => {
+            // Desktop nav
+            const aDesktop = document.createElement('a');
+            aDesktop.href = `#${section.id}`;
+            aDesktop.textContent = section.name;
+            aDesktop.classList.add('nav-item');
+            navLinksContainer.appendChild(aDesktop);
+
+            // Mobile nav
+            const aMobile = document.createElement('a');
+            aMobile.href = `#${section.id}`;
+            aMobile.textContent = section.name;
+            aMobile.classList.add('block', 'nav-item', 'px-4', 'py-2', 'text-sm');
+            mobileMenuContainer.appendChild(aMobile);
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll for nav links & active state
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                mobileMenu.classList.add('hidden'); // Close mobile menu on click
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Update active state (simple version, could be enhanced with scroll spy)
+                    document.querySelectorAll('#nav-links .nav-item, #mobile-menu .nav-item').forEach(item => item.classList.remove('active'));
+                    document.querySelectorAll(`#nav-links a[href="${targetId}"], #mobile-menu a[href="${targetId}"]`).forEach(item => item.classList.add('active'));
+                }
+            });
+        });
+        
+        // Chart.js Label Wrapping Function
+        function wrapTextChartJs(text, maxWidth = 16) {
+            if (typeof text !== 'string' || text.length <= maxWidth) {
+                return text;
+            }
+            const words = text.split(' ');
+            let currentLine = '';
+            const lines = [];
+            for (const word of words) {
+                if ((currentLine + (currentLine ? ' ' : '') + word).length <= maxWidth || currentLine === '') {
+                    currentLine += (currentLine === '' ? '' : ' ') + word;
+                } else {
+                    lines.push(currentLine);
+                    currentLine = word;
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine);
+            }
+            return lines.length > 0 ? lines : text; // Ensure it returns original if not wrapped
+        }
+        
+        // Tooltip Configuration
+        const chartTooltipTitleCallback = function(tooltipItems) {
+            const item = tooltipItems[0];
+            if (!item || !item.chart || !item.chart.data || !item.chart.data.labels) return '';
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label || '';
+        };
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { 
+                    position: 'bottom',
+                    labels: { color: '#333333', font: { size: 10 } } 
+                },
+                tooltip: { 
+                    callbacks: { title: chartTooltipTitleCallback },
+                    bodyFont: { size: 10 },
+                    titleFont: { size: 12 }
+                }
+            },
+            scales: {
+                y: { 
+                    beginAtZero: true, 
+                    ticks: { color: '#333333', font: { size: 10 } },
+                    grid: { color: '#D8D8D8' }
+                },
+                x: { 
+                    ticks: { color: '#333333', font: { size: 10 } },
+                    grid: { display: false }
+                }
+            }
+        };
+
+        // Aloha Throughput Chart
+        const alohaCtx = document.getElementById('alohaThroughputChart')?.getContext('2d');
+        if (alohaCtx) {
+            new Chart(alohaCtx, {
+                type: 'bar',
+                data: {
+                    labels: [wrapTextChartJs('Pure Aloha'), wrapTextChartJs('Slotted Aloha')],
+                    datasets: [{
+                        label: 'Max Theoretical Throughput (%)',
+                        data: [18.4, 36.8],
+                        backgroundColor: ['#F5A623', '#50E3C2'],
+                        borderColor: ['#D48E1B', '#40BFA0'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    ...commonChartOptions,
+                    plugins: {
+                        ...commonChartOptions.plugins,
+                        title: { display: true, text: 'Aloha Protocol Throughput Comparison', color: '#4A90E2', font: { size: 14 } }
+                    },
+                     scales: {
+                        y: { ...commonChartOptions.scales.y, max: 40, title: { display: true, text: 'Throughput (%)', color: '#333333'} },
+                        x: commonChartOptions.scales.x
+                    }
+                }
+            });
+        }
+
+        // IPv4 Class Charts
+        const ipv4ChartBaseOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: true, position: 'right', labels: { color: '#333333', font: {size: 9}, boxWidth: 10 } },
+                tooltip: { callbacks: { title: chartTooltipTitleCallback }, bodyFont: {size:9}, titleFont: {size:10} },
+                title: { display: true, color: '#4A90E2', font: {size: 12} }
+            }
+        };
+
+        const classACtx = document.getElementById('ipv4ClassAChart')?.getContext('2d');
+        if(classACtx) {
+            new Chart(classACtx, {
+                type: 'doughnut',
+                data: {
+                    labels: [wrapTextChartJs('Network (8)',12), wrapTextChartJs('Host (24)',12)],
+                    datasets: [{ data: [8, 24], backgroundColor: ['#4A90E2', '#D8D8D8'], borderColor: '#FFFFFF', borderWidth: 2 }]
+                },
+                options: {...ipv4ChartBaseOptions, plugins: {...ipv4ChartBaseOptions.plugins, title: {...ipv4ChartBaseOptions.plugins.title, text:'Class A Bits'} }}
+            });
+        }
+        
+        const classBCtx = document.getElementById('ipv4ClassBChart')?.getContext('2d');
+        if(classBCtx) {
+            new Chart(classBCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: [wrapTextChartJs('Network (16)',12), wrapTextChartJs('Host (16)',12)],
+                    datasets: [{ data: [16, 16], backgroundColor: ['#4A90E2', '#D8D8D8'], borderColor: '#FFFFFF', borderWidth: 2 }]
+                },
+                options: {...ipv4ChartBaseOptions, plugins: {...ipv4ChartBaseOptions.plugins, title: {...ipv4ChartBaseOptions.plugins.title, text:'Class B Bits'} }}
+            });
+        }
+
+        const classCCtx = document.getElementById('ipv4ClassCChart')?.getContext('2d');
+        if(classCCtx) {
+            new Chart(classCCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: [wrapTextChartJs('Network (24)',12), wrapTextChartJs('Host (8)',12)],
+                    datasets: [{ data: [24, 8], backgroundColor: ['#4A90E2', '#D8D8D8'], borderColor: '#FFFFFF', borderWidth: 2 }]
+                },
+                options: {...ipv4ChartBaseOptions, plugins: {...ipv4ChartBaseOptions.plugins, title: {...ipv4ChartBaseOptions.plugins.title, text:'Class C Bits'} }}
+            });
+        }
+
+        // Tab switching logic for Congestion Control
+        function openCongestionTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementById('congestionTabs').nextElementSibling.parentNode.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementById('congestionTabs').getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Tab switching logic for CSMA
+        function openCsmaTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementById('csmaTabs').nextElementSibling.parentNode.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                 tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementById('csmaTabs').getElementsByClassName("tab-button");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Initialize first tabs
+        if (document.querySelector('#congestionTabs .tab-button')) {
+             document.querySelector('#congestionTabs .tab-button').click();
+        }
+        if (document.querySelector('#csmaTabs .tab-button')) {
+            document.querySelector('#csmaTabs .tab-button').click();
+        }
+
+
+    </script>
+</body>
+</html>
