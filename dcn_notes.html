@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Exam Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f0f4f8;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+        }
+        h1, h2, h3 {
+            color: #1e293b;
+            font-weight: 700; /* font-bold */
+        }
+        h1 {
+            font-size: 2.25rem; /* text-4xl */
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.875rem; /* text-3xl */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0; /* border-b-2 border-slate-200 */
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            font-size: 1.5rem; /* text-2xl */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        p, ul, ol {
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        strong {
+            font-weight: 600; /* font-semibold */
+        }
+        .section-note {
+            font-style: italic;
+            color: #64748b; /* text-slate-500 */
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .question {
+            background-color: #f8fafc; /* bg-slate-50 */
+            border-left: 4px solid #3b82f6; /* border-l-4 border-blue-500 */
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem; /* rounded-lg */
+        }
+        .question strong {
+            color: #1d4ed8; /* text-blue-700 */
+        }
+        pre {
+            background-color: #e2e8f0; /* bg-slate-200 */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem; /* text-sm */
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .diagram {
+            text-align: center;
+            margin: 1.5rem 0;
+            background-color: #f0f4f8;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px dashed #94a3b8;
+        }
+        .diagram pre {
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+        .math {
+            font-family: 'Times New Roman', serif; /* Or any serif font for math */
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" 
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md 
+                  transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 
+                  focus:ring-blue-500 focus:ring-opacity-75">
+            Home
+        </a>
+        <a href="dcn.html" 
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md 
+                  transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 
+                  focus:ring-blue-500 focus:ring-opacity-75">
+            DCN
+        </a>
+        <a href="dcn_notes.html" 
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md 
+                  transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 
+                  focus:ring-blue-500 focus:ring-opacity-75">
+            Q & A
+        </a>
+        <a href="dcn_notes.html" 
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md 
+                  transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 
+                  focus:ring-blue-500 focus:ring-opacity-75">
+            Infographics
+        </a>
+        <h1>Networking Exam Solutions</h1>
+        <p class="section-note">Here are the answers to the provided questions, categorized by section.</p>
+
+        <section id="section-a">
+            <h2>Section A</h2>
+            <p class="section-note">Answer any TWELVE questions: (Each question carries TWO marks)</p>
+
+            <div class="question">
+                <strong>1. Differentiate between simplex and duplex data flow.</strong>
+                <ul>
+                    <li><strong>Simplex:</strong> Data flows in only one direction. Examples: Keyboard to computer, traditional radio/TV broadcast.</li>
+                    <li><strong>Duplex:</strong> Data flows in both directions.
+                        <ul>
+                            <li><strong>Half-Duplex:</strong> Communication can occur in both directions, but not simultaneously (one at a time). Example: Walkie-talkies.</li>
+                            <li><strong>Full-Duplex:</strong> Communication can occur in both directions simultaneously. Example: Telephone conversation.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>2. List the components of Data Communication.</strong>
+                <p>The five basic components of data communication are:</p>
+                <ol>
+                    <li><strong>Message:</strong> The information (data) to be communicated.</li>
+                    <li><strong>Sender:</strong> The device that sends the data message.</li>
+                    <li><strong>Receiver:</strong> The device that receives the data message.</li>
+                    <li><strong>Transmission Medium:</strong> The physical path by which a message travels from sender to receiver.</li>
+                    <li><strong>Protocol:</strong> A set of rules that govern data communication.</li>
+                </ol>
+            </div>
+
+            <div class="question">
+                <strong>3. What are guard bands in FDM?</strong>
+                <p>Guard bands in Frequency Division Multiplexing (FDM) are narrow, unused frequency strips located between adjacent channels. Their purpose is to prevent interference or crosstalk between these channels, ensuring that signals from one channel do not bleed into another.</p>
+            </div>
+
+            <div class="question">
+                <strong>4. Differentiate between analog and digital signals.</strong>
+                <ul>
+                    <li><strong>Analog Signals:</strong> Continuous waveforms that can have an infinite number of values over a given range. They represent information by varying characteristics like amplitude or frequency. Example: Human voice.</li>
+                    <li><strong>Digital Signals:</strong> Discrete-time signals that can only take on a finite set of distinct values (typically represented as 0s and 1s). Example: Data stored in a computer.</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>5. Define an error. List the error detection techniques?</strong>
+                <ul>
+                    <li><strong>Error:</strong> An error in data communication is any corruption of data during transmission, such that the data received by the receiver does not match the data sent by the sender.</li>
+                </ul>
+                <p><strong>Error Detection Techniques:</strong></p>
+                <ol>
+                    <li>Parity Check (VRC)</li>
+                    <li>Checksum</li>
+                    <li>Cyclic Redundancy Check (CRC)</li>
+                    <li>Longitudinal Redundancy Check (LRC)</li>
+                </ol>
+            </div>
+
+            <div class="question">
+                <strong>6. List the difference between circuit switching and packet switching.</strong>
+                <ul>
+                    <li><strong>Circuit Switching:</strong>
+                        <ul>
+                            <li>A dedicated physical path is established between sender and receiver for the duration of the communication.</li>
+                            <li>Resources (e.g., bandwidth, switch capacity) are reserved.</li>
+                            <li>Example: Traditional telephone network.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Packet Switching:</strong>
+                        <ul>
+                            <li>Data is broken into smaller units called packets.</li>
+                            <li>Packets are routed independently through the network and may take different paths.</li>
+                            <li>No dedicated path; resources are shared dynamically.</li>
+                            <li>Example: Internet.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>7. Compare error detection and correction.</strong>
+                <ul>
+                    <li><strong>Error Detection:</strong> Involves techniques to identify whether errors have occurred during data transmission. The receiver can only determine that the received data is corrupted but cannot fix it. Example: Parity check, CRC.</li>
+                    <li><strong>Error Correction:</strong> Involves techniques not only to detect errors but also to locate and correct them (or request retransmission). This is more complex than detection. Example: Hamming code.</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>8. What is Byte stuffing?</strong>
+                <p>Byte stuffing (also known as character stuffing) is a process used in character-oriented framing. If a predefined flag byte pattern (used to mark the start or end of a frame) appears within the actual data being transmitted, an extra special character (escape byte) is inserted before the data's flag-like pattern. This prevents the receiver from misinterpreting data as a control sequence.</p>
+            </div>
+
+            <div class="question">
+                <strong>9. Given a data word 1010011. What code word will be transmitted if an a) even parity is used and b) odd parity is used.</strong>
+                <p>Data word: 1010011</p>
+                <p>Number of 1s in the data word = 4.</p>
+                <ol>
+                    <li><strong>Even Parity:</strong> The total number of 1s (including the parity bit) must be even. Since there are already 4 (even) 1s, the parity bit is 0.</li>
+                    <p>Codeword: 10100110</p>
+                    <li><strong>Odd Parity:</strong> The total number of 1s (including the parity bit) must be odd. Since there are 4 (even) 1s, the parity bit is 1 to make the total 5 (odd).</li>
+                    <p>Codeword: 10100111</p>
+                </ol>
+            </div>
+
+            <div class="question">
+                <strong>10. Differentiate between PAP and CHAP used in Point to Point protocol.</strong>
+                <ul>
+                    <li><strong>PAP (Password Authentication Protocol):</strong>
+                        <ul>
+                            <li>Sends username and password in clear text over the link.</li>
+                            <li>Vulnerable to eavesdropping.</li>
+                            <li>Uses a two-way handshake for authentication.</li>
+                        </ul>
+                    </li>
+                    <li><strong>CHAP (Challenge-Handshake Authentication Protocol):</strong>
+                        <ul>
+                            <li>More secure; password is not sent over the link.</li>
+                            <li>Uses a three-way handshake involving a challenge from the authenticator, a response calculated by the peer using a shared secret, and verification by the authenticator.</li>
+                            <li>Periodically re-challenges to verify identity.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>11. What is the throughput of Aloha and Slotted Aloha protocol?</strong>
+                <ul>
+                    <li><strong>Aloha:</strong> The maximum theoretical throughput is approximately 18.4% (or $1/(2e)$).</li>
+                    <li><strong>Slotted Aloha:</strong> The maximum theoretical throughput is approximately 36.8% (or $1/e$). Slotted Aloha doubles the throughput of pure Aloha by restricting transmissions to the beginning of time slots.</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>12. What is CDMA? Where is it used?</strong>
+                <ul>
+                    <li><strong>CDMA (Code Division Multiple Access):</strong> A multiplexing technique where multiple users can transmit simultaneously over the same frequency band. Each user is assigned a unique pseudo-random code (spreading code) that differentiates their signal from others.</li>
+                    <li><strong>Uses:</strong> Widely used in mobile communication technologies (e.g., some 2G and 3G cellular networks like CDMA2000, WCDMA), GPS, and some satellite communication systems.</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>13. What is Explicit Feedback?</strong>
+                <p>Explicit feedback is a method of congestion notification in a network. In this approach, a congested network node (e.g., a router) explicitly sends a signal or message to the source (or destination) to inform it about the congestion. This signal can be a bit set in a packet header (e.g., ECN bit) or a separate control packet (e.g., a choke packet), prompting the source to reduce its transmission rate.</p>
+            </div>
+
+            <div class="question">
+                <strong>14. Compare Static routing table and dynamic routing table.</strong>
+                <ul>
+                    <li><strong>Static Routing Table:</strong>
+                        <ul>
+                            <li>Routes are manually configured by a network administrator.</li>
+                            <li>Does not change unless manually updated.</li>
+                            <li>Simple, secure (if configured correctly), less overhead.</li>
+                            <li>Not adaptive to network topology changes or failures.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dynamic Routing Table:</strong>
+                        <ul>
+                            <li>Routes are learned and updated automatically by routing protocols (e.g., RIP, OSPF, BGP).</li>
+                            <li>Adapts to network changes and failures.</li>
+                            <li>More complex, more overhead (due to routing protocol messages).</li>
+                            <li>Can be less secure if not properly configured.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>15. Define congestion. List the types of congestion control.</strong>
+                <ul>
+                    <li><strong>Congestion:</strong> A state in a network where the demand for resources (like bandwidth, buffer space, processing capacity) exceeds the available supply. This leads to increased packet delays, packet loss, and reduced overall network throughput.</li>
+                </ul>
+                <p><strong>Types of Congestion Control:</strong></p>
+                <ol>
+                    <li><strong>Open-Loop Congestion Control (Prevention):</strong> Aims to prevent congestion before it happens using policies at the source or during connection setup. Examples: Admission control, traffic shaping, discard policy.</li>
+                    <li><strong>Closed-Loop Congestion Control (Reaction/Removal):</strong> Aims to detect and alleviate congestion after it has occurred. It uses feedback from the network. Examples: Backpressure, choke packet, implicit signaling (e.g., TCP inferring congestion from timeouts), explicit signaling (e.g., ECN).</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="section-b">
+            <h2>Section B</h2>
+            <p class="section-note">Answer any SIX of the following, (Each question carries SIX marks)</p>
+
+            <div class="question">
+                <strong>1. Explain Ring and Mesh topologies with its advantages and drawbacks.</strong>
+                <h3>Ring Topology:</h3>
+                <ul>
+                    <li><strong>Explanation:</strong> In a ring topology, devices are connected in a circular fashion, with each device having exactly two neighbors for communication purposes. Data travels from device to device around the ring, typically in one direction (unidirectional), though bidirectional rings exist. Each device acts as a repeater, regenerating the signal before passing it on.</li>
+                </ul>
+                <div class="diagram">
+                    <pre>
+[Device A] --- [Device B]
+    |             |
+    |             |
+[Device D] --- [Device C]
+                    </pre>
+                </div>
+                <ul>
+                    <li><strong>Advantages:</strong>
+                        <ul>
+                            <li><strong>Orderly Access:</strong> Well-suited for token-passing schemes, ensuring fair access for all devices.</li>
+                            <li><strong>Performance:</strong> Can perform well under heavy network load if designed properly.</li>
+                            <li><strong>Fault Identification:</strong> In unidirectional rings, a break can be easily located.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Drawbacks:</strong>
+                        <ul>
+                            <li><strong>Single Point of Failure:</strong> If one node or a section of the cable fails, the entire ring can be disrupted. (Dual rings can mitigate this).</li>
+                            <li><strong>Difficult Reconfiguration:</strong> Adding or removing devices can disrupt network operation as the ring must be broken.</li>
+                            <li><strong>Delay:</strong> Signal regeneration at each node introduces propagation delay, which can be significant in large rings.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Mesh Topology:</h3>
+                <ul>
+                    <li><strong>Explanation:</strong> In a mesh topology, every device has a dedicated point-to-point link to every other device (full mesh), or at least to several other devices (partial mesh).
+                        <ul>
+                            <li><strong>Full Mesh:</strong> Each of 'n' devices has 'n-1' connections.</li>
+                            <li><strong>Partial Mesh:</strong> Some devices are connected to all others, but some are only connected to those with which they exchange the most data.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="diagram">
+                    <pre>
+[Device A] --- [Device B]
+    | \         / |
+    |  \       /  |
+    |   \     /   |
+    |    \   /    |
+    |     \ /     |
+[Device D] --- [Device C]
+(Simplified: A also connects to C, B to D in a full mesh of 4)
+                    </pre>
+                </div>
+                <ul>
+                    <li><strong>Advantages:</strong>
+                        <ul>
+                            <li><strong>High Reliability/Fault Tolerance:</strong> Failure of one link does not affect the entire network as alternative paths exist (especially in full mesh).</li>
+                            <li><strong>Robustness:</strong> Traffic can be routed around busy or failed links.</li>
+                            <li><strong>Security/Privacy:</strong> Dedicated links provide better security and privacy.</li>
+                            <li><strong>Easy Fault Identification & Isolation:</strong> Since links are point-to-point, isolating faults is easier.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Drawbacks:</strong>
+                        <ul>
+                            <li><strong>Expensive:</strong> Requires a large amount of cabling and many I/O ports, making it costly to install.</li>
+                            <li><strong>Complex Installation:</strong> Difficult to install and reconfigure, especially for full mesh.</li>
+                            <li><strong>Redundant Connections:</strong> Many connections might be underutilized.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>2. Explain the network layer protocols of TCP/IP model.</strong>
+                <p>The Network Layer (also known as the Internet Layer) in the TCP/IP model is responsible for logical addressing, routing packets from source to destination across multiple networks, and packet fragmentation and reassembly if necessary. Key protocols include:</p>
+                <ul>
+                    <li><strong>IP (Internet Protocol):</strong>
+                        <ul>
+                            <li><strong>Function:</strong> The primary protocol of the Network Layer. It provides a connectionless, unreliable datagram delivery service. "Unreliable" means it doesn't guarantee delivery, order, or error-free transmission; these are handled by higher-layer protocols like TCP.</li>
+                            <li><strong>Addressing:</strong> Defines the global addressing scheme (IPv4 and IPv6 addresses) to uniquely identify hosts on the internet.</li>
+                            <li><strong>Routing:</strong> Determines the path packets take from source to destination based on routing tables.</li>
+                            <li><strong>Fragmentation/Reassembly:</strong> If a packet is too large for a particular network segment, IP can fragment it into smaller pieces and reassemble them at the destination.</li>
+                            <li><strong>Packet Format:</strong> IP packets (datagrams) have a header containing source/destination IP addresses, Time-To-Live (TTL), protocol type (e.g., TCP, UDP), and other control information.</li>
+                        </ul>
+                    </li>
+                    <li><strong>ICMP (Internet Control Message Protocol):</strong>
+                        <ul>
+                            <li><strong>Function:</strong> Works in conjunction with IP to provide error reporting and diagnostic capabilities. It is used by hosts and routers to communicate network-level information.</li>
+                            <li><strong>Messages:</strong> ICMP messages are encapsulated within IP datagrams. Common messages include:
+                                <ul>
+                                    <li>Echo Request/Reply: Used by the ping utility to test reachability.</li>
+                                    <li>Destination Unreachable: Informs the source that a packet could not be delivered (e.g., host unreachable, port unreachable).</li>
+                                    <li>Time Exceeded: Sent if a packet's TTL reaches zero or if fragments are not reassembled in time.</li>
+                                    <li>Redirect: Informs a host of a better route to a destination.</li>
+                                    <li>Source Quench (obsolete): Used to request senders to slow down transmission (now largely replaced by other congestion control mechanisms).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Routing Protocols:</strong>
+                        <ul>
+                            <li>While not directly handling data packets like IP, routing protocols are essential for the Network Layer's function of routing. They enable routers to build and maintain routing tables.</li>
+                            <li><strong>Examples:</strong>
+                                <ul>
+                                    <li>RIP (Routing Information Protocol): A distance-vector protocol.</li>
+                                    <li>OSPF (Open Shortest Path First): A link-state protocol.</li>
+                                    <li>BGP (Border Gateway Protocol): An exterior gateway protocol used between autonomous systems on the internet.</li>
+                                </ul>
+                            </li>
+                            <li>These protocols exchange routing information, allowing IP to forward packets effectively.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>3. What is time division multiplexing? Explain its types with a neat diagram.</strong>
+                <p><strong>Time Division Multiplexing (TDM)</strong> is a digital multiplexing technique that allows multiple low-speed data streams to be combined and transmitted over a single high-speed communication channel. This is achieved by dividing the channel's transmission time into discrete time slots, with each user or input signal being allocated one or more time slots in rotation.</p>
+                <h3>Diagram of TDM Concept:</h3>
+                <div class="diagram">
+                    <p>Input Signals:</p>
+                    <pre>
+Signal A: A1 A2 A3 ...
+Signal B: B1 B2 B3 ...
+Signal C: C1 C2 C3 ...
+                    </pre>
+                    <p>Multiplexer (MUX) combines these into a single stream:</p>
+                    <pre>
+Frame 1     Frame 2
+[A1|B1|C1] [A2|B2|C2]
+
+--> Transmitted over High-Speed Channel
+                    </pre>
+                    <p>Demultiplexer (DEMUX) separates them at the receiver:</p>
+                    <pre>
+[A1 B1 C1] [A2|B2|C2] --> Signal A: A1 A2 ...
+                       --> Signal B: B1 B2 ...
+                       --> Signal C: C1 C2 ...
+                    </pre>
+                </div>
+                <h3>Types of TDM:</h3>
+                <ul>
+                    <li><strong>Synchronous TDM (STDM):</strong>
+                        <ul>
+                            <li><strong>Explanation:</strong> In STDM, each input device is allocated a fixed time slot in every frame, regardless of whether it has data to send or not. The time slots are pre-assigned and follow a fixed rotation. If a device has no data during its allocated slot, that slot remains empty and is wasted.</li>
+                            <li><strong>Diagram:</strong>
+                                <pre>
+Inputs: A, B, C, D
+Frame: [Slot for A | Slot for B | Slot for C | Slot for D]
+
+Example: If B has no data:
+Frame: [Data from A | EMPTY | Data from C | Data from D]
+                                </pre>
+                            </li>
+                            <li><strong>Advantages:</strong> Simple to implement, no addressing overhead within the frame for data identification.</li>
+                            <li><strong>Disadvantages:</strong> Inefficient use of bandwidth if input lines are often idle, as slots go unused.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Asynchronous TDM (ATDM) / Statistical TDM:</strong>
+                        <ul>
+                            <li><strong>Explanation:</strong> ATDM, also known as Statistical TDM, allocates time slots dynamically based on demand. Only active input devices (those with data to send) are given time slots. To identify the data, each slot or a group of slots in a frame carries addressing information (e.g., source port number) along with the data. The number of slots in a frame is typically less than the number of input lines.</li>
+                            <li><strong>Diagram:</strong>
+                                <pre>
+Inputs: A, B, C, D (Suppose A, C are active)
+Frame: [(Addr A, Data A) | (Addr C, Data C)]
+(Frame length can be variable or contain a variable number of slots)
+                                </pre>
+                            </li>
+                            <li><strong>Advantages:</strong> More efficient use of bandwidth as it avoids empty slots. Suitable for bursty traffic.</li>
+                            <li><strong>Disadvantages:</strong> More complex due to the need for addressing and dynamic allocation. Introduces overhead for address information. Requires buffering if input data rate temporarily exceeds output capacity.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>4. Data word to be transmitted by the sender is 1001101. Assuming the even parity, find out the code word that will be sent to the receiver using Hamming code.</strong>
+                <p>Data word ($m$) = 1001101. So, $k=7$ bits.</p>
+                <p>Parity type: Even parity.</p>
+                <p><strong>Step 1: Determine the number of parity bits (r).</strong></p>
+                <p>The condition is $2^r \ge k+r+1.$</p>
+                <ul>
+                    <li>If $r=3: 2^3=8.$ $k+r+1=7+3+1=11.$ $8 \not\ge 11$ (False).</li>
+                    <li>If $r=4: 2^4=16.$ $k+r+1=7+4+1=12.$ $16 \ge 12$ (True).</li>
+                </ul>
+                <p>So, we need $r=4$ parity bits.</p>
+                <p><strong>Step 2: Determine the total length of the codeword (n).</strong></p>
+                <p>$n=k+r=7+4=11$ bits.</p>
+                <p><strong>Step 3: Position the parity bits and data bits.</strong></p>
+                <p>Parity bits (P1, P2, P4, P8) are placed at positions that are powers of 2. Data bits (D3, D5, D6, D7, D9, D10, D11) fill the remaining slots.</p>
+                <p>Data word: d7d6d5d4d3d2d1 = 1001101</p>
+                <p>Codeword structure:</p>
+                <pre>
+Position: 1  2  3  4  5  6  7  8  9  10 11
+Bit:      P1 P2 D3 P4 D5 D6 D7 P8 D9 D10 D11
+                </pre>
+                <p>Mapped Data: P1 P2 (d1=1) P4 (d2=0) (d3=0) (d4=1) P8 (d5=1) (d6=0) (d7=1)</p>
+                <p><strong>Step 4: Calculate the values of the parity bits for even parity.</strong></p>
+                <ul>
+                    <li><strong>P1 (checks bits 1, 3, 5, 7, 9, 11):</strong>
+                        <p>$P1 \oplus D3 \oplus D5 \oplus D7 \oplus D9 \oplus D11 = 0$ (for even parity)</p>
+                        <p>$P1 \oplus 1 \oplus 0 \oplus 1 \oplus 1 \oplus 1 = 0$</p>
+                        <p>$P1 \oplus 0 = 0 \Rightarrow P1 = 0$</p>
+                    </li>
+                    <li><strong>P2 (checks bits 2, 3, 6, 7, 10, 11):</strong>
+                        <p>$P2 \oplus D3 \oplus D6 \oplus D7 \oplus D10 \oplus D11 = 0$</p>
+                        <p>$P2 \oplus 1 \oplus 0 \oplus 1 \oplus 0 \oplus 1 = 0$</p>
+                        <p>$P2 \oplus 1 = 0 \Rightarrow P2 = 1$</p>
+                    </li>
+                    <li><strong>P4 (checks bits 4, 5, 6, 7):</strong>
+                        <p>$P4 \oplus D5 \oplus D6 \oplus D7 = 0$</p>
+                        <p>$P4 \oplus 0 \oplus 0 \oplus 1 = 0$</p>
+                        <p>$P4 \oplus 1 = 0 \Rightarrow P4 = 1$</p>
+                    </li>
+                    <li><strong>P8 (checks bits 8, 9, 10, 11):</strong>
+                        <p>$P8 \oplus D9 \oplus D10 \oplus D11 = 0$</p>
+                        <p>$P8 \oplus 1 \oplus 0 \oplus 1 = 0$</p>
+                        <p>$P8 \oplus 0 = 0 \Rightarrow P8 = 0$</p>
+                    </li>
+                </ul>
+                <p><strong>Step 5: Construct the Hamming codeword.</strong></p>
+                <pre>
+Position: 1  2  3  4  5  6  7  8  9  10 11
+Bit:      P1 P2 D3 P4 D5 D6 D7 P8 D9 D10 D11
+Value:    0  1  1  1  0  0  1  0  1  0  1
+                </pre>
+                <p>The Hamming codeword to be transmitted is <strong>01110010101</strong>.</p>
+            </div>
+
+            <div class="question">
+                <strong>5. Explain the different types of frames exchanged during data transmission in HDLC protocol.</strong>
+                <p>HDLC (High-level Data Link Control) is a bit-oriented protocol that defines three types of frames, distinguished by the first one or two bits of the Control field in the HDLC frame structure.</p>
+                <h3>HDLC Frame Structure (briefly):</h3>
+                <p>Flag | Address | Control | Information (optional) | FCS | Flag</p>
+                <p>(Flag = 01111110)</p>
+                <p>The Control Field determines the frame type:</p>
+                <ul>
+                    <li><strong>I-Frames (Information frames):</strong>
+                        <ul>
+                            <li><strong>Purpose:</strong> Used to carry user data from the network layer. They also include sequence numbers for flow and error control (piggybacking acknowledgments).</li>
+                            <li><strong>Control Field Format:</strong> Starts with a 0.
+                                <pre>
+|0|N(S)|P/F|N(R)|
+                                </pre>
+                                <ul>
+                                    <li>$N(S)$: Send sequence number (3 or 7 bits).</li>
+                                    <li>$P/F$: Poll/Final bit.</li>
+                                    <li>$N(R)$: Receive sequence number (acknowledges frames up to $N(R)-1$, 3 or 7 bits).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Function:</strong> Transmit actual data and can acknowledge received I-frames.</li>
+                        </ul>
+                    </li>
+                    <li><strong>S-Frames (Supervisory frames):</strong>
+                        <ul>
+                            <li><strong>Purpose:</strong> Used for flow and error control when piggybacking is not possible or appropriate. They do not carry user data.</li>
+                            <li><strong>Control Field Format:</strong> Starts with 10.
+                                <pre>
+|1|0|S Code | P/F | N(R) |
+                                </pre>
+                                <ul>
+                                    <li>S Code (2 bits): Specifies the type of S-frame.</li>
+                                    <li>$P/F$: Poll/Final bit.</li>
+                                    <li>$N(R)$: Receive sequence number (acknowledges frames).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Subtypes (based on S Code):</strong>
+                                <ul>
+                                    <li><strong>Receive Ready (RR, S Code=00):</strong> Acknowledges previously received frames (up to $N(R)-1$) and indicates the station is ready to receive more I-frames.</li>
+                                    <li><strong>Receive Not Ready (RNR, S Code=01):</strong> Acknowledges previously received frames but indicates the station is temporarily unable to receive more I-frames (e.g., buffer full).</li>
+                                    <li><strong>Reject (REJ, S Code=10):</strong> A negative acknowledgment. It requests retransmission of I-frames starting from N(R). Used in Go-Back-N ARQ.</li>
+                                    <li><strong>Selective Reject (SREJ, S Code=11):</strong> A negative acknowledgment. It requests retransmission of only the specific I-frame N(R). Used in Selective Repeat ARQ.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>U-Frames (Unnumbered frames):</strong>
+                        <ul>
+                            <li><strong>Purpose:</strong> Used for various link management and control functions, such as link setup, disconnection, and reporting certain error conditions. They do not contain sequence numbers related to I-frame transmission.</li>
+                            <li><strong>Control Field Format:</strong> Starts with 11.
+                                <pre>
+| 1 | 1 | M Code | P/F | M Code |
+                                </pre>
+                                <ul>
+                                    <li>M Code (5 bits, split into two parts): Specifies the type of U-frame.</li>
+                                    <li>$P/F$: Poll/Final bit.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Examples of U-Frames:</strong>
+                                <ul>
+                                    <li>SABM (Set Asynchronous Balanced Mode) / SABME (Extended): Initiates a connection in ABM.</li>
+                                    <li>DISC (Disconnect): Terminates a logical link connection.</li>
+                                    <li>UA (Unnumbered Acknowledgment): Acknowledges SABM/SABME or DISC commands.</li>
+                                    <li>FRMR (Frame Reject): Reports an error in a received frame's format or content that cannot be resolved by retransmission (e.g., invalid control field, information field too long).</li>
+                                    <li>UP (Unnumbered Poll): Used to solicit a response from the secondary station.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>6. Explain Stop and wait ARQ protocol with an example.</strong>
+                <p><strong>Stop-and-Wait ARQ (Automatic Repeat reQuest)</strong> is a simple flow and error control protocol for noisy channels.</p>
+                <h3>Principle:</h3>
+                <ol>
+                    <li>The sender transmits one frame at a time.</li>
+                    <li>After sending a frame, the sender stops and waits for an acknowledgment (ACK) from the receiver before sending the next frame.</li>
+                    <li>To handle lost frames or lost ACKs, the sender uses a timer. If an ACK is not received before the timer expires, the sender retransmits the same frame.</li>
+                    <li>Sequence numbers (typically 0 and 1) are used for frames and ACKs to distinguish between new frames and retransmissions, preventing duplicate processing at the receiver.</li>
+                </ol>
+                <h3>Error Handling Scenarios:</h3>
+                <ul>
+                    <li><strong>Normal Operation:</strong> Sender sends Frame 0. Receiver gets Frame 0, sends ACK 1 (acknowledging Frame 0, expecting Frame 1). Sender gets ACK 1, sends Frame 1.</li>
+                    <li><strong>Lost Frame:</strong> Sender sends Frame 0. Frame 0 is lost. Receiver does nothing. Sender's timer expires. Sender retransmits Frame 0.</li>
+                    <li><strong>Lost ACK:</strong> Sender sends Frame 0. Receiver gets Frame 0, sends ACK 1. ACK 1 is lost. Sender's timer expires. Sender retransmits Frame 0. Receiver gets duplicate Frame 0 (recognizes it by sequence number), discards it, and resends ACK 1.</li>
+                    <li><strong>Damaged Frame:</strong> Sender sends Frame 0. Frame 0 is damaged. Receiver detects damage (e.g., via FCS), discards the frame, and sends no ACK (or a NAK if implemented). Sender's timer expires, and it retransmits Frame 0.</li>
+                    <li><strong>Delayed ACK (Premature Timeout):</strong> If an ACK is delayed but not lost, and the sender times out and retransmits, the receiver will get a duplicate. It will discard the duplicate and send another ACK. The sender might receive two ACKs for the same frame.</li>
+                </ul>
+                <h3>Example with Timeline:</h3>
+                <p>(S = Sender, R = Receiver, F0 = Frame 0, F1 = Frame 1, ACK0 = Ack for F1, ACK1 = Ack for F0)</p>
+                <h4>Scenario 1: Normal Operation</h4>
+                <pre>
+Time | Sender (S)                | Receiver (R)
+------------------------------------------------------
+t1   | Sends F0, Starts Timer    |
+t2   |                           | Receives F0
+t3   |                           | Sends ACK1
+t4   | Receives ACK1, Stops Timer|
+t5   | Sends F1, Starts Timer    |
+t6   |                           | Receives F1
+t7   |                           | Sends ACK0
+t8   | Receives ACK0, Stops Timer|
+                </pre>
+                <h4>Scenario 2: Lost Frame</h4>
+                <pre>
+Time | Sender (S)                | Receiver (R)
+------------------------------------------------------
+t1   | Sends F0, Starts Timer    |
+t2   |                           | (F0 is lost)
+...  | (Timer running)           | (Waiting for F0)
+tX   | Timer Expires!            |
+tX+1 | Retransmits F0, Starts Timer|
+tX+2 |                           | Receives F0
+tX+3 |                           | Sends ACK1
+tX+4 | Receives ACK1, Stops Timer|
+                </pre>
+                <ul>
+                    <li><strong>Advantages:</strong> Simple to implement.</li>
+                    <li><strong>Disadvantages:</strong> Very inefficient, especially for links with high bandwidth or long propagation delays, as the sender is idle for a significant amount of time waiting for ACKs. Only one frame is "in flight" at any time.</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>7. Explain Leaky Bucket algorithm with a neat diagram.</strong>
+                <p>The <strong>Leaky Bucket algorithm</strong> is a traffic shaping mechanism used to control the rate at which data packets are sent into a network, smoothing out bursty traffic into a steady, regulated stream.</p>
+                <ul>
+                    <li><strong>Analogy:</strong> Imagine a bucket with a small hole at the bottom. Water (packets) can be poured into the bucket at any rate (bursty input). However, water leaks out of the hole at a constant rate, as long as there's water in the bucket. If the bucket is full, any additional water poured in will overflow and be lost.</li>
+                </ul>
+                <h3>Mechanism:</h3>
+                <ol>
+                    <li><strong>Buffer (Bucket):</strong> A finite-sized queue (buffer) holds incoming packets.</li>
+                    <li><strong>Input:</strong> Packets arrive from the source and are added to the queue if there is space.</li>
+                    <li><strong>Output (Leakage):</strong> Packets are transmitted from the queue onto the network at a constant rate (the "leak rate"), provided the queue is not empty.</li>
+                    <li><strong>Overflow:</strong> If a packet arrives when the queue is full, it is typically discarded (or sometimes marked with lower priority).</li>
+                </ol>
+                <h3>Diagram:</h3>
+                <div class="diagram">
+                    <pre>
+ +-----------------+
+Incoming Packets ---------------> |                 |
+(Bursty, Variable Rate) |     BUCKET      | --> Discarded if Bucket Full
+                        |     (Queue)     |
+                        |                 |
+                        +--------|--------+
+                                 | (Hole)
+                                 V
+                         Outgoing Packets
+                         (Constant Rate)
+                    </pre>
+                </div>
+                <h3>Characteristics:</h3>
+                <ul>
+                    <li><strong>Rate Control:</strong> Enforces a strict average output rate.</li>
+                    <li><strong>Burst Smoothing:</strong> Converts bursty traffic into a smooth, predictable flow.</li>
+                    <li><strong>No Credit for Idle Time:</strong> If the bucket becomes empty, the "permission" to send at the leak rate is not saved up. The output rate remains constant when data is available.</li>
+                    <li><strong>Packet Loss:</strong> Can lead to packet loss if the input burstiness is high and the bucket size is insufficient.</li>
+                </ul>
+                <h3>Purpose in Congestion Control:</h3>
+                <ul>
+                    <li>By regulating the traffic flow from a source, the leaky bucket algorithm helps prevent congestion in the network by ensuring that the network does not receive data at a rate faster than it can handle. It's a form of open-loop congestion control (traffic shaping).</li>
+                </ul>
+                <h3>Advantages:</h3>
+                <ul>
+                    <li>Simple to implement.</li>
+                    <li>Effectively controls the average rate of traffic.</li>
+                </ul>
+                <h3>Disadvantages:</h3>
+                <ul>
+                    <li>Does not adapt to network conditions; the output rate is fixed.</li>
+                    <li>Bursty traffic that exceeds the bucket capacity is lost, even if the network might have been able to handle it momentarily.</li>
+                    <li>Does not allow for saving "credits" during idle periods to send larger bursts later (unlike Token Bucket).</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>8. Compare and contrast how Congestion control is achieved in Leaky Bucket and Token Bucket algorithm.</strong>
+                <p>Both Leaky Bucket and Token Bucket are traffic shaping algorithms used to regulate the flow of data and can contribute to congestion control by preventing sources from overwhelming the network.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="border p-2">Feature</th>
+                                <th class="border p-2">Leaky Bucket Algorithm</th>
+                                <th class="border p-2">Token Bucket Algorithm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border p-2">Primary Goal</td>
+                                <td class="border p-2">Enforce a strict, constant output rate; smooth out bursts.</td>
+                                <td class="border p-2">Allow controlled bursts while maintaining an average rate.</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">Mechanism</td>
+                                <td class="border p-2">Data packets queue in a buffer and "leak" out at a constant rate.</td>
+                                <td class="border p-2">Tokens are generated at a constant rate and stored in a token bucket. A packet needs a token to be transmitted.</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">Output Pattern</td>
+                                <td class="border p-2">Very smooth, constant rate.</td>
+                                <td class="border p-2">Can be bursty (up to token bucket capacity), then average rate.</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">Handling Bursts</td>
+                                <td class="border p-2">Absorbs small bursts in its data buffer. Large bursts lead to packet discard if buffer overflows.</td>
+                                <td class="border p-2">Allows bursts by consuming accumulated tokens. If no tokens, packets wait or are discarded.</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">Idle Periods</td>
+                                <td class="border p-2">If input is idle, the "permission" to send is lost. Output rate remains constant when data is available.</td>
+                                <td class="border p-2">If input is idle, tokens accumulate (up to bucket capacity), allowing for larger bursts later.</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">Packet Discard</td>
+                                <td class="border p-2">When the data buffer (bucket) is full.</td>
+                                <td class="border p-2">When no tokens are available and packet cannot be buffered (or if configured to discard).</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">Flexibility</td>
+                                <td class="border p-2">Less flexible; rigid output rate.</td>
+                                <td class="border p-2">More flexible; accommodates burstiness better.</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">Congestion Control Aspect</td>
+                                <td class="border p-2"><strong>Prevention by Smoothing:</strong> Prevents congestion by ensuring the source sends a steady, predictable stream, avoiding sudden network overloads. It's primarily rate control.</td>
+                                <td class="border p-2"><strong>Prevention by Policing/Shaping:</strong> Can police traffic (check conformance to a contract) or shape it. By limiting average rate and burst size, it prevents sustained high-rate transmission that causes congestion. Allows short bursts that the network might tolerate.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3>Contrast in Congestion Control Achievement:</h3>
+                <ul>
+                    <li><strong>Leaky Bucket for Congestion Control:</strong>
+                        <ul>
+                            <li>Achieves congestion control indirectly by strictly limiting the output rate. It forces a smooth flow, preventing the source from injecting large, sudden bursts that could overwhelm downstream routers.</li>
+                            <li>Its main contribution is rate enforcement, ensuring the network sees a predictable traffic pattern from the source.</li>
+                            <li>If the source attempts to send too much too quickly, packets are dropped at the source's leaky bucket, effectively signaling congestion to the application (via packet loss) before those packets even enter the core network.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Token Bucket for Congestion Control:</strong>
+                        <ul>
+                            <li>Achieves congestion control by limiting the average rate while allowing for some burstiness. The token generation rate controls the long-term average rate, and the token bucket size controls the maximum burst size.</li>
+                            <li>This is often more aligned with how networks operate, as networks can often absorb short bursts.</li>
+                            <li>It prevents sustained high-rate traffic that leads to congestion but allows flexibility for applications that are naturally bursty.</li>
+                            <li>If a source tries to exceed its token limit (either average rate or burst size), packets are delayed or dropped, thus controlling the load on the network.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Similarities:</h3>
+                <ul>
+                    <li>Both are implemented at the source or network ingress points.</li>
+                    <li>Both aim to regulate traffic flow to prevent network congestion.</li>
+                    <li>Both use a form of "credit" or "capacity" (data buffer capacity in Leaky Bucket, token count in Token Bucket).</li>
+                    <li>Both can lead to packet discarding if the input traffic exceeds configured parameters.</li>
+                </ul>
+                <p>In essence, Leaky Bucket is like a strict regulator ensuring a constant flow, while Token Bucket is a more adaptable regulator that allows for managed bursts within an overall average rate limit. Token Bucket is generally preferred for its flexibility in handling modern network traffic.</p>
+            </div>
+        </section>
+
+        <section id="section-c">
+            <h2>Section C</h2>
+            <p class="section-note">Answer any FIVE of the following, (Each question carries EIGHT marks)</p>
+
+            <div class="question">
+                <strong>1. Explain distance vector routing algorithm with an example.</strong>
+                <p><strong>Distance Vector Routing Algorithm:</strong> Distance Vector (DV) routing is an iterative, asynchronous, and distributed routing algorithm. It's a class of routing algorithms where each router maintains a routing table (a "vector") containing the "distance" (cost or metric, e.g., hop count, delay) to every other reachable destination network and the next-hop router to reach that destination.</p>
+                <h3>Key Principles:</h3>
+                <ol>
+                    <li><strong>Knowledge about Neighbors:</strong> Each router knows the distance to its directly connected neighbors.</li>
+                    <li><strong>Information Sharing:</strong> Routers periodically exchange their entire routing tables (distance vectors) only with their directly connected neighbors.</li>
+                    <li><strong>Bellman-Ford Algorithm:</strong> The core logic is based on the Bellman-Ford algorithm. Each router updates its table based on the information received from its neighbors. For a destination X, a router R calculates its distance to X via neighbor N as: Cost(R to X via N) = Cost(R to N) + Cost(N to X reported by N).</li>
+                    <li><strong>Update Rule:</strong> Router R chooses the path with the minimum cost among all its neighbors to reach destination X.</li>
+                    <li><strong>Iterative Process:</strong> Routers continue to exchange information and update their tables until they converge to a stable state where no more changes occur.</li>
+                </ol>
+                <h3>Data Structures:</h3>
+                <ul>
+                    <li>Each router maintains a distance vector: $D_x(y)$ = estimated least cost from router x to destination y.</li>
+                    <li>Each router also maintains its routing table, which includes: Destination Network, Cost (Distance), Next Hop.</li>
+                </ul>
+                <h3>Algorithm Steps (Simplified):</h3>
+                <ol>
+                    <li><strong>Initialization:</strong> Each router initializes its table with entries for directly connected networks (cost = direct link cost) and others as infinity.</li>
+                    <li><strong>Sharing:</strong> Periodically, each router sends its current distance vector to all its direct neighbors.</li>
+                    <li><strong>Updating:</strong> When a router receives a distance vector from a neighbor, it updates its own table. For each destination in the received vector:
+                        <ul>
+                            <li>It calculates the new cost to that destination through that neighbor.</li>
+                            <li>If this new cost is less than the current cost in its table, or if it's a new route, or if the information is from the current next-hop router, it updates its entry with the new shorter cost and sets the next hop to that neighbor.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h3>Example:</h3>
+                <p>Consider a simple network with routers A, B, C, D. Costs are hop counts.</p>
+                <div class="diagram">
+                    <pre>
+     (1)      (1)
+A ----- B ----- C
+ \     /
+  \   / (1)
+   \ /
+    D
+(A-D cost 1)
+                    </pre>
+                </div>
+                <h4>Initial Tables (Directly Connected):</h4>
+                <ul>
+                    <li><strong>Router A:</strong> (A,0,-), (B,1,B), (D,1,D)</li>
+                    <li><strong>Router B:</strong> (B,0,-), (A,1,A), (C,1,C), (D,1,D)</li>
+                    <li><strong>Router C:</strong> (C,0,-), (B,1,B)</li>
+                    <li><strong>Router D:</strong> (D,0,-), (A,1,A), (B,1,B)</li>
+                </ul>
+                <h4>Iteration 1 (Exchange and Update):</h4>
+                <ul>
+                    <li><strong>A receives from B:</strong> B says it can reach C with cost 1. A calculates cost to C via B = (cost A-B) + (cost B-C) = 1 + 1 = 2. A adds (C,2,B) to its table.</li>
+                    <li><strong>A receives from D:</strong> (No new shorter paths for A via D initially for B,C).</li>
+                    <li><strong>B receives from A:</strong> A says it can reach D with cost 1. (B already knows D directly).</li>
+                    <li><strong>B receives from C:</strong> C says it can reach C with cost 0. (B already knows C directly).</li>
+                    <li><strong>B receives from D:</strong> D says it can reach A with cost 1. (B already knows A directly).</li>
+                    <li><strong>C receives from B:</strong> B says it can reach A with cost 1, D with cost 1.
+                        <ul>
+                            <li>C to A via B: (cost C-B) + (cost B-A) = 1 + 1 = 2. C adds (A,2,B).</li>
+                            <li>C to D via B: (cost C-B) + (cost B-D) = 1 + 1 = 2. C adds (D,2,B).</li>
+                        </ul>
+                    </li>
+                    <li><strong>D receives from A:</strong> A says it can reach B with cost 1. (D already knows B directly).</li>
+                    <li><strong>D receives from B:</strong> B says it can reach C with cost 1.
+                        <ul>
+                            <li>D to C via B: (cost D-B) + (cost B-C) = 1 + 1 = 2. D adds (C,2,B).</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>Updated Tables after Iteration 1 (simplified, showing key changes):</h4>
+                <ul>
+                    <li><strong>Router A:</strong> (A,0,-), (B,1,B), (D,1,D), (C,2,B)</li>
+                    <li><strong>Router B:</strong> (B,0,-), (A,1,A), (C,1,C), (D,1,D)</li>
+                    <li><strong>Router C:</strong> (C,0,-), (B,1,B), (A,2,B), (D,2,B)</li>
+                    <li><strong>Router D:</strong> (D,0,-), (A,1,A), (B,1,B), (C,2,B)</li>
+                </ul>
+                <p>The process continues until all tables stabilize.</p>
+                <h3>Advantages:</h3>
+                <ul>
+                    <li>Simple to understand and implement.</li>
+                    <li>Less computational overhead compared to link-state algorithms.</li>
+                </ul>
+                <h3>Disadvantages:</h3>
+                <ul>
+                    <li><strong>Slow Convergence (Count-to-Infinity Problem):</strong> When a link fails or cost increases ("bad news"), the information propagates slowly through the network. Routers might form routing loops and increment costs until they reach infinity (a predefined maximum).
+                        <ul>
+                            <li><strong>Example of Count-to-Infinity:</strong> If link B-C fails. C knows cost to C is 0. B's path to C was direct. Now B might hear from A that A can reach C (via B, before A learns of failure), leading to B thinking it can reach C via A, and A thinking it can reach C via B, creating a loop.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Solutions to Count-to-Infinity:</strong>
+                        <ul>
+                            <li><strong>Split Horizon:</strong> A router does not advertise a route back to the neighbor from which it learned the route.</li>
+                            <li><strong>Poison Reverse (Split Horizon with Poison Reverse):</strong> A router advertises a route back to the neighbor from which it learned it, but with an infinite metric.</li>
+                            <li><strong>Triggered Updates:</strong> When a router detects a change, it sends updates immediately instead of waiting for the periodic timer.</li>
+                            <li><strong>Hold-down Timers:</strong> After learning of a link failure, a router ignores updates for that route for a certain period to allow the "bad news" to propagate.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Bandwidth Consumption:</strong> Transmitting entire routing tables can consume significant bandwidth, especially on slow links or in large networks.</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>2. What is line coding? Explain the different schemes of line coding for the data stream 10011101.</strong>
+                <p><strong>Line Coding</strong> is the process of converting binary data (a sequence of bits: 0s and 1s) into a digital signal suitable for transmission over a physical transmission medium (like a cable). The digital signal consists of discrete voltage levels, pulses, or other signal characteristics.</p>
+                <h3>Purposes of Line Coding:</h3>
+                <ul>
+                    <li><strong>Synchronization:</strong> To enable the receiver to synchronize its clock with the sender's clock for correct bit interpretation.</li>
+                    <li><strong>DC Component Minimization:</strong> To reduce or eliminate any DC (direct current) component in the signal, as some transmission systems cannot pass DC.</li>
+                    <li><strong>Error Detection:</strong> Some schemes have inherent error detection capabilities.</li>
+                    <li><strong>Bandwidth Efficiency:</strong> To use the available bandwidth effectively.</li>
+                    <li><strong>Noise Immunity:</strong> To improve the signal's resistance to noise.</li>
+                </ul>
+                <p>Data Stream: 10011101</p>
+                <h3>Different Line Coding Schemes (with diagrams for 10011101):</h3>
+                <p>(Assume positive voltage for high, negative for low, zero for no signal. Transitions occur at bit boundaries unless specified.)</p>
+                <h4>1. Unipolar NRZ (Non-Return to Zero):</h4>
+                <ul>
+                    <li><strong>Rule:</strong> '1' is represented by a positive voltage, '0' by zero voltage. Signal does not return to zero during the bit interval.</li>
+                    <li><strong>10011101:</strong>
+                        <div class="diagram">
+                            <pre>
+1   0   0   1   1   1   0   1
++V|____ ____|____|____|____ ____
+  |    |    |    |    |    |    |    |
+0V+----|----|----|----|----|----|----|----
+  |____|____|    |    |    |____|____|
+Bit intervals ---->
+                            </pre>
+                        </div>
+                    </li>
+                    <li><strong>Pros:</strong> Simple.</li>
+                    <li><strong>Cons:</strong> Has a DC component, lacks synchronization for long strings of 0s or 1s.</li>
+                </ul>
+                <h4>2. Polar NRZ-L (Non-Return to Zero - Level):</h4>
+                <ul>
+                    <li><strong>Rule:</strong> '1' is represented by one voltage level (e.g., +V), '0' by another (e.g., -V).</li>
+                    <li><strong>10011101:</strong>
+                        <div class="diagram">
+                            <pre>
+1   0   0   1   1   1   0   1
++V|____             |____|____|____             |____
+  |    |           |    |    |    |           |
+0V+----|-----------|----|----|----|-----------|----
+  |    |____|____|           |____|____|
+-V |
+                            </pre>
+                        </div>
+                    </li>
+                    <li><strong>Pros:</strong> Better noise immunity than Unipolar NRZ.</li>
+                    <li><strong>Cons:</strong> Has a DC component, synchronization issues for long strings of identical bits.</li>
+                </ul>
+                <h4>3. Polar NRZ-I (Non-Return to Zero - Invert):</h4>
+                <ul>
+                    <li><strong>Rule:</strong> '1' causes a transition (inversion) of the signal level at the beginning of the bit interval. '0' causes no transition. (Assume starting level is Low/-V).</li>
+                    <li><strong>10011101:</strong>
+                        <div class="diagram">
+                            <pre>
+(Start -V)
+ 1   0   0   1   1   1   0   1
++V |____|____|____ |____ |____|____
+   (Inv)           (Inv)(Inv)(Inv)           (Inv)
+0V-----+-----------+----+----+----+-----------+----
+   (NoInv)(NoInv)            (NoInv)
+-V|____ |____ |____
+                            </pre>
+                        </div>
+                    </li>
+                    <li><strong>Pros:</strong> Provides some synchronization for 1s.</li>
+                    <li><strong>Cons:</strong> DC component, synchronization issues for long strings of 0s.</li>
+                </ul>
+                <h4>4. Polar RZ (Return to Zero):</h4>
+                <ul>
+                    <li><strong>Rule:</strong> '1' is +V for half the bit period then returns to 0V. '0' is -V for half the bit period then returns to 0V.</li>
+                    <li><strong>10011101:</strong>
+                        <div class="diagram">
+                            <pre>
+1   0   0   1   1   1   0   1
++V|_ _ _ |_ |_ |_ _ |_
+  | | | | | | | | | | | | | | | |
+0V-- -- -- -- --- -- -- -- -- -- -- -- ---
+  | | | | | | | | | | | |
+-V |_| |_| _ _ _ |_| _
+                            </pre>
+                        </div>
+                    </li>
+                    <li><strong>Pros:</strong> Contains synchronization information (signal change for each bit), no DC component if +V and -V are used symmetrically.</li>
+                    <li><strong>Cons:</strong> Requires more bandwidth (two signal changes per bit for 1s and 0s).</li>
+                </ul>
+                <h4>5. Bipolar AMI (Alternate Mark Inversion):</h4>
+                <ul>
+                    <li><strong>Rule:</strong> '0' is represented by zero voltage. '1's (marks) are represented by alternating positive and negative voltages.</li>
+                    <li><strong>10011101:</strong>
+                        <div class="diagram">
+                            <pre>
+1   0   0   1   1   1   0   1
++V|____             |____             |____
+  |    |    |    |    |    |    |    |
+0V+----|----|----|----|----|----|----|----
+  |    |____|____|    |____|____|    |____
+-V |
+                            </pre>
+                        </div>
+                    </li>
+                    <li><strong>Pros:</strong> No DC component, some error detection (violation of alternation).</li>
+                    <li><strong>Cons:</strong> Synchronization issues with long strings of 0s (loss of pulses).</li>
+                </ul>
+                <h4>6. Manchester Coding:</h4>
+                <ul>
+                    <li><strong>Rule:</strong> Combines NRZ-L and RZ. Each bit period has a transition in the middle. '1': Low-to-High transition in the middle. '0': High-to-Low transition in the middle. (This is one common convention, G.E. Thomas convention. IEEE 802.3 is opposite).</li>
+                    <li><strong>10011101 (Using L->H for 1, H->L for 0):</strong>
+                        <div class="diagram">
+                            <pre>
+1   0   0   1   1   1   0   1
++V _|¯|_ ¯|_ ¯|_ _|¯|_ _|¯|_ _|¯|_ ¯|_ _|¯|_
+  |_| |_| |_| |_| |_| |_| |_| |_|
+-V
+                            </pre>
+                        </div>
+                    </li>
+                    <li><strong>Pros:</strong> Self-synchronizing (transition in every bit), no DC component.</li>
+                    <li><strong>Cons:</strong> Doubles the bandwidth requirement compared to NRZ (two signal elements per bit).</li>
+                </ul>
+                <h4>7. Differential Manchester Coding:</h4>
+                <ul>
+                    <li><strong>Rule:</strong> Always a transition in the middle of the bit interval (for clocking). '1' is represented by no transition at the beginning of the interval. '0' is represented by a transition at the beginning of the interval. (Signal level itself is determined by the mid-bit transition and previous state).</li>
+                    <li><strong>10011101 (Assume previous bit ended High):</strong>
+                        <div class="diagram">
+                            <pre>
+(Prev ended H)
+ 1   0   0   1   1   1   0   1
++V ¯|_ _|¯|_ _|¯|_ ¯|_ ¯|_ ¯|_ _|¯|_ ¯|_
+   (NoT)(Tr)(Tr)(NoT)(NoT)(NoT)(Tr)(NoT) <-- Transition at start
+  |_| |_| |_| |_| |_| |_| |_| |_|
+-V
+                            </pre>
+                        </div>
+                    </li>
+                    <li><strong>Pros:</strong> Self-synchronizing, no DC component, differential encoding (robust to polarity inversion).</li>
+                    <li><strong>Cons:</strong> Doubles bandwidth requirement. Complexity.</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>3. Discuss in detail the design of Fiber Optic cables and how it transmits data? Explain its types.</strong>
+                <h3>Design of Fiber Optic Cables:</h3>
+                <p>A fiber optic cable is designed to guide light along its length with minimal loss. Its key components are:</p>
+                <ol>
+                    <li><strong>Core:</strong>
+                        <ul>
+                            <li>The innermost part of the fiber, made of highly pure silica glass or sometimes plastic.</li>
+                            <li>This is the medium through which light pulses (carrying data) propagate.</li>
+                            <li>Diameter: Varies depending on type; typically 8-10 µm for single-mode fibers and 50-62.5 µm for multi-mode fibers.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cladding:</strong>
+                        <ul>
+                            <li>A layer of glass or plastic that surrounds the core.</li>
+                            <li>It has a lower refractive index than the core. This difference is critical for Total Internal Reflection.</li>
+                            <li>Diameter: Typically standardized at 125 µm for glass fibers.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Buffer Coating (Primary Buffer):</strong>
+                        <ul>
+                            <li>A layer of plastic (e.g., acrylate polymer) applied over the cladding.</li>
+                            <li>Provides mechanical protection to the delicate fiber, shielding it from abrasion, moisture, and physical damage during handling and installation.</li>
+                            <li>Increases the fiber's toughness. Typically 250 µm or 900 µm in diameter.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Strength Members:</strong>
+                        <ul>
+                            <li>Materials like Aramid yarn (e.g., Kevlar strands), fiberglass, or steel strands embedded in the cable structure around the buffered fibers.</li>
+                            <li>Provide tensile strength to the cable, protecting the optical fibers from stress and strain during pulling, installation, and over the cable's lifetime.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Outer Jacket:</strong>
+                        <ul>
+                            <li>The outermost layer of the cable, usually made of durable polymers like PVC (Polyvinyl Chloride), PE (Polyethylene), or LSZH (Low Smoke Zero Halogen) materials.</li>
+                            <li>Protects the internal components from environmental factors such as moisture, abrasion, chemicals, UV radiation, and temperature variations.</li>
+                            <li>Often color-coded for identification.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h3>Diagram (Cross-section):</h3>
+                <div class="diagram">
+                    <pre>
+ +-----------------------------------+
+ |           Outer Jacket            |
+ +-----------------------------------+
+ |         Strength Members          | (e.g., Aramid Yarn)
+ +-----------------------------------+
+ |           Buffer Coating          |
+ +-----------------------------------+
+ |             Cladding              | (Lower Refractive Index)
+ +-----------------------------------+
+ |               Core                | (Higher Refractive Index - Light Path)
+ +-----------------------------------+
+                    </pre>
+                </div>
+                <h3>How Fiber Optic Cables Transmit Data (Principle of Total Internal Reflection - TIR):</h3>
+                <p>Data is transmitted through fiber optic cables as pulses of light generated by a light source (LED or laser). The transmission relies on the principle of Total Internal Reflection (TIR).</p>
+                <ol>
+                    <li><strong>Light Injection:</strong> Light from a transmitter is launched into one end of the fiber's core at a specific angle.</li>
+                    <li><strong>Refractive Index Difference:</strong> The core has a higher refractive index ($n_1$) than the cladding ($n_2$).</li>
+                    <li><strong>Critical Angle:</strong> When light traveling in a denser medium (core) strikes the boundary of a less dense medium (cladding) at an angle of incidence greater than the critical angle ($\theta_c$), the light is completely reflected back into the denser medium. The critical angle is given by $\sin(\theta_c) = n_2/n_1$.</li>
+                    <li><strong>Propagation:</strong> This TIR process repeats itself numerous times as the light zig-zags or curves along the length of the fiber, effectively guiding the light pulses from the transmitter to the receiver with very low loss (attenuation).</li>
+                    <li><strong>Data Encoding:</strong> Binary data (0s and 1s) is encoded by modulating the light (e.g., light ON = 1, light OFF = 0, or using different intensities/phases).</li>
+                </ol>
+                <h3>Types of Fiber Optic Cables:</h3>
+                <h4>A. Based on Refractive Index Profile:</h4>
+                <ol>
+                    <li><strong>Step-Index Fiber:</strong>
+                        <ul>
+                            <li><strong>Profile:</strong> The refractive index of the core is uniform throughout and changes abruptly (in a step) at the core-cladding boundary.</li>
+                            <li><strong>Light Path:</strong> In multimode step-index fibers, light rays take different paths (modes) of varying lengths, leading to modal dispersion (pulse spreading), which limits bandwidth.</li>
+                            <li>Used in both single-mode and some older/specialty multi-mode fibers.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Graded-Index Fiber:</strong>
+                        <ul>
+                            <li><strong>Profile:</strong> The refractive index of the core is highest at the center and gradually decreases towards the core-cladding boundary (often in a parabolic profile).</li>
+                            <li><strong>Light Path:</strong> Light rays travel in sinusoidal or helical paths. Rays that travel further from the center (longer paths) pass through regions of lower refractive index, causing them to travel faster. This equalizes the travel times of different modes.</li>
+                            <li><strong>Benefit:</strong> Significantly reduces modal dispersion compared to step-index multimode fibers, allowing for higher bandwidth. Primarily used for multi-mode fibers.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h4>B. Based on Number of Modes (Paths for Light):</h4>
+                <ol>
+                    <li><strong>Single-Mode Fiber (SMF):</strong>
+                        <ul>
+                            <li><strong>Core Diameter:</strong> Very small (typically 8-10 µm).</li>
+                            <li><strong>Mode Propagation:</strong> Allows only a single path or mode of light (the fundamental mode) to propagate directly through the core.</li>
+                            <li><strong>Light Source:</strong> Requires highly coherent laser sources.</li>
+                            <li><strong>Dispersion:</strong> Minimal dispersion (no modal dispersion; only chromatic and waveguide dispersion, which are much smaller).</li>
+                            <li><strong>Advantages:</strong> Extremely high bandwidth, very low attenuation, suitable for very long-distance transmission (tens to thousands of kilometers).</li>
+                            <li><strong>Disadvantages:</strong> More expensive connectors, more difficult to couple light into the fiber due to the small core.</li>
+                            <li><strong>Applications:</strong> Long-haul telecommunication backbones, submarine cables, CATV main lines, high-speed data networks (e.g., 10 Gbps and above over long distances).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Multi-Mode Fiber (MMF):</strong>
+                        <ul>
+                            <li><strong>Core Diameter:</strong> Larger (typically 50 µm or 62.5 µm).</li>
+                            <li><strong>Mode Propagation:</strong> Allows multiple paths (modes) of light to propagate simultaneously through the core. Each mode travels at a slightly different angle and path length.</li>
+                            <li><strong>Light Source:</strong> Can use less expensive light sources like LEDs (Light Emitting Diodes) or VCSELs (Vertical Cavity Surface Emitting Lasers).</li>
+                            <li><strong>Dispersion:</strong> Suffers from modal dispersion, where different modes arrive at the receiver at different times, causing the light pulse to spread and potentially overlap with adjacent pulses. This limits bandwidth and transmission distance.</li>
+                            <li><strong>Advantages:</strong> Easier to connect and couple light into, less expensive sources and connectors.</li>
+                            <li><strong>Disadvantages:</strong> Lower bandwidth and shorter transmission distances (typically up to a few kilometers) compared to SMF.</li>
+                            <li><strong>Applications:</strong> Local Area Networks (LANs), data centers, short-distance links within buildings, Fiber to the Desktop (FTTD).</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="question">
+                <strong>4. a) Explain internet checksum method with an example.</strong>
+                <p><strong>Internet Checksum Method:</strong> The Internet Checksum is an error detection algorithm used in various Internet protocols (like IP, TCP, UDP) primarily for their headers. It's a simple method designed for speed.</p>
+                <h3>Sender Side Calculation:</h3>
+                <ol>
+                    <li><strong>Divide Data:</strong> The data (e.g., header) to be checksummed is treated as a sequence of 16-bit integers.</li>
+                    <li><strong>Initialize Checksum Field:</strong> The checksum field in the header is initially set to zero.</li>
+                    <li><strong>One's Complement Sum:</strong> All the 16-bit words are added together using one's complement arithmetic. In one's complement addition, any carry-out from the most significant bit (MSB) is added back to the least significant bit (LSB) of the sum (this is called an "end-around carry").</li>
+                    <li><strong>One's Complement of Sum:</strong> The final sum is then one's complemented (all bits are flipped) to get the checksum value.</li>
+                    <li><strong>Insert Checksum:</strong> This checksum value is placed into the checksum field of the header.</li>
+                </ol>
+                <h3>Receiver Side Verification:</h3>
+                <ol>
+                    <li><strong>Divide Data:</strong> The received header (including the received checksum value in its field) is treated as a sequence of 16-bit integers.</li>
+                    <li><strong>One's Complement Sum:</strong> All these 16-bit words (including the checksum) are added together using one's complement arithmetic (with end-around carry).</li>
+                    <li><strong>Verification:</strong> If the final sum (after all additions and end-around carries) is all 1s (i.e., 0xFFFF in hexadecimal for a 16-bit checksum), then no error is detected. If the result is not 0xFFFF, an error is detected, and the packet is typically discarded.</li>
+                </ol>
+                <h3>Example:</h3>
+                <p>Suppose we have two 16-bit words of data in a header: 0x1234 and 0xABCD. (Checksum field is initially 0x0000 for calculation at sender).</p>
+                <h4>Sender Side:</h4>
+                <ol>
+                    <li>Data words: 0001 0010 0011 0100 (0x1234) <br> 1010 1011 1100 1101 (0xABCD)</li>
+                    <li>Add the words:
+                        <pre>
+ 0001 0010 0011 0100 (0x1234)
++ 1010 1011 1100 1101 (0xABCD)
+--------------------
+ 1011 1101 1111 0001 (0xBDF1)
+                        </pre>
+                        <p>No carry-out in this step. Sum = 0xBDF1.</p>
+                    </li>
+                    <li>One's complement of the sum: ~0xBDF1 = ~ (1011 1101 1111 0001)$_2$ = (0100 0010 0000 1110)$_2$ = 0x420E</li>
+                    <li>The checksum is 0x420E. This is placed in the checksum field.</li>
+                </ol>
+                <h4>Receiver Side:</h4>
+                <p>The receiver gets the data words 0x1234, 0xABCD, and the checksum 0x420E.</p>
+                <ol>
+                    <li>Add all three 16-bit words: 0x1234 + 0xABCD + 0x420E</li>
+                    <li>First sum: 0x1234 + 0xABCD = 0xBDF1 (from sender side)</li>
+                    <li>Add the checksum to this sum:
+                        <pre>
+ BDF1
++ 420E
+------
+ FFFF
+                        </pre>
+                        <p>Result is 0xFFFF. No error detected.</p>
+                    </li>
+                </ol>
+                <p><strong>Important Note:</strong> The Internet checksum is relatively weak and can miss certain types of errors (e.g., reordering of 16-bit words, errors that cancel each other out). However, it's simple and fast to compute in software.</p>
+
+                <strong>b) Explain simple parity check method with an example.</strong>
+                <p><strong>Simple Parity Check (Vertical Redundancy Check - VRC):</strong> The simple parity check is one of the most basic error detection techniques. An extra bit, called a parity bit, is appended to each data unit (e.g., a byte or character) before transmission.</p>
+                <h3>Types:</h3>
+                <ol>
+                    <li><strong>Even Parity:</strong> The parity bit is set to '0' or '1' such that the total number of '1's in the data unit (including the parity bit) is even.</li>
+                    <li><strong>Odd Parity:</strong> The parity bit is set to '0' or '1' such that the total number of '1's in the data unit (including the parity bit) is odd.</li>
+                </ol>
+                <h3>Sender Side:</h3>
+                <ul>
+                    <li>Counts the number of 1s in the data unit.</li>
+                    <li>Sets the parity bit according to the chosen parity scheme (even or odd).</li>
+                    <li>Appends the parity bit to the data unit, forming the codeword.</li>
+                </ul>
+                <h3>Receiver Side:</h3>
+                <ul>
+                    <li>Receives the codeword (data unit + parity bit).</li>
+                    <li>Counts the total number of 1s in the received codeword.</li>
+                    <li>If even parity is used: An odd count of 1s indicates an error. An even count suggests no error (or an undetectable even number of bit errors).</li>
+                    <li>If odd parity is used: An even count of 1s indicates an error. An odd count suggests no error (or an undetectable even number of bit errors).</li>
+                </ul>
+                <h3>Capabilities:</h3>
+                <ul>
+                    <li>Can detect all single-bit errors.</li>
+                    <li>Can detect any odd number of bit errors within the data unit.</li>
+                    <li>Cannot detect errors if an even number of bits are flipped (e.g., 2-bit error, 4-bit error), as the parity would still appear correct.</li>
+                    <li>Cannot correct any errors; it only indicates that an error has occurred.</li>
+                </ul>
+                <h3>Example:</h3>
+                <p>Suppose the data unit is 1011010 (7 bits).</p>
+                <ol>
+                    <li><strong>Even Parity:</strong>
+                        <ul>
+                            <li>Data: 1011010</li>
+                            <li>Number of 1s in data = 4 (which is even).</li>
+                            <li>Sender: To make the total number of 1s even, the parity bit must be 0.</li>
+                            <li>Codeword transmitted: 10110100 (Total 1s = 4, even).</li>
+                            <li>Receiver:
+                                <ul>
+                                    <li>If 10110100 is received: Counts 4 ones (even). No error detected.</li>
+                                    <li>If 10110110 is received (error in 3rd bit from right: 0->1): Counts 5 ones (odd). Error detected (since even parity was expected).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Odd Parity:</strong>
+                        <ul>
+                            <li>Data: 1011010</li>
+                            <li>Number of 1s in data = 4 (which is even).</li>
+                            <li>Sender: To make the total number of 1s odd, the parity bit must be 1.</li>
+                            <li>Codeword transmitted: 10110101 (Total 1s = 5, odd).</li>
+                            <li>Receiver:
+                                <ul>
+                                    <li>If 10110101 is received: Counts 5 ones (odd). No error detected.</li>
+                                    <li>If 10110100 is received (error, last bit 1->0): Counts 4 ones (even). Error detected (since odd parity was expected).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <h4>Undetectable Error Example (using Even Parity):</h4>
+                <ul>
+                    <li>Original codeword (even parity): 10110100</li>
+                    <li>Suppose a 2-bit error occurs, and 10100000 is received (2nd bit 1->0, 4th bit 1->0).</li>
+                    <li>Number of 1s in received 10100000 is 2 (even).</li>
+                    <li>The receiver checks parity and finds an even number of 1s. It assumes no error, even though the data is corrupted. This highlights the limitation of simple parity check.</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>5. Analyse the types of CSMA protocol used in medium access control.</strong>
+                <p><strong>CSMA (Carrier Sense Multiple Access)</strong> is a family of Medium Access Control (MAC) protocols where stations listen to (sense) the transmission medium before attempting to transmit. If the medium is sensed busy, the station defers its transmission. This helps reduce the probability of collisions but doesn't eliminate them due to propagation delay.</p>
+                <h3>Types of CSMA Protocols:</h3>
+                <h4>1. 1-Persistent CSMA:</h4>
+                <ul>
+                    <li><strong>Rule:</strong>
+                        <ol>
+                            <li>Sense the channel.</li>
+                            <li>If the channel is idle, transmit immediately (with probability 1).</li>
+                            <li>If the channel is busy, continuously sense the channel until it becomes idle, then transmit immediately.</li>
+                        </ol>
+                    </li>
+                    <li><strong>Analysis:</strong>
+                        <ul>
+                            <li><strong>Pros:</strong> Reduces idle channel time if only one station is waiting. Simple.</li>
+                            <li><strong>Cons:</strong> Greedy approach. If multiple stations are waiting for a busy channel to become idle, they will all sense it as idle at roughly the same time and transmit simultaneously, leading to a high probability of collision. This degrades throughput.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>2. Non-Persistent CSMA:</h4>
+                <ul>
+                    <li><strong>Rule:</strong>
+                        <ol>
+                            <li>Sense the channel.</li>
+                            <li>If the channel is idle, transmit immediately.</li>
+                            <li>If the channel is busy, wait for a random amount of time (backoff) and then go back to step 1 (sense again). It does not continuously sense while waiting.</li>
+                        </ol>
+                    </li>
+                    <li><strong>Analysis:</strong>
+                        <ul>
+                            <li><strong>Pros:</strong> Reduces collision probability compared to 1-persistent because waiting stations don't all transmit immediately after the channel becomes free; their random backoff times spread out their attempts. Better channel utilization than 1-persistent under high load.</li>
+                            <li><strong>Cons:</strong> Can lead to longer delays if the random waiting time is large and the channel becomes idle during that wait, as the station isn't sensing continuously. Bandwidth might be wasted during these idle periods.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>3. p-Persistent CSMA:</h4>
+                <ul>
+                    <li><strong>Rule:</strong> (Typically used in slotted channels, like some Wi-Fi coordination functions)
+                        <ol>
+                            <li>Sense the channel.</li>
+                            <li>If the channel is idle:
+                                <ul>
+                                    <li>Transmit with probability 'p'.</li>
+                                    <li>With probability (1-p), defer to the next time slot. If deferring, go back to step 1 for the next slot.</li>
+                                </ul>
+                            </li>
+                            <li>If the channel is busy, continuously sense until it becomes idle, then proceed with step 2.</li>
+                            <li>If transmission is deferred to the next slot (due to 1-p probability), and the channel is still idle in that next slot, again transmit with probability 'p' or defer with (1-p).</li>
+                        </ol>
+                    </li>
+                    <li><strong>Analysis:</strong>
+                        <ul>
+                            <li><strong>Pros:</strong> Aims to strike a balance. It attempts to reduce collisions (like non-persistent) by randomizing access among multiple waiting stations when the channel becomes free, and also tries to reduce idle channel time (like 1-persistent). The value of 'p' is crucial for performance; it's tuned based on the number of stations.</li>
+                            <li><strong>Cons:</strong> Performance is highly dependent on the choice of 'p'. If 'p' is too high, it behaves like 1-persistent. If 'p' is too low, channel can remain idle even if stations have data, leading to delays. More complex than 1-persistent or non-persistent.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Extensions to CSMA:</h3>
+                <h4>4. CSMA/CD (Carrier Sense Multiple Access with Collision Detection):</h4>
+                <ul>
+                    <li><strong>Rule:</strong> "Listen before talk" and "Listen while talk."
+                        <ol>
+                            <li>Sense channel (like CSMA).</li>
+                            <li>If idle, start transmitting the frame.</li>
+                            <li>Crucially: Continue to monitor (listen to) the channel during its own transmission to detect collisions.</li>
+                            <li>If a collision is detected (e.g., transmitted signal doesn't match received signal):
+                                <ul>
+                                    <li>Abort transmission immediately.</li>
+                                    <li>Transmit a brief "jam signal" to ensure all other colliding stations also detect the collision.</li>
+                                    <li>Wait for a random backoff period (typically using Binary Exponential Backoff algorithm) before attempting to retransmit by returning to step 1.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><strong>Analysis:</strong>
+                        <ul>
+                            <li><strong>Pros:</strong> Significantly improves CSMA performance by detecting collisions early and stopping transmission, saving time and bandwidth that would be wasted transmitting a full corrupted frame. Widely used in wired Ethernet (IEEE 802.3).</li>
+                            <li><strong>Cons:</strong> Collision detection requires the station to be able to receive while transmitting. The effectiveness depends on the propagation delay; the station must detect a collision before it finishes transmitting its frame (frame size must be large enough relative to network span). Not easily applicable to wireless networks due to the hidden terminal problem and difficulty in detecting weak colliding signals.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>5. CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance):</h4>
+                <ul>
+                    <li><strong>Rule:</strong> Used primarily in wireless networks (e.g., Wi-Fi - IEEE 802.11) where collision detection is impractical. Tries to avoid collisions rather than detect them.
+                        <ol>
+                            <li>Sense channel. If idle for a specified period (DIFS - Distributed Inter-Frame Space), then transmit.</li>
+                            <li>If busy, or if channel was idle but became busy before DIFS expired, the station chooses a random backoff time from a contention window. The station waits for this backoff period, decrementing its backoff timer only when the channel is sensed idle. When the timer reaches zero, it transmits.</li>
+                            <li>Uses acknowledgements (ACKs): After transmitting a data frame, the sender expects an ACK from the receiver. If ACK not received within a timeout, a collision is assumed, and the sender retransmits after a new, typically longer, backoff period.</li>
+                            <li>Optional RTS/CTS (Request to Send/Clear to Send) mechanism: For larger packets, a station can send an RTS. The receiver responds with a CTS. Other stations hearing RTS or CTS will defer transmission, helping to avoid collisions, especially with hidden terminals.</li>
+                        </ol>
+                    </li>
+                    <li><strong>Analysis:</strong>
+                        <ul>
+                            <li><strong>Pros:</strong> Reduces the probability of collision in wireless environments where detection is hard. Addresses issues like the hidden terminal problem (partially, especially with RTS/CTS).</li>
+                            <li><strong>Cons:</strong> More overhead than CSMA/CD due to Inter-Frame Spaces (IFS), backoff procedures, ACKs, and optional RTS/CTS. Collisions can still occur, and when they do, entire frames are wasted (as detection isn't happening during transmission).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <strong>6. Explain in detail the different classes of IPv4 addressing.</strong>
+                <p>IPv4 addressing, in its original "classful" system, divided the 32-bit IP address space into five classes: A, B, C, D, and E. The class of an address was determined by the first few bits of its first octet. This system has largely been superseded by Classless Inter-Domain Routing (CIDR), but understanding classes is important for historical context and some older network configurations.</p>
+                <p>An IPv4 address is 32 bits long, typically written in dotted-decimal notation (e.g., 192.168.1.1). It's divided into a Network ID part and a Host ID part.</p>
+                <h3>Class A:</h3>
+                <ul>
+                    <li><strong>First Octet Range:</strong> 1 - 126 (Binary: 0xxxxxxx. The first bit is 0).
+                        <ul>
+                            <li>(Note: Network 0.0.0.0 is reserved, and network 127.0.0.0 is reserved for loopback.)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Network/Host Division:</strong>
+                        <ul>
+                            <li><strong>Network ID:</strong> First 8 bits (1st octet).</li>
+                            <li><strong>Host ID:</strong> Last 24 bits (2nd, 3rd, 4th octets).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Number of Networks:</strong> $2^7-2=126$ usable networks.</li>
+                    <li><strong>Number of Hosts per Network:</strong> $2^{24}-2=16,777,214$ hosts (all 0s for network address, all 1s for broadcast address are not assignable to hosts).</li>
+                    <li><strong>Use:</strong> Designed for very large organizations with a huge number of hosts.</li>
+                    <li><strong>Example:</strong> Address 10.50.120.7. Network ID is 10. Host ID is 50.120.7.</li>
+                    <li><strong>Default Subnet Mask:</strong> 255.0.0.0</li>
+                </ul>
+                <h3>Class B:</h3>
+                <ul>
+                    <li><strong>First Octet Range:</strong> 128 - 191 (Binary: 10xxxxxx. The first two bits are 10).</li>
+                    <li><strong>Network/Host Division:</strong>
+                        <ul>
+                            <li><strong>Network ID:</strong> First 16 bits (1st and 2nd octets).</li>
+                            <li><strong>Host ID:</strong> Last 16 bits (3rd and 4th octets).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Number of Networks:</strong> $2^{14}=16,384$ networks.</li>
+                    <li><strong>Number of Hosts per Network:</strong> $2^{16}-2=65,534$ hosts.</li>
+                    <li><strong>Use:</strong> Designed for medium to large-sized organizations.</li>
+                    <li><strong>Example:</strong> Address 172.16.30.5. Network ID is 172.16. Host ID is 30.5.</li>
+                    <li><strong>Default Subnet Mask:</strong> 255.255.0.0</li>
+                </ul>
+                <h3>Class C:</h3>
+                <ul>
+                    <li><strong>First Octet Range:</strong> 192 - 223 (Binary: 110xxxxx. The first three bits are 110).</li>
+                    <li><strong>Network/Host Division:</strong>
+                        <ul>
+                            <li><strong>Network ID:</strong> First 24 bits (1st, 2nd, and 3rd octets).</li>
+                            <li><strong>Host ID:</strong> Last 8 bits (4th octet).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Number of Networks:</strong> $2^{21}=2,097,152$ networks.</li>
+                    <li><strong>Number of Hosts per Network:</strong> $2^8-2=254$ hosts.</li>
+                    <li><strong>Use:</strong> Designed for small organizations.</li>
+                    <li><strong>Example:</strong> Address 192.168.1.101. Network ID is 192.168.1. Host ID is 101.</li>
+                    <li><strong>Default Subnet Mask:</strong> 255.255.255.0</li>
+                </ul>
+                <h3>Class D:</h3>
+                <ul>
+                    <li><strong>First Octet Range:</strong> 224 - 239 (Binary: 1110xxxx. The first four bits are 1110).</li>
+                    <li><strong>Use:</strong> Reserved for Multicast Addressing. There is no Network ID/Host ID division in the same way as Classes A, B, C. The entire 32-bit address identifies a multicast group, to which multiple hosts can subscribe. Packets sent to a multicast address are delivered to all hosts in that group.</li>
+                    <li><strong>Example:</strong> 224.0.0.5 (OSPF AllSPFRouters multicast group).</li>
+                </ul>
+                <h3>Class E:</h3>
+                <ul>
+                    <li><strong>First Octet Range:</strong> 240 - 255 (Binary: 1111xxxx. The first four bits are 1111).</li>
+                    <li><strong>Use:</strong> Reserved for Experimental or Future Use. These addresses are not typically used on the public internet.</li>
+                </ul>
+                <h3>Summary Table:</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="border p-2">Class</th>
+                                <th class="border p-2">Leading Bits</th>
+                                <th class="border p-2">First Octet Range</th>
+                                <th class="border p-2">Network ID Bits</th>
+                                <th class="border p-2">Host ID Bits</th>
+                                <th class="border p-2">Max Networks</th>
+                                <th class="border p-2">Max Hosts/Network</th>
+                                <th class="border p-2">Default Mask</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border p-2">A</td>
+                                <td class="border p-2">0</td>
+                                <td class="border p-2">1-126</td>
+                                <td class="border p-2">8</td>
+                                <td class="border p-2">24</td>
+                                <td class="border p-2">126</td>
+                                <td class="border p-2">16,777,214</td>
+                                <td class="border p-2">255.0.0.0</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">B</td>
+                                <td class="border p-2">10</td>
+                                <td class="border p-2">128-191</td>
+                                <td class="border p-2">16</td>
+                                <td class="border p-2">16</td>
+                                <td class="border p-2">16,384</td>
+                                <td class="border p-2">65,534</td>
+                                <td class="border p-2">255.255.0.0</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">C</td>
+                                <td class="border p-2">110</td>
+                                <td class="border p-2">192-223</td>
+                                <td class="border p-2">24</td>
+                                <td class="border p-2">8</td>
+                                <td class="border p-2">2,097,152</td>
+                                <td class="border p-2">254</td>
+                                <td class="border p-2">255.255.255.0</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">D</td>
+                                <td class="border p-2">1110</td>
+                                <td class="border p-2">224-239</td>
+                                <td class="border p-2">N/A (Multicast)</td>
+                                <td class="border p-2">N/A</td>
+                                <td class="border p-2">N/A</td>
+                                <td class="border p-2">N/A</td>
+                                <td class="border p-2">N/A</td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">E</td>
+                                <td class="border p-2">1111</td>
+                                <td class="border p-2">240-255</td>
+                                <td class="border p-2">N/A (Experimental)</td>
+                                <td class="border p-2">N/A</td>
+                                <td class="border p-2">N/A</td>
+                                <td class="border p-2">N/A</td>
+                                <td class="border p-2">N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3>Special Addresses:</h3>
+                <ul>
+                    <li><strong>Network Address:</strong> An address where the Host ID portion is all zeros (e.g., 192.168.1.0). Represents the network itself.</li>
+                    <li><strong>Directed Broadcast Address:</strong> An address where the Host ID portion is all ones (e.g., 192.168.1.255). Sends a packet to all hosts on that specific remote network.</li>
+                    <li><strong>Limited Broadcast Address:</strong> 255.255.255.255. Sends a packet to all hosts on the local network segment.</li>
+                    <li><strong>Loopback Address:</strong> 127.0.0.1 (part of the 127.0.0.0/8 block). Used by a host to send packets to itself, for testing TCP/IP stack.</li>
+                    <li><strong>Private Addresses (RFC 1918):</strong> Ranges within Classes A, B, and C are reserved for private networks (not routable on the public internet, require NAT for internet access):
+                        <ul>
+                            <li>Class A: 10.0.0.0 to 10.255.255.255 (10.0.0.0/8)</li>
+                            <li>Class B: 172.16.0.0 to 172.31.255.255 (172.16.0.0/12)</li>
+                            <li>Class C: 192.168.0.0 to 192.168.255.255 (192.168.0.0/16)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Limitations of Classful Addressing:</h3>
+                <p>The rigid structure of classful addressing led to inefficient use of the IPv4 address space:</p>
+                <ul>
+                    <li><strong>Wastage:</strong> A company needing 300 IPs would get a Class B (65k IPs), wasting most, or multiple Class Cs, which is complex to manage. A Class C (254 IPs) might be too small, and a Class B too large.</li>
+                    <li><strong>Address Exhaustion:</strong> Rapid growth of the internet led to faster-than-expected depletion of available IPv4 addresses.</li>
+                </ul>
+                <p>These limitations prompted the development of Classless Inter-Domain Routing (CIDR), which uses variable-length subnet masking (VLSM) to allocate IP addresses more flexibly and efficiently.</p>
+            </div>
+
+            <div class="question">
+                <strong>7. Explain bit-oriented framing and the need for bit stuffing with an example.</strong>
+                <h3>Bit-Oriented Framing:</h3>
+                <p>In data link layer protocols, framing is the process of dividing a stream of bits received from the network layer into manageable data units called frames. Bit-oriented framing means that the data within the frame is treated as a sequence of bits, not necessarily as characters or bytes. These protocols can carry any combination of bits.</p>
+                <ul>
+                    <li><strong>Flag Byte:</strong> Bit-oriented protocols typically use a special bit pattern, known as a flag byte (or simply a flag), to mark the beginning and end of each frame. A commonly used flag pattern is 01111110 (hexadecimal 0x7E).</li>
+                </ul>
+                <p>Frame Structure: [Flag] [Header] [Payload (Data)] [Trailer (e.g., FCS)] [Flag]</p>
+                <p>01111110 ...data... 01111110</p>
+                <h3>The Need for Bit Stuffing (Data Transparency):</h3>
+                <p>A critical issue arises if the flag byte pattern (01111110) accidentally appears within the actual data being transmitted (i.e., in the header, payload, or trailer fields). If this happens, the receiver's data link layer would mistakenly interpret this data pattern as an end-of-frame marker, leading to premature frame termination and errors. This would mean the protocol cannot transparently carry any arbitrary bit pattern as data.</p>
+                <p>To solve this problem and ensure data transparency (the ability to carry any bit pattern as data), a technique called <strong>bit stuffing</strong> (also known as zero-bit insertion/deletion) is used.</p>
+                <h3>Bit Stuffing Mechanism:</h3>
+                <ul>
+                    <li><strong>Sender Side:</strong>
+                        <ol>
+                            <li>The sender's data link layer monitors the bit stream of the payload (all data between the start and end flags).</li>
+                            <li>Whenever the sender encounters five consecutive '1's in the data stream, it automatically inserts (stuffs) an extra '0' bit immediately after the fifth '1'.</li>
+                            <li>This insertion happens regardless of the value of the bit that follows the five '1's.</li>
+                            <li>The special flag sequence 01111110 itself is not subject to bit stuffing when it is used as a frame delimiter.</li>
+                        </ol>
+                    </li>
+                    <li><strong>Receiver Side (Bit Destuffing):</strong>
+                        <ol>
+                            <li>The receiver's data link layer monitors the incoming bit stream.</li>
+                            <li>When it encounters five consecutive '1's:
+                                <ul>
+                                    <li>It inspects the very next bit (the sixth bit).</li>
+                                    <li>If this sixth bit is a '0', the receiver knows that this '0' was stuffed by the sender. It removes (destuffs) this '0' bit to restore the original data stream.</li>
+                                    <li>If this sixth bit is a '1', the receiver checks the seventh bit.</li>
+                                    <li>If the pattern is 1111110 (i.e., five 1s followed by 10), it recognizes this as a flag sequence (01111110 if preceded by a 0, or part of a flag).</li>
+                                    <li>If the pattern is 1111111 (seven or more 1s), it's usually an error condition or an abort sequence.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+                <h3>Example:</h3>
+                <ul>
+                    <li>Original Data to be sent (payload): 0110111111011111100 (Note: contains 11111 sequences)</li>
+                    <li>Flag: 01111110</li>
+                </ul>
+                <h4>Sender Side (Bit Stuffing):</h4>
+                <ol>
+                    <li>Scan data: 0110 (no stuffing needed)</li>
+                    <li>Next sequence: 11111 (five consecutive 1s). Stuff a 0. Data becomes: 0110 111110</li>
+                    <li>Remaining original data: 1011111100</li>
+                    <li>Continue scanning from the 1 after the stuffed 0: 10 (no stuffing)</li>
+                    <li>Next sequence: 11111 (five consecutive 1s). Stuff a 0. Data becomes: 0110 111110 10 111110</li>
+                    <li>Remaining original data: 100</li>
+                    <li>Final stuffed payload: 011011111010111110100</li>
+                </ol>
+                <p>Frame Transmitted:</p>
+                <p>01111110 011011111010111110100 01111110</p>
+                <p>(Flag) (Stuffed Payload) (Flag)</p>
+                <h4>Receiver Side (Bit Destuffing):</h4>
+                <ol>
+                    <li>Receives stuffed payload: 011011111010111110100</li>
+                    <li>Scans: 0110 (no destuffing)</li>
+                    <li>Encounters 11111 followed by a 0. This 0 is a stuffed bit. Destuff it.</li>
+                    <p>Restored part: 0110 11111</p>
+                    <p>Remaining received data: 101111110100 (after removing the first stuffed 0)</p>
+                    <li>Continue scanning from the 1 after the destuffed sequence: 10 (no destuffing)</li>
+                    <p>Restored part: 0110 11111 10</p>
+                    <li>Encounters 11111 followed by a 0. This 0 is a stuffed bit. Destuff it.</li>
+                    <p>Restored part: 0110 11111 10 11111</p>
+                    <p>Remaining received data: 100 (after removing the second stuffed 0)</p>
+                    <li>Scan 100 (no destuffing).</li>
+                    <li>Final Restored Original Data: 0110111111011111100 (Matches the original data).</li>
+                </ol>
+                <h3>Benefits of Bit Stuffing:</h3>
+                <ul>
+                    <li><strong>Data Transparency:</strong> Allows any arbitrary sequence of bits to be transmitted in the payload without being misinterpreted as a flag.</li>
+                    <li><strong>Reliable Framing:</strong> Ensures that flags uniquely identify frame boundaries.</li>
+                </ul>
+                <h3>Drawback:</h3>
+                <ul>
+                    <li>Slightly increases the length of the transmitted frame due to the inserted bits, leading to a small overhead.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
